@@ -1,0 +1,96 @@
+# ============================================================
+# Experiment 3: Eden-500M from scratch (BitNet b1.58)
+# Target: 1x RTX PRO 6000 Blackwell (96GB, FP4 Tensor Cores)
+# Duration: ~24-48 hours
+# Architecture: Based on Microsoft BitNet b1.58
+# ============================================================
+
+model:
+  name: "eden-500m"
+  type: "bitnet"                        # Custom 1.58-bit architecture
+  
+  # Architecture (BitNet b1.58 transformer)
+  architecture:
+    hidden_size: 1024
+    intermediate_size: 2816             # ~2.75x hidden
+    num_hidden_layers: 24
+    num_attention_heads: 16
+    num_key_value_heads: 4              # GQA: 4 KV heads
+    max_position_embeddings: 4096
+    vocab_size: 32000                   # Shared Qwen tokenizer
+    rms_norm_eps: 1.0e-6
+    rope_theta: 10000.0
+    tie_word_embeddings: true
+    
+  # BitNet specifics
+  bitnet:
+    weight_bits: 1.58                   # Ternary: {-1, 0, +1}
+    activation_bits: 8                  # FP8 activations (Blackwell native)
+    quantization_method: "absmean"      # Scale = mean(|W|)
+    straight_through_estimator: true    # STE for gradient computation
+
+# Pre-training config
+pretrain:
+  data: "slimpajama_sample_1B"          # 1B tokens from SlimPajama
+  per_device_batch_size: 16
+  gradient_accumulation_steps: 16       # Effective batch = 256
+  learning_rate: 1.0e-3                 # Higher LR for from-scratch
+  lr_scheduler_type: "cosine"
+  warmup_steps: 1000
+  max_steps: 20000                      # ~1B tokens at batch 256 × seq 2048
+  max_seq_length: 2048                  # Shorter during pre-training
+  bf16: true
+  gradient_checkpointing: true
+  logging_steps: 50
+  save_steps: 2000
+  optim: "adamw_torch"
+  weight_decay: 0.1
+  max_grad_norm: 1.0
+  seed: 42
+
+# SFT config (after pre-training)
+sft:
+  per_device_batch_size: 8
+  gradient_accumulation_steps: 4
+  learning_rate: 5.0e-5
+  lr_scheduler_type: "cosine"
+  warmup_ratio: 0.05
+  num_train_epochs: 5
+  max_seq_length: 4096
+  bf16: true
+  logging_steps: 10
+  save_steps: 500
+  eval_steps: 250
+  optim: "adamw_torch"
+  weight_decay: 0.01
+  seed: 42
+
+data:
+  tokenizer: "Qwen/Qwen3-4B"           # Borrow Qwen's tokenizer (32K vocab)
+  format: "chatml"
+  system_message: |
+    You are Eden, a local AI assistant. Call tools using <tool_call> tags.
+
+tool_format:
+  call_start: "<tool_call>"
+  call_end: "</tool_call>"
+  result_start: "<tool_result>"
+  result_end: "</tool_result>"
+  json_schema: true
+
+eval:
+  eval_on_start: false                  # No eval during pre-training
+  eval_after_sft: true
+  metric: "tool_call_accuracy"
+
+output:
+  export_mlx: true
+  export_gguf: true
+  
+# Expected model stats
+expected:
+  total_parameters: "~500M"
+  size_1bit: "~60MB"
+  size_fp16: "~1GB"
+  target_tok_s_m1: ">300"
+  target_eden_eval: ">80%"

@@ -1,0 +1,71 @@
+# ============================================================
+# Experiment 2: Bonsai-1.7B 1-bit LoRA Fine-tune
+# Target: 1x RTX PRO 6000 Blackwell (96GB, FP4 Tensor Cores)
+# Duration: ~4 hours
+# ============================================================
+
+model:
+  name: "prism-ml/Bonsai-1.7B-1bit"    # Apache 2.0
+  torch_dtype: "bfloat16"
+  # Bonsai uses ternary weights {-1, 0, +1}
+  # Activations stay in BF16/FP4 during LoRA
+
+lora:
+  r: 32                                 # Lower rank — 1-bit model is smaller
+  alpha: 64
+  dropout: 0.05
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - gate_proj
+    - up_proj
+    - down_proj
+  task_type: "CAUSAL_LM"
+  bias: "none"
+
+# No quantization — model is already 1-bit
+# LoRA adapters train in BF16
+
+training:
+  per_device_train_batch_size: 8        # Small model fits more per batch
+  gradient_accumulation_steps: 4        # Effective batch = 32
+  learning_rate: 5.0e-5                 # Higher LR for small model
+  lr_scheduler_type: "cosine"
+  warmup_ratio: 0.05
+  num_train_epochs: 5                   # More epochs — small model, fast training
+  max_seq_length: 4096                  # Shorter context for 1.7B
+  gradient_checkpointing: false         # Small enough without
+  bf16: true
+  logging_steps: 10
+  save_steps: 500
+  eval_steps: 250
+  save_total_limit: 3
+  optim: "adamw_torch"
+  weight_decay: 0.01
+  seed: 42
+
+data:
+  train_path: "data/combined_sft_train.jsonl"
+  eval_path: "data/combined_sft_eval.jsonl"
+  format: "chatml"
+  system_message: |
+    You are Eden, a local AI assistant. Call tools using <tool_call> tags.
+    Be concise. Call the right tool with correct parameters.
+
+tool_format:
+  call_start: "<tool_call>"
+  call_end: "</tool_call>"
+  result_start: "<tool_result>"
+  result_end: "</tool_result>"
+  json_schema: true
+
+eval:
+  eval_on_start: true
+  metric: "tool_call_accuracy"
+
+output:
+  merge_adapters: true
+  export_mlx: true
+  export_gguf: true
