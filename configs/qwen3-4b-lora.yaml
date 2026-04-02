@@ -1,0 +1,88 @@
+# ============================================================
+# Eden-Models: Qwen3-4B LoRA Fine-tune Config
+# Target: 1x A100 80GB on Great Lakes
+# Duration: ~8-16 hours
+# ============================================================
+
+# Base model
+model:
+  name: "Qwen/Qwen3-4B"
+  torch_dtype: "bfloat16"
+  attn_implementation: "flash_attention_2"
+
+# LoRA configuration
+lora:
+  r: 64
+  alpha: 128
+  dropout: 0.05
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - gate_proj
+    - up_proj
+    - down_proj
+  task_type: "CAUSAL_LM"
+  bias: "none"
+
+# Quantization (QLoRA)
+quantization:
+  load_in_4bit: true
+  bnb_4bit_compute_dtype: "bfloat16"
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_use_double_quant: true
+
+# Training parameters
+training:
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 8       # Effective batch = 32
+  learning_rate: 2.0e-5
+  lr_scheduler_type: "cosine"
+  warmup_ratio: 0.05
+  num_train_epochs: 3
+  max_seq_length: 8192
+  gradient_checkpointing: true
+  bf16: true
+  tf32: true
+  logging_steps: 10
+  save_steps: 500
+  eval_steps: 250
+  save_total_limit: 5
+  dataloader_num_workers: 4
+  optim: "adamw_torch"
+  weight_decay: 0.01
+  max_grad_norm: 1.0
+  seed: 42
+
+# Data
+data:
+  train_path: "data/combined_sft_train.jsonl"
+  eval_path: "data/combined_sft_eval.jsonl"
+  format: "chatml"                     # Match Qwen's chat template
+  system_message: |
+    You are Eden, a local AI coding assistant. You have access to tools
+    that you can call using <tool_call> tags. Call the right tool with
+    the right parameters. If no tool is needed, respond directly.
+    After receiving tool results, summarize them for the user.
+
+# Tool call format (what the model learns to output)
+tool_format:
+  call_start: "<tool_call>"
+  call_end: "</tool_call>"
+  result_start: "<tool_result>"
+  result_end: "</tool_result>"
+  json_schema: true                    # {"name": "...", "input": {...}}
+
+# Evaluation during training
+eval:
+  eval_on_start: true
+  metric: "tool_call_accuracy"
+  eval_dataset: "eval/test_cases/eden_eval_400.jsonl"
+
+# Output
+output:
+  merge_adapters: true                 # Merge LoRA into base on completion
+  push_to_hub: false                   # Manual upload after review
+  export_mlx: true                     # Convert to MLX format
+  export_gguf: true                    # Convert to GGUF format
