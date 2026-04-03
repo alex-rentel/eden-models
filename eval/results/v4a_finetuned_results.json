@@ -1,0 +1,849 @@
+{
+  "model": "mlx-community/Qwen3-1.7B-4bit",
+  "adapter": "adapters/qwen3-1.7b-tools-v4a",
+  "total_passed": 40,
+  "total_tests": 50,
+  "accuracy": 0.8,
+  "categories": {
+    "single_tool": {
+      "passed": 12,
+      "total": 20
+    },
+    "arg_format": {
+      "passed": 10,
+      "total": 10
+    },
+    "multi_tool": {
+      "passed": 5,
+      "total": 5
+    },
+    "no_tool": {
+      "passed": 8,
+      "total": 10
+    },
+    "wrong_tool": {
+      "passed": 5,
+      "total": 5
+    }
+  },
+  "results": [
+    {
+      "name": "list directory",
+      "category": "single_tool",
+      "difficulty": "easy",
+      "prompt": "List the files in /home/user/projects",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"list_files\", \"arguments\": {\"path\": \"/home/user/projects\"}}\n</tool_call>",
+      "extracted_tool": "list_files",
+      "extracted_args": {
+        "path": "/home/user/projects"
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "args_correct": true,
+      "expected_tool": "list_files",
+      "generation_time": 1.36,
+      "tokens_approx": 9
+    },
+    {
+      "name": "read specific file",
+      "category": "single_tool",
+      "difficulty": "easy",
+      "prompt": "Show me the contents of /etc/hostname",
+      "response_preview": "<think>\n\n</think>\n\n![](https://i.imgur.com/11J1sKs.png)",
+      "extracted_tool": null,
+      "extracted_args": {},
+      "made_tool_call": false,
+      "passed": false,
+      "args_correct": false,
+      "expected_tool": "read_file",
+      "generation_time": 1.22,
+      "tokens_approx": 3
+    },
+    {
+      "name": "weather query",
+      "category": "single_tool",
+      "difficulty": "easy",
+      "prompt": "What's the weather like in Tokyo right now?",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Tokyo\"}}\n</tool_call>",
+      "extracted_tool": "get_weather",
+      "extracted_args": {
+        "city": "Tokyo"
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "args_correct": true,
+      "expected_tool": "get_weather",
+      "generation_time": 1.26,
+      "tokens_approx": 9
+    },
+    {
+      "name": "web search current",
+      "category": "single_tool",
+      "difficulty": "easy",
+      "prompt": "Who won the Super Bowl in 2024?",
+      "response_preview": "<think>\n\n</think>\n\nNone of the major leagues, including the NFL, have scheduled a Super Bowl in 2024.",
+      "extracted_tool": null,
+      "extracted_args": {},
+      "made_tool_call": false,
+      "passed": false,
+      "args_correct": false,
+      "expected_tool": "search_web",
+      "generation_time": 1.28,
+      "tokens_approx": 17
+    },
+    {
+      "name": "run git status",
+      "category": "single_tool",
+      "difficulty": "easy",
+      "prompt": "Run git status in the current directory",
+      "response_preview": "<think>\n\n</think>\n\nI cannot run git commands directly.",
+      "extracted_tool": null,
+      "extracted_args": {},
+      "made_tool_call": false,
+      "passed": false,
+      "args_correct": false,
+      "expected_tool": "run_command",
+      "generation_time": 1.13,
+      "tokens_approx": 8
+    },
+    {
+      "name": "write hello file",
+      "category": "single_tool",
+      "difficulty": "easy",
+      "prompt": "Create a file at /tmp/hello.txt containing 'Hello World'",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"write_file\", \"arguments\": {\"path\": \"/tmp/hello.txt\", \"content\": \"Hello World\"}}\n</tool_call>",
+      "extracted_tool": "write_file",
+      "extracted_args": {
+        "path": "/tmp/hello.txt",
+        "content": "Hello World"
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "args_correct": true,
+      "expected_tool": "write_file",
+      "generation_time": 1.37,
+      "tokens_approx": 12
+    },
+    {
+      "name": "send email task",
+      "category": "single_tool",
+      "difficulty": "easy",
+      "prompt": "Send an email to alice@example.com with subject 'Meeting' and body 'See you at 3pm'",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"send_email\", \"arguments\": {\"to\": \"alice@example.com\", \"subject\": \"Meeting\", \"body\": \"See you at 3pm\"}}\n</tool_call>",
+      "extracted_tool": "send_email",
+      "extracted_args": {
+        "to": "alice@example.com",
+        "subject": "Meeting",
+        "body": "See you at 3pm"
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "args_correct": true,
+      "expected_tool": "send_email",
+      "generation_time": 1.48,
+      "tokens_approx": 16
+    },
+    {
+      "name": "translate to french",
+      "category": "single_tool",
+      "difficulty": "easy",
+      "prompt": "Translate 'Good morning' to French",
+      "response_preview": "<think>\n\n</think>\n\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"Good morning\", \"source_lang\": \"en\", \"target_lang\": \"fr\"}}",
+      "extracted_tool": "translate_text",
+      "extracted_args": {
+        "text": "Good morning",
+        "source_lang": "en",
+        "target_lang": "fr"
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "args_correct": true,
+      "expected_tool": "translate_text",
+      "generation_time": 1.39,
+      "tokens_approx": 12
+    },
+    {
+      "name": "set reminder",
+      "category": "single_tool",
+      "difficulty": "easy",
+      "prompt": "Remind me to call the dentist tomorrow at 9am",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"create_reminder\", \"arguments\": {\"message\": \"Remind me to call the dentist tomorrow at 9am\", \"time\": \"2023-10-05T09:00:00\"}}\n</tool_call>",
+      "extracted_tool": "create_reminder",
+      "extracted_args": {
+        "message": "Remind me to call the dentist tomorrow at 9am",
+        "time": "2023-10-05T09:00:00"
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "args_correct": true,
+      "expected_tool": "create_reminder",
+      "generation_time": 1.63,
+      "tokens_approx": 19
+    },
+    {
+      "name": "calculate expression",
+      "category": "single_tool",
+      "difficulty": "easy",
+      "prompt": "What is 245 * 18 + 33?",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"calculate\", \"arguments\": {\"expression\": \"245 * 18 + 33\"}}\n</tool_call>",
+      "extracted_tool": "calculate",
+      "extracted_args": {
+        "expression": "245 * 18 + 33"
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "args_correct": true,
+      "expected_tool": "calculate",
+      "generation_time": 1.37,
+      "tokens_approx": 13
+    },
+    {
+      "name": "weather fahrenheit",
+      "category": "single_tool",
+      "difficulty": "medium",
+      "prompt": "What's the temperature in New York in fahrenheit?",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"New York\", \"units\": \"fahrenheit\"}}\n</tool_call>",
+      "extracted_tool": "get_weather",
+      "extracted_args": {
+        "city": "New York",
+        "units": "fahrenheit"
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "args_correct": true,
+      "expected_tool": "get_weather",
+      "generation_time": 1.34,
+      "tokens_approx": 12
+    },
+    {
+      "name": "list hidden files",
+      "category": "single_tool",
+      "difficulty": "medium",
+      "prompt": "Show me all files including hidden ones in /home/user",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"list_files\", \"arguments\": {\"path\": \"/home/user\", \"show_hidden\": true}}\n</tool_call>",
+      "extracted_tool": "list_files",
+      "extracted_args": {
+        "path": "/home/user",
+        "show_hidden": true
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "args_correct": true,
+      "expected_tool": "list_files",
+      "generation_time": 1.32,
+      "tokens_approx": 11
+    },
+    {
+      "name": "search technical",
+      "category": "single_tool",
+      "difficulty": "medium",
+      "prompt": "Search for the latest Python 3.13 release notes",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"search_web\", \"arguments\": {\"query\": \"latest Python 3.13 release notes\", \"num_results\": 5}}\n</tool_call>",
+      "extracted_tool": "search_web",
+      "extracted_args": {
+        "query": "latest Python 3.13 release notes",
+        "num_results": 5
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "args_correct": true,
+      "expected_tool": "search_web",
+      "generation_time": 1.42,
+      "tokens_approx": 15
+    },
+    {
+      "name": "read config",
+      "category": "single_tool",
+      "difficulty": "medium",
+      "prompt": "Read the configuration file at ~/.config/app/settings.json",
+      "response_preview": "<think>\n\n</think>\n\n![](https://i.imgur.com/1J1J1J1.png)",
+      "extracted_tool": null,
+      "extracted_args": {},
+      "made_tool_call": false,
+      "passed": false,
+      "args_correct": false,
+      "expected_tool": "read_file",
+      "generation_time": 1.23,
+      "tokens_approx": 3
+    },
+    {
+      "name": "run pip install",
+      "category": "single_tool",
+      "difficulty": "medium",
+      "prompt": "Install the requests library using pip",
+      "response_preview": "<think>\n\n</think>\n\n![](https://i.imgur.com/1J1J1J1.png)",
+      "extracted_tool": null,
+      "extracted_args": {},
+      "made_tool_call": false,
+      "passed": false,
+      "args_correct": false,
+      "expected_tool": "run_command",
+      "generation_time": 1.21,
+      "tokens_approx": 3
+    },
+    {
+      "name": "translate spanish",
+      "category": "single_tool",
+      "difficulty": "medium",
+      "prompt": "How do you say 'Where is the train station?' in Spanish?",
+      "response_preview": "<think>\n\n</think>\n\nThe phrase \"Where is the train station?\" in Spanish is: \"\u00bfD\u00f3nde est\u00e1 la estaci\u00f3n de tren?\"",
+      "extracted_tool": null,
+      "extracted_args": {},
+      "made_tool_call": false,
+      "passed": false,
+      "args_correct": false,
+      "expected_tool": "translate_text",
+      "generation_time": 1.3,
+      "tokens_approx": 18
+    },
+    {
+      "name": "weather specific city",
+      "category": "single_tool",
+      "difficulty": "medium",
+      "prompt": "Is it raining in London right now?",
+      "response_preview": "<think>\n\n</think>\n\nI cannot check the weather right now.",
+      "extracted_tool": null,
+      "extracted_args": {},
+      "made_tool_call": false,
+      "passed": false,
+      "args_correct": false,
+      "expected_tool": "get_weather",
+      "generation_time": 1.15,
+      "tokens_approx": 9
+    },
+    {
+      "name": "write python file",
+      "category": "single_tool",
+      "difficulty": "medium",
+      "prompt": "Write a Python script to /tmp/test.py that prints numbers 1 to 10",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"write_file\", \"arguments\": {\"path\": \"/tmp/test.py\", \"content\": \"print(1)\\nprint(2)\\nprint(3)\\nprint(4)\\nprint(5)\\nprint(6)\\nprint(7)\\nprint(8)\\nprint(9)\\nprint(10)\"}}\n</tool_call>",
+      "extracted_tool": "write_file",
+      "extracted_args": {
+        "path": "/tmp/test.py",
+        "content": "print(1)\nprint(2)\nprint(3)\nprint(4)\nprint(5)\nprint(6)\nprint(7)\nprint(8)\nprint(9)\nprint(10)"
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "args_correct": true,
+      "expected_tool": "write_file",
+      "generation_time": 1.84,
+      "tokens_approx": 11
+    },
+    {
+      "name": "search ambiguous",
+      "category": "single_tool",
+      "difficulty": "hard",
+      "prompt": "Find information about the MLX framework by Apple",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"search_web\", \"arguments\": {\"query\": \"MLX framework by Apple\", \"num_results\": 5}}\n</tool_call>",
+      "extracted_tool": "search_web",
+      "extracted_args": {
+        "query": "MLX framework by Apple",
+        "num_results": 5
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "args_correct": true,
+      "expected_tool": "search_web",
+      "generation_time": 1.38,
+      "tokens_approx": 14
+    },
+    {
+      "name": "command with pipe",
+      "category": "single_tool",
+      "difficulty": "hard",
+      "prompt": "Count how many Python files are in /home/user/projects",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"list_files\", \"arguments\": {\"path\": \"/home/user/projects\", \"show_hidden\": false}}\n</tool_call>",
+      "extracted_tool": "list_files",
+      "extracted_args": {
+        "path": "/home/user/projects",
+        "show_hidden": false
+      },
+      "made_tool_call": true,
+      "passed": false,
+      "args_correct": false,
+      "expected_tool": "run_command",
+      "generation_time": 1.35,
+      "tokens_approx": 11
+    },
+    {
+      "name": "email full args",
+      "category": "arg_format",
+      "difficulty": "medium",
+      "prompt": "Email bob@corp.com about the quarterly report being ready for review",
+      "response_preview": "<think>\n\n</think>\n\n{\"name\": \"send_email\", \"arguments\": {\"to\": \"bob@corp.com\", \"subject\": \"Quarterly Report Ready for Review\", \"body\": \"The quarterly report is ready for review.\"}}",
+      "extracted_tool": "send_email",
+      "extracted_args": {
+        "to": "bob@corp.com",
+        "subject": "Quarterly Report Ready for Review",
+        "body": "The quarterly report is ready for review."
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "args_valid": true,
+      "expected_tool": "send_email",
+      "generation_time": 1.51,
+      "tokens_approx": 21
+    },
+    {
+      "name": "weather with units",
+      "category": "arg_format",
+      "difficulty": "medium",
+      "prompt": "Temperature in Berlin in celsius please",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Berlin\", \"units\": \"celsius\"}}\n</tool_call>",
+      "extracted_tool": "get_weather",
+      "extracted_args": {
+        "city": "Berlin",
+        "units": "celsius"
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "args_valid": true,
+      "expected_tool": "get_weather",
+      "generation_time": 1.33,
+      "tokens_approx": 11
+    },
+    {
+      "name": "translate with source",
+      "category": "arg_format",
+      "difficulty": "medium",
+      "prompt": "Translate this German text to English: 'Guten Morgen, wie geht es Ihnen?'",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"Guten Morgen, wie geht es Ihnen?\", \"source_lang\": \"de\", \"target_lang\": \"en\"}}\n</tool_call>",
+      "extracted_tool": "translate_text",
+      "extracted_args": {
+        "text": "Guten Morgen, wie geht es Ihnen?",
+        "source_lang": "de",
+        "target_lang": "en"
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "args_valid": true,
+      "expected_tool": "translate_text",
+      "generation_time": 1.47,
+      "tokens_approx": 18
+    },
+    {
+      "name": "write multiline",
+      "category": "arg_format",
+      "difficulty": "medium",
+      "prompt": "Create /tmp/notes.txt with the following content:\nLine 1: Hello\nLine 2: World",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"write_file\", \"arguments\": {\"path\": \"/tmp/notes.txt\", \"content\": \"Line 1: Hello\\nLine 2: World\"}}\n</tool_call>",
+      "extracted_tool": "write_file",
+      "extracted_args": {
+        "path": "/tmp/notes.txt",
+        "content": "Line 1: Hello\nLine 2: World"
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "args_valid": true,
+      "expected_tool": "write_file",
+      "generation_time": 1.48,
+      "tokens_approx": 15
+    },
+    {
+      "name": "calculate complex",
+      "category": "arg_format",
+      "difficulty": "medium",
+      "prompt": "Compute (100 + 50) * 2 / 3",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"calculate\", \"arguments\": {\"expression\": \"(100 + 50) * 2 / 3\"}}",
+      "extracted_tool": "calculate",
+      "extracted_args": {
+        "expression": "(100 + 50) * 2 / 3"
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "args_valid": true,
+      "expected_tool": "calculate",
+      "generation_time": 1.36,
+      "tokens_approx": 14
+    },
+    {
+      "name": "list with special path",
+      "category": "arg_format",
+      "difficulty": "hard",
+      "prompt": "List files in the directory '/home/user/my documents/work'",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"list_files\", \"arguments\": {\"path\": \"/home/user/my documents/work\", \"show_hidden\": false}}\n</tool_call>",
+      "extracted_tool": "list_files",
+      "extracted_args": {
+        "path": "/home/user/my documents/work",
+        "show_hidden": false
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "args_valid": true,
+      "expected_tool": "list_files",
+      "generation_time": 1.38,
+      "tokens_approx": 12
+    },
+    {
+      "name": "command with quotes",
+      "category": "arg_format",
+      "difficulty": "hard",
+      "prompt": "Run: echo 'Hello World' | wc -c",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"run_command\", \"arguments\": {\"command\": \"echo 'Hello World' | wc -c\"}}",
+      "extracted_tool": "run_command",
+      "extracted_args": {
+        "command": "echo 'Hello World' | wc -c"
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "args_valid": true,
+      "expected_tool": "run_command",
+      "generation_time": 1.32,
+      "tokens_approx": 13
+    },
+    {
+      "name": "search with special chars",
+      "category": "arg_format",
+      "difficulty": "hard",
+      "prompt": "Search for 'C++ vs Rust performance comparison 2024'",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"search_web\", \"arguments\": {\"query\": \"C++ vs Rust performance comparison 2024\", \"num_results\": 5}}\n</tool_call>",
+      "extracted_tool": "search_web",
+      "extracted_args": {
+        "query": "C++ vs Rust performance comparison 2024",
+        "num_results": 5
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "args_valid": true,
+      "expected_tool": "search_web",
+      "generation_time": 1.43,
+      "tokens_approx": 16
+    },
+    {
+      "name": "write json content",
+      "category": "arg_format",
+      "difficulty": "hard",
+      "prompt": "Write a JSON config file to /tmp/config.json with {\"debug\": true, \"port\": 8080}",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"write_file\", \"arguments\": {\"path\": \"/tmp/config.json\", \"content\": \"{ \\\"debug\\\": true, \\\"port\\\": 8080 }\"}}\n</tool_call>",
+      "extracted_tool": "write_file",
+      "extracted_args": {
+        "path": "/tmp/config.json",
+        "content": "{ \"debug\": true, \"port\": 8080 }"
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "args_valid": true,
+      "expected_tool": "write_file",
+      "generation_time": 1.49,
+      "tokens_approx": 16
+    },
+    {
+      "name": "email with html",
+      "category": "arg_format",
+      "difficulty": "hard",
+      "prompt": "Email support@example.com with subject 'Bug Report #123' and body explaining a crash on startup with error code 500",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"send_email\", \"arguments\": {\"to\": \"support@example.com\", \"subject\": \"Bug Report #123\", \"body\": \"explaining a crash on startup with error code 500\"}}\n</tool_call>",
+      "extracted_tool": "send_email",
+      "extracted_args": {
+        "to": "support@example.com",
+        "subject": "Bug Report #123",
+        "body": "explaining a crash on startup with error code 500"
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "args_valid": true,
+      "expected_tool": "send_email",
+      "generation_time": 1.57,
+      "tokens_approx": 23
+    },
+    {
+      "name": "read then search",
+      "category": "multi_tool",
+      "difficulty": "hard",
+      "prompt": "Read the file /tmp/query.txt and then search the web for its contents",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"read_file\", \"arguments\": {\"path\": \"/tmp/query.txt\"}}\n</tool_call>\n![](https://i.imgur.com/1J1J1J1.png)",
+      "extracted_tool": "read_file",
+      "extracted_args": {
+        "path": "/tmp/query.txt"
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "note": "Multi-tool: checked if at least one tool call made",
+      "generation_time": 1.47,
+      "tokens_approx": 10
+    },
+    {
+      "name": "list then read",
+      "category": "multi_tool",
+      "difficulty": "hard",
+      "prompt": "List the files in /home/user/docs and then read README.md from that directory",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"list_files\", \"arguments\": {\"path\": \"/home/user/docs\", \"show_hidden\": false}}\n</tool_call>\n<tool_call>\n{\"name\": \"read_file\", \"arguments\": {\"path\": \"/home/user/docs/README.md\"}}\n</tool_call>",
+      "extracted_tool": "list_files",
+      "extracted_args": {
+        "path": "/home/user/docs",
+        "show_hidden": false
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "note": "Multi-tool: checked if at least one tool call made",
+      "generation_time": 1.58,
+      "tokens_approx": 18
+    },
+    {
+      "name": "search then email",
+      "category": "multi_tool",
+      "difficulty": "hard",
+      "prompt": "Search for the weather in Paris and email the results to alice@example.com",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"search_web\", \"arguments\": {\"query\": \"weather in Paris\", \"num_results\": 5}}\n</tool_call>\n<tool_call>\n{\"name\": \"send_email\", \"arguments\": {\"to\": \"alice@example.com\", \"subject\": \"Weather in Paris\", \"body\": \"Here are the results for the weather in Paris.\"}}\n</tool_call>",
+      "extracted_tool": "search_web",
+      "extracted_args": {
+        "query": "weather in Paris",
+        "num_results": 5
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "note": "Multi-tool: checked if at least one tool call made",
+      "generation_time": 1.82,
+      "tokens_approx": 34
+    },
+    {
+      "name": "calculate then write",
+      "category": "multi_tool",
+      "difficulty": "hard",
+      "prompt": "Compute 15% tip on a $85 bill and write the result to /tmp/tip.txt",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"calculate\", \"arguments\": {\"expression\": \"0.15 * 85\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"write_file\", \"arguments\": {\"path\": \"/tmp/tip.txt\", \"content\": \"The total tip is $12.75.\"}}\n</tool_call>",
+      "extracted_tool": "calculate",
+      "extracted_args": {
+        "expression": "0.15 * 85"
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "note": "Multi-tool: checked if at least one tool call made",
+      "generation_time": 1.75,
+      "tokens_approx": 24
+    },
+    {
+      "name": "translate then email",
+      "category": "multi_tool",
+      "difficulty": "hard",
+      "prompt": "Translate 'Meeting confirmed for Monday' to Japanese and email it to tanaka@example.jp",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"translate_text\", \"arguments\": {\"text\": \"Meeting confirmed for Monday\", \"source_lang\": \"English\", \"target_lang\": \"Japanese\"}}\n</tool_call>\n![](https://images.unsplash.com/photo-1506309400086-1111900000000?ixid=M3wzNjM5Nzd8MHwxfHNlZCIwfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfHwxfH",
+      "extracted_tool": "translate_text",
+      "extracted_args": {
+        "text": "Meeting confirmed for Monday",
+        "source_lang": "English",
+        "target_lang": "Japanese"
+      },
+      "made_tool_call": true,
+      "passed": true,
+      "note": "Multi-tool: checked if at least one tool call made",
+      "generation_time": 6.3,
+      "tokens_approx": 17
+    },
+    {
+      "name": "capital of france",
+      "category": "no_tool",
+      "difficulty": "easy",
+      "prompt": "What is the capital of France?",
+      "response_preview": "<think>\n\n</think>\n\nThe capital of France is Paris.",
+      "extracted_tool": null,
+      "extracted_args": {},
+      "made_tool_call": false,
+      "passed": true,
+      "note": "Should respond directly without tools",
+      "generation_time": 1.1,
+      "tokens_approx": 8
+    },
+    {
+      "name": "simple math",
+      "category": "no_tool",
+      "difficulty": "easy",
+      "prompt": "What is 2 + 2?",
+      "response_preview": "<think>\n\n</think>\n\n{\"name\": \"calculate\", \"arguments\": {\"expression\": \"2 + 2\"}}",
+      "extracted_tool": "calculate",
+      "extracted_args": {
+        "expression": "2 + 2"
+      },
+      "made_tool_call": true,
+      "passed": false,
+      "note": "Should respond directly without tools",
+      "generation_time": 1.23,
+      "tokens_approx": 9
+    },
+    {
+      "name": "explain concept",
+      "category": "no_tool",
+      "difficulty": "easy",
+      "prompt": "What is machine learning?",
+      "response_preview": "<think>\n\n</think>\n\nMachine learning is a subset of artificial intelligence that focuses on developing algorithms and models that can learn patterns from data. Instead of being explicitly programmed for specific tasks, these models improve their performance over time as they are exposed to more data.",
+      "extracted_tool": null,
+      "extracted_args": {},
+      "made_tool_call": false,
+      "passed": true,
+      "note": "Should respond directly without tools",
+      "generation_time": 1.55,
+      "tokens_approx": 45
+    },
+    {
+      "name": "coding question",
+      "category": "no_tool",
+      "difficulty": "medium",
+      "prompt": "How do I write a for loop in Python?",
+      "response_preview": "<think>\n\n</think>\n\nNot sure if you need to write a for loop in Python, but I can explain it.",
+      "extracted_tool": null,
+      "extracted_args": {},
+      "made_tool_call": false,
+      "passed": true,
+      "note": "Should respond directly without tools",
+      "generation_time": 1.26,
+      "tokens_approx": 19
+    },
+    {
+      "name": "history question",
+      "category": "no_tool",
+      "difficulty": "medium",
+      "prompt": "When did World War II end?",
+      "response_preview": "<think>\n\n</think>\n\nThe end of World War II occurred on September 2, 1945.",
+      "extracted_tool": null,
+      "extracted_args": {},
+      "made_tool_call": false,
+      "passed": true,
+      "note": "Should respond directly without tools",
+      "generation_time": 1.24,
+      "tokens_approx": 13
+    },
+    {
+      "name": "definition",
+      "category": "no_tool",
+      "difficulty": "medium",
+      "prompt": "What does 'ephemeral' mean?",
+      "response_preview": "<think>\n\n</think>\n\n\"ephemeral\" means relating to or occurring in a short time, such as a fleeting or transient thing.",
+      "extracted_tool": null,
+      "extracted_args": {},
+      "made_tool_call": false,
+      "passed": true,
+      "note": "Should respond directly without tools",
+      "generation_time": 1.29,
+      "tokens_approx": 19
+    },
+    {
+      "name": "opinion question",
+      "category": "no_tool",
+      "difficulty": "medium",
+      "prompt": "What are the pros and cons of using TypeScript?",
+      "response_preview": "<think>\n\n</think>\n\n</think>\n\nHere are the pros and cons of using TypeScript.",
+      "extracted_tool": null,
+      "extracted_args": {},
+      "made_tool_call": false,
+      "passed": true,
+      "note": "Should respond directly without tools",
+      "generation_time": 1.17,
+      "tokens_approx": 12
+    },
+    {
+      "name": "greeting",
+      "category": "no_tool",
+      "difficulty": "medium",
+      "prompt": "Hello, how are you today?",
+      "response_preview": "<think>\n\n</think>\n\nI'm just a virtual assistant, but I'm here to help! How can I assist you today?",
+      "extracted_tool": null,
+      "extracted_args": {},
+      "made_tool_call": false,
+      "passed": true,
+      "note": "Should respond directly without tools",
+      "generation_time": 1.28,
+      "tokens_approx": 18
+    },
+    {
+      "name": "math reasoning",
+      "category": "no_tool",
+      "difficulty": "hard",
+      "prompt": "If a train travels at 60mph for 2.5 hours, how far does it go?",
+      "response_preview": "<think>\n\n</think>\n\n`60mph` is the speed, and `2.5 hours` is the time. To find the distance, use the formula:\n\n$$\n\\text{Distance} = \\text{Speed} \\times \\text{Time}\n$$\n\nSo, the distance is:\n\n$$\n60 \\times 2.5 = 150 \\text{ miles}\n$$",
+      "extracted_tool": null,
+      "extracted_args": {},
+      "made_tool_call": false,
+      "passed": true,
+      "note": "Should respond directly without tools",
+      "generation_time": 1.88,
+      "tokens_approx": 39
+    },
+    {
+      "name": "ambiguous no tool",
+      "category": "no_tool",
+      "difficulty": "hard",
+      "prompt": "Tell me about the Eiffel Tower",
+      "response_preview": "<think>\n\n</think>\n\n<tool_call>\n{\"name\": \"search_web\", \"arguments\": {\"query\": \"Eiffel Tower\", \"num_results\": 5}}\n</tool_call>",
+      "extracted_tool": "search_web",
+      "extracted_args": {
+        "query": "Eiffel Tower",
+        "num_results": 5
+      },
+      "made_tool_call": true,
+      "passed": false,
+      "note": "Should respond directly without tools",
+      "generation_time": 1.37,
+      "tokens_approx": 12
+    },
+    {
+      "name": "no database tool",
+      "category": "wrong_tool",
+      "difficulty": "hard",
+      "prompt": "Query the PostgreSQL database for all users created this month",
+      "response_preview": "<think>\n\n</think>\n\nI cannot directly query a PostgreSQL database as I do not have access to it. However, if you need assistance with querying a PostgreSQL database, I can guide you through the process using SQL commands.",
+      "extracted_tool": null,
+      "extracted_args": {},
+      "made_tool_call": false,
+      "passed": true,
+      "note": "Should refuse or explain limitation",
+      "generation_time": 1.47,
+      "tokens_approx": 37
+    },
+    {
+      "name": "no image tool",
+      "category": "wrong_tool",
+      "difficulty": "hard",
+      "prompt": "Generate an image of a sunset over the ocean",
+      "response_preview": "<think>\n\n</think>\n\nI cannot generate images directly. However, I can help you describe a sunset over the ocean or find an image online using a web search. Would you like me to describe it or find an image?",
+      "extracted_tool": null,
+      "extracted_args": {},
+      "made_tool_call": false,
+      "passed": true,
+      "note": "Should refuse or explain limitation",
+      "generation_time": 1.49,
+      "tokens_approx": 38
+    },
+    {
+      "name": "no video tool",
+      "category": "wrong_tool",
+      "difficulty": "hard",
+      "prompt": "Play the video file at /home/user/movie.mp4",
+      "response_preview": "<think>\n\n</think>\n\n![](https://via.placeholder.com/150x100?text=Play+Video+File)",
+      "extracted_tool": null,
+      "extracted_args": {},
+      "made_tool_call": false,
+      "passed": true,
+      "note": "Should refuse or explain limitation",
+      "generation_time": 1.32,
+      "tokens_approx": 3
+    },
+    {
+      "name": "no calendar tool",
+      "category": "wrong_tool",
+      "difficulty": "hard",
+      "prompt": "Schedule a meeting with John for next Tuesday at 2pm",
+      "response_preview": "<think>\n\n</think>\n\nI cannot schedule meetings directly. However, I can help you find a time to meet with John or assist with other tasks.",
+      "extracted_tool": null,
+      "extracted_args": {},
+      "made_tool_call": false,
+      "passed": true,
+      "note": "Should refuse or explain limitation",
+      "generation_time": 1.31,
+      "tokens_approx": 24
+    },
+    {
+      "name": "no payment tool",
+      "category": "wrong_tool",
+      "difficulty": "hard",
+      "prompt": "Process a payment of $50 to merchant ID 12345",
+      "response_preview": "<think>\n\n</think>\n\nI cannot process payments.",
+      "extracted_tool": null,
+      "extracted_args": {},
+      "made_tool_call": false,
+      "passed": true,
+      "note": "Should refuse or explain limitation",
+      "generation_time": 1.09,
+      "tokens_approx": 6
+    }
+  ]
+}
