@@ -2,8 +2,8 @@ data/raw/
 data/train.jsonl
 data/valid.jsonl
 data/test.jsonl
-adapters/
-logs/
+adapters/*.safetensors
+adapters/*/0*_adapters.safetensors
 __pycache__/
 *.pyc
 .DS_Store
