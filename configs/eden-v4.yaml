@@ -1,0 +1,22 @@
+# Eden v4: Qwen3-1.7B LoRA on Eden-specific synthetic data
+# Same conservative settings as v3 (which scored 78%)
+
+model: mlx-community/Qwen3-1.7B-4bit
+train: true
+data: data/
+num_layers: 8
+batch_size: 4
+iters: 200
+learning_rate: 2e-6
+steps_per_report: 10
+steps_per_eval: 50
+save_every: 50
+max_seq_length: 2048
+mask_prompt: true
+adapter_path: adapters/qwen3-1.7b-tools-v4
+seed: 42
+
+lora_parameters:
+  rank: 8
+  scale: 10.0
+  dropout: 0.0
