@@ -4,6 +4,7 @@ data/valid.jsonl
 data/test.jsonl
 adapters/*.safetensors
 adapters/*/0*_adapters.safetensors
+models/
 __pycache__/
 *.pyc
 .DS_Store
