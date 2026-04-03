@@ -1,214 +1,201 @@
 # Eden Models — Local Tool-Calling LLMs
 
-Training pipeline for the Eden model family: purpose-built language models optimized for agentic tool calling at low-bit precision.
+Training pipeline for the Eden model family: LoRA fine-tuned language models optimized for agentic tool calling on Apple Silicon.
 
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 
-## Goal
+## Current Status: Prototype Complete
 
-Train the first open-source language model specifically optimized for local agentic tool calling:
-- **95%+ tool-calling accuracy** on Eden's 33 tools
-- **200+ tok/s** on Apple Silicon (1-bit variant)
-- **120MB model size** at 1.58-bit precision
-- **Apache 2.0** — fully open-source
+We've completed the first prototype training run on an M1 Max MacBook Pro. The best model (**v4a**) scores **80% on our 50-case tool-calling eval** — an 8-point improvement over the unmodified base model, achieved with just 15K synthetic training examples and 30 minutes of training.
 
-## Approach: Three Parallel Experiments
+| Model | Accuracy | Key Result |
+|-------|----------|------------|
+| Qwen3-1.7B base (no fine-tuning) | 72% | Baseline |
+| v3 — generic data, conservative LoRA | 78% | First improvement |
+| **v4a — Eden-specific data, 400 iters** | **80%** | **Best: +8 over base** |
 
-We run three approaches at small scale (5K examples, <0.5% UMRCP quota), compare results, then scale the winner.
+## Experiment Design
 
-| Experiment | Base Model | Hardware | Time | What We Learn |
-|---|---|---|---|---|
-| **Exp 1:** LoRA fine-tune Qwen3-4B | Qwen3-4B (97.5% tool-call baseline) | 1x A100 80GB | ~2 hrs | Upper bound accuracy |
-| **Exp 2:** 1-bit LoRA fine-tune Bonsai | Bonsai-1.7B (1-bit, Apache 2.0) | 1x RTX PRO 6000 Blackwell | ~4 hrs | Can 1-bit match full precision? |
-| **Exp 3:** Train from scratch (1-bit) | None — BitNet b1.58 architecture | 1x RTX PRO 6000 Blackwell | ~48 hrs | Is purpose-built viable? |
+### Hypothesis
 
-### Decision Tree After Experiments
+Qwen3-1.7B already has tool-calling ability (72% baseline). We don't need to teach it *capability* — we need to teach it *format consistency* and *tool selection accuracy* for Eden's specific 9 tools (bash, file_read, file_write, file_edit, glob, grep, python_run, web_search, web_fetch).
 
-```
-IF Qwen3 LoRA >> Bonsai >> Scratch:
-  → Scale Qwen3 LoRA to 50K dataset (production model)
-  → Publish Bonsai results for comparison
+### Approach
 
-IF Bonsai LoRA ≈ Qwen3 LoRA:
-  → 1-bit matches full precision — major finding
-  → Scale Bonsai fine-tune (120MB production model)
+**LoRA fine-tuning** on Qwen3-1.7B-4bit using Apple's [MLX](https://github.com/ml-explore/mlx-lm) framework. We ran 7 training variants over two sessions to systematically find the right combination of data, rank, learning rate, and iteration count.
 
-IF Scratch 500M > 80% accuracy:
-  → Purpose-built is viable — scale to 1B, 4B, 8B
-  → That's a major paper
+### What We Tried
 
-IF Scratch 500M < 60%:
-  → Focus on fine-tuning paths
-  → Try scratch again at larger scale
-```
+| Variant | Data | LoRA Config | Iters | Result | Lesson |
+|---------|------|-------------|-------|--------|--------|
+| v1 | 113K glaive (mixed) | rank=16, LR=1e-5 | 1000 | 48% | Catastrophic forgetting — too aggressive |
+| v2 | 64K rebalanced | rank=16, LR=1e-5 | 1000 | 36% | Still too aggressive, model refused all tools |
+| v3 | 51K glaive (tool-only) | rank=8, LR=2e-6 | 200 | 78% | Conservative LoRA preserved base ability |
+| v4 | 15K Eden synthetic | rank=8, LR=2e-6 | 200 | 78% | Eden data matches generic at 3x less volume |
+| **v4a** | **15K Eden synthetic** | **rank=8, LR=2e-6** | **400** | **80%** | **Best — val loss still dropping** |
+| v4b | 15K Eden synthetic | rank=16, LR=2e-6 | 400 | 68% | Higher rank hurts small models |
 
-## Training Infrastructure
+### Key Findings
 
-- **Cluster:** University of Michigan Great Lakes HPC ([UMRCP](https://arc.umich.edu/umrcp/))
-- **GPUs:** A100 80GB (Exp 1) + RTX PRO 6000 Blackwell 96GB (Exp 2, 3)
-- **Storage:** 10TB Turbo (active) + 100TB Data Den (archive)
-- **Total compute budget:** ~300 GPU hours for experiments (<0.5% UMRCP)
+1. **Data quality > data quantity.** 15K purpose-built examples outperformed 113K generic examples.
+2. **Conservative LoRA is critical for small models.** Rank 8, LR 2e-6, 8 layers. Higher rank or LR causes catastrophic forgetting on 1.7B parameters.
+3. **Template-based data generation works.** Zero-cost synthetic data (no API calls) matched the quality of large open-source datasets.
+4. **`mask_prompt=true` matters.** Training only on completions, not prompt tokens, preserves the base model's reasoning.
 
-### Why Two GPU Types
+## Results Breakdown
 
-| GPU | Best For | Why |
-|---|---|---|
-| A100 80GB | LoRA fine-tuning (Exp 1) | HBM2e at 2 TB/s — fastest for gradient updates |
-| RTX PRO 6000 Blackwell | 1-bit training (Exp 2, 3) | Native FP4 Tensor Cores — 2-4x faster for sub-4-bit math |
+Evaluated on a 50-case suite covering 5 categories:
+
+| Category | Base | Best (v4a) | Change |
+|----------|------|------------|--------|
+| Single tool selection (20 cases) | 70% | 60% | -10% |
+| Argument formatting (10 cases) | 90% | **100%** | +10% |
+| Multi-tool chaining (5 cases) | 40% | **100%** | +60% |
+| No-tool judgment (10 cases) | 60% | **80%** | +20% |
+| Wrong-tool avoidance (5 cases) | 100% | **100%** | — |
+
+The fine-tuned model excels at **multi-tool chains** (+60%), **knowing when NOT to use tools** (+20%), and **argument formatting** (+10%). Single-tool selection regressed slightly because some eval tools (e.g. `run_command`, `translate_text`) weren't in the Eden tool schema.
 
 ## Training Data
 
-### Layer 1: Open-Source Tool-Calling Datasets (~590K examples)
+### Synthetic Eden Data (15K examples)
 
-| Dataset | Size | Purpose | License |
-|---|---|---|---|
-| [ToolMind](https://arxiv.org/abs/2511.15718) | 360K | Multi-turn with reasoning traces | Apache 2.0 |
-| [xlam-function-calling-60k](https://huggingface.co/datasets/Salesforce/xlam-function-calling-60k) | 60K | High-quality single-turn | CC-BY-4.0 |
-| [Glaive function-calling-v2](https://huggingface.co/datasets/glaiveai/glaive-function-calling-v2) | 113K | Diverse conversations | Apache 2.0 |
-| [ToolACE](https://huggingface.co/datasets/Team-ACE/ToolACE) | 26K | Verified multi-domain | Apache 2.0 |
-| [NVIDIA When2Call](https://github.com/NVIDIA/When2Call) | 10K | When NOT to call tools | Apache 2.0 |
-| [Gorilla/BFCL](https://gorilla.cs.berkeley.edu/) | 14K | Berkeley function calling | Apache 2.0 |
+Generated by `data/generation/generate_eden_data.py` — a template-based generator that creates diverse conversations covering all 9 Eden tools. No API calls required.
 
-### Layer 2: Eden-Specific Synthetic Data (~50-100K examples)
+| Category | % | Examples |
+|----------|---|---------|
+| Single tool call | 50% | "List files in src/" → bash `ls -la src/` |
+| Multi-tool chain | 15% | glob → file_read → file_edit |
+| No tool needed | 15% | "What is a decorator?" → direct answer |
+| Error recovery | 10% | file_read fails → try different path |
+| Clarification | 10% | "Edit the config" → "Which config file?" |
 
-Generated using Claude API, covering all 33 Eden tools with Claude Code behavioral patterns:
+Each example includes realistic tool results (directory listings, Python code, grep output, etc.) and uses the exact format mlx_lm.lora expects.
 
-| Category | % | Description |
-|---|---|---|
-| Single tool call | 30% | One tool, correct params |
-| Multi-tool sequential | 20% | Tool A → use result → Tool B |
-| Multi-tool parallel | 10% | Multiple independent tools |
-| Error recovery | 10% | Tool fails → model tries alternative |
-| No tool needed | 10% | Model answers directly |
-| Complex chains | 15% | 3+ tools with reasoning |
-| Refusal | 5% | Dangerous commands blocked |
+### Open-Source Datasets (used in v1-v3)
 
-### Layer 3: Eden Session Replay (growing)
+| Dataset | Size | Used In | Notes |
+|---------|------|---------|-------|
+| [Glaive function-calling-v2](https://huggingface.co/datasets/glaiveai/glaive-function-calling-v2) | 113K | v1, v2, v3 | Good coverage but 50% are refusals |
 
-Real conversations from Eden usage — the training flywheel.
+## Training Infrastructure
 
-### Claude Code Behavioral Patterns
+### Current: M1 Max MacBook Pro
+- **Hardware:** M1 Max, 64GB unified memory
+- **Framework:** [mlx-lm](https://github.com/ml-explore/mlx-lm) 0.31.1 (Apple MLX)
+- **Training time:** ~30 min for best config (v4a: 400 iters)
+- **Peak memory:** 10 GB
+- **Adapter size:** 10 MB (rank 8)
 
-Training data is aligned with Claude Code's observable behavioral patterns:
-- **Explore before modify** — always read/grep before editing files
-- **Error recovery** — tool fails → try alternative approach
-- **Permission model** — auto-execute safe tools, ask for write ops
-- **Response format** — summarize results, don't dump raw output
-- **Multi-step chains** — find → read → edit → verify
+### Next: Great Lakes HPC
+- **Cluster:** University of Michigan Great Lakes ([UMRCP](https://arc.umich.edu/umrcp/))
+- **Target GPUs:** A100 80GB, RTX PRO 6000 Blackwell 96GB
+- **Plan:** Scale to Qwen3-4B and 8B with 50K+ examples
+- See [docs/SCALING_PLAN.md](docs/SCALING_PLAN.md) for full details.
+
+## Quick Start
+
+```bash
+# Clone
+git clone https://github.com/alex-rentel/eden-models.git
+cd eden-models
+
+# Install dependencies
+pip install mlx-lm datasets --break-system-packages
+
+# Generate training data (no API key needed)
+python3 data/generation/generate_eden_data.py --num 15000 --output data/eden_15k.jsonl
+
+# Split into train/valid
+python3 -c "
+import json, random; random.seed(42)
+data = [json.loads(l) for l in open('data/eden_15k.jsonl')]
+random.shuffle(data); s = int(len(data)*0.9)
+open('data/train.jsonl','w').writelines(json.dumps(d)+'\n' for d in data[:s])
+open('data/valid.jsonl','w').writelines(json.dumps(d)+'\n' for d in data[s:])
+"
+
+# Train (best config — ~30 min on M1 Max)
+python3 -m mlx_lm.lora -c configs/eden-v4a-400iter.yaml
+
+# Evaluate
+python3 eval/tool_calling_eval.py \
+    --model mlx-community/Qwen3-1.7B-4bit \
+    --adapter-path adapters/qwen3-1.7b-tools-v4a \
+    --output eval/results/v4a_results.json
+
+# Fuse into standalone model
+python3 -m mlx_lm.fuse \
+    --model mlx-community/Qwen3-1.7B-4bit \
+    --adapter-path adapters/qwen3-1.7b-tools-v4a \
+    --save-path models/eden-1.7b-tools-v4a
+```
 
 ## Repository Structure
 
 ```
 eden-models/
-├── configs/                    # Training configurations
-│   ├── qwen3-4b-lora.yaml     # Exp 1: Qwen3 QLoRA on A100
-│   ├── bonsai-1bit-lora.yaml  # Exp 2: Bonsai 1-bit LoRA on RTX PRO 6000
-│   └── eden-500m-scratch.yaml # Exp 3: From-scratch BitNet on RTX PRO 6000
+├── configs/                        # Training configs (YAML for mlx_lm.lora)
+│   ├── eden-v4a-400iter.yaml       # Best config (80% accuracy)
+│   ├── eden-v4b-rank16.yaml        # Rank 16 experiment (68%)
+│   ├── overnight-m1max-v3.yaml     # v3 overnight run (78%)
+│   └── qwen3-4b-lora.yaml         # Great Lakes A100 config (planned)
 ├── data/
-│   ├── generation/             # Synthetic data generation scripts
-│   │   ├── generate_eden_tools.py      # Claude API → 50K examples
-│   │   ├── generate_hard_negatives.py  # Refusals, security, no-tool
-│   │   └── claude_code_patterns.py     # Behavioral pattern templates
-│   ├── processing/             # Data cleaning and formatting
-│   │   ├── format_for_sft.py
-│   │   ├── merge_datasets.py
-│   │   └── quality_filter.py
-│   └── schemas/
-│       └── eden_tools.json     # All 33 Eden tools with examples
-├── training/
-│   ├── sft.py                  # Supervised fine-tuning (LoRA + full)
-│   ├── dpo.py                  # Direct preference optimization
-│   ├── bitnet.py               # 1-bit training (from scratch)
-│   └── utils.py
+│   ├── generation/
+│   │   ├── generate_eden_data.py   # Template-based data generator
+│   │   └── generate_eden_tools.py  # Claude API generator (not used yet)
+│   ├── processing/
+│   │   ├── format_for_mlx_lora.py  # Glaive → mlx_lm format converter
+│   │   └── rebalance_data.py       # Data rebalancing script
+│   ├── schemas/
+│   │   └── eden_tools.json         # Eden tool definitions
+│   └── eden_15k.jsonl              # Generated training data
 ├── eval/
-│   ├── bfcl_eval.py            # Berkeley Function Calling benchmark
-│   ├── eden_eval.py            # Custom 400-case Eden eval
-│   ├── speed_bench.py          # tok/s across hardware
-│   └── test_cases/
-├── convert/
-│   ├── to_mlx.py               # → MLX format (Apple Silicon)
-│   ├── to_gguf.py              # → GGUF format (llama.cpp)
-│   └── to_1bit.py              # → 1-bit quantization
-├── slurm/                      # Great Lakes job scripts
-│   ├── sft_qwen3.slurm        # Exp 1
-│   ├── sft_bonsai.slurm       # Exp 2
-│   ├── train_scratch.slurm    # Exp 3
-│   └── eval.slurm
+│   ├── tool_calling_eval.py        # 50-case eval suite
+│   └── results/                    # JSON results per model variant
+├── adapters/                       # Trained LoRA adapters
+│   ├── qwen3-1.7b-tools-v4a/      # Best (80%, rank 8, 400 iter)
+│   └── ...                         # v1-v4b variants
+├── logs/                           # Training logs
 ├── docs/
-│   └── RESEARCH-PLAN.md
-└── LICENSE                     # Apache 2.0
+│   ├── MLX_LORA_API.md             # mlx_lm.lora API reference
+│   ├── SCALING_PLAN.md             # Great Lakes scaling plan
+│   └── RESEARCH-PLAN.md            # Original research plan
+├── RESULTS.md                      # Detailed overnight results (v1-v3)
+└── LICENSE                         # Apache 2.0
 ```
 
-## Timeline
+## Path Forward
 
-```
-Week 1: Data Generation
-├── Generate 5K test examples (verify quality)
-├── Generate remaining 45K examples
-├── Download + process open-source datasets
-├── Set up Great Lakes environment
-└── Parallel: Format data for all 3 experiments
+### Immediate (data quality)
+- Expand template generator: more query variations, more realistic tool results
+- Add examples for persistent failure modes: `file_read` vs `list_files` confusion, `bash` for pip/git commands, `web_search` for current events
+- Target 50K examples with broader coverage
 
-Week 2: Run All 3 Experiments (small scale)
-├── Monday:    Exp 1 — Qwen3 LoRA on A100 (2 hrs, 5K examples)
-├── Tuesday:   Exp 2 — Bonsai LoRA on RTX PRO 6000 (4 hrs)
-├── Wed-Thu:   Exp 3 — Scratch 500M on RTX PRO 6000 (48 hrs)
-├── Friday:    Evaluate all three on Eden-Eval + BFCL
-└── Friday PM: DECIDE which path to scale
+### Short-term (scaling to Great Lakes)
+- **Qwen3-4B** on A100 — larger model may handle rank 16+ without forgetting
+- **Qwen3-8B** QLoRA — test if more parameters improve single-tool selection
+- Longer training (1000+ iters) with learning rate scheduling
+- Multi-model comparison: Qwen3 vs Llama 3.2 vs Phi-3.5 vs Gemma
 
-Week 3-4: Scale the Winner
-├── Full 50K dataset training
-├── Multiple model sizes if from-scratch won
-├── Comprehensive benchmarks
-├── Convert to MLX, test on Apple Silicon
-└── Compare: Eden-Eval, BFCL, tok/s, model size
+### Medium-term (production)
+- DPO/preference training to improve tool-vs-no-tool judgment
+- Real user session data as training signal (flywheel)
+- BFCL and ToolBench benchmark evaluation
+- 1-bit (Bonsai) fine-tuning for smallest possible deployment
 
-Week 5: Write + Release
-├── arXiv paper (all 3 experiments + scaled results)
-├── HuggingFace model release
-├── Blog post
-└── Integration into Eden framework
-```
-
-## Evaluation
-
-| Benchmark | What It Measures | Target |
-|---|---|---|
-| [BFCL v4](https://gorilla.cs.berkeley.edu/leaderboard.html) | General tool-calling accuracy | >90% |
-| Eden-Eval (custom, 400 cases) | Eden's 33 specific tools | >95% |
-| [ToolBench](https://github.com/OpenBMB/ToolBench) | Multi-tool planning | >85% |
-| Speed (tok/s) | Inference on M1 Max 64GB | >200 (1-bit) |
-| MT-Bench | General conversation quality | >6.5 |
-
-## Quick Start
-
-```bash
-# 1. Clone
-git clone https://github.com/alex-rentel/eden-models.git
-cd eden-models
-
-# 2. Generate training data (needs ANTHROPIC_API_KEY)
-pip install aiohttp
-export ANTHROPIC_API_KEY=sk-...
-python data/generation/generate_eden_tools.py \
-    --num_examples 1000 \
-    --output data/test_1k.jsonl \
-    --parallel 3
-
-# 3. Inspect quality
-head -5 data/test_1k.jsonl | python -m json.tool
-
-# 4. Train (on Great Lakes)
-sbatch slurm/sft_qwen3.slurm
-```
+### Long-term (research)
+- From-scratch BitNet training for purpose-built tool-calling
+- Multi-agent tool coordination
+- Streaming tool execution with partial results
+- arXiv paper comparing fine-tuning approaches at different scales
 
 ## Related Projects
 
-- [Eden](https://github.com/alex-rentel/eden) — The local AI agent framework these models are built for
-- [PrismML/Bonsai](https://github.com/PrismML-Eng/Bonsai-demo) — 1-bit model architecture reference
-- [Microsoft BitNet](https://github.com/microsoft/BitNet) — 1.58-bit training methodology
+- [mlx-lm](https://github.com/ml-explore/mlx-lm) — Apple MLX framework for LoRA fine-tuning
 - [Salesforce xLAM](https://github.com/SalesforceAIResearch/xLAM) — Action model research
 - [Berkeley BFCL](https://gorilla.cs.berkeley.edu/) — Tool-calling evaluation standard
+- [PrismML/Bonsai](https://github.com/PrismML-Eng/Bonsai-demo) — 1-bit model architecture
 
 ## License
 
