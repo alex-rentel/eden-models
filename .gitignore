@@ -1,0 +1,9 @@
+data/raw/
+data/train.jsonl
+data/valid.jsonl
+data/test.jsonl
+adapters/
+logs/
+__pycache__/
+*.pyc
+.DS_Store
