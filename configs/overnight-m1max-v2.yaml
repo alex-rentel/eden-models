@@ -1,0 +1,22 @@
+# Eden v2: Qwen3-1.7B LoRA tool-calling fine-tune
+# Rebalanced data: 80% tool-calling, 10% refusal, 10% no-tool
+
+model: mlx-community/Qwen3-1.7B-4bit
+train: true
+data: data/
+num_layers: 16
+batch_size: 4
+iters: 1000
+learning_rate: 1e-5
+steps_per_report: 10
+steps_per_eval: 200
+save_every: 200
+max_seq_length: 2048
+mask_prompt: true
+adapter_path: adapters/qwen3-1.7b-tools-v2
+seed: 42
+
+lora_parameters:
+  rank: 16
+  scale: 20.0
+  dropout: 0.0
