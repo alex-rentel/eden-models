@@ -1,5 +1,6 @@
 # ============================================================
 # Experiment 2: Bonsai-1.7B 1-bit LoRA Fine-tune
+# Tests whether 1-bit base models can match full-precision on tool calling
 # Target: 1x RTX PRO 6000 Blackwell (96GB, FP4 Tensor Cores)
 # Duration: ~4 hours
 # ============================================================

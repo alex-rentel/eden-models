@@ -1,12 +1,17 @@
 # ============================================================
-# Eden-Models: Qwen3-4B LoRA Fine-tune Config
+# Experiment 4: GPT-OSS 20B LoRA Fine-tune for Tool Calling
+# Base: openai/gpt-oss-20b (Apache 2.0, optimized for tool use)
+# Architecture: MoE — 21B total params, 3.6B active
 # Target: 1x A100 80GB on Great Lakes
-# Duration: ~8-16 hours
+# Duration: ~16-24 hours
+# Why: OpenAI's first open-source model, specifically designed for
+#      tool use and function calling — ideal base for Eden
+# Note: Uses "harmony" response format (see OpenAI docs)
 # ============================================================
 
 # Base model
 model:
-  name: "Qwen/Qwen3-4B"
+  name: "openai/gpt-oss-20b"
   torch_dtype: "bfloat16"
   attn_implementation: "flash_attention_2"
 
@@ -26,7 +31,7 @@ lora:
   task_type: "CAUSAL_LM"
   bias: "none"
 
-# Quantization (QLoRA)
+# Quantization (QLoRA — MoE fits in A100 80GB with 4-bit)
 quantization:
   load_in_4bit: true
   bnb_4bit_compute_dtype: "bfloat16"
@@ -35,9 +40,9 @@ quantization:
 
 # Training parameters
 training:
-  per_device_train_batch_size: 4
-  gradient_accumulation_steps: 8       # Effective batch = 32
-  learning_rate: 2.0e-5
+  per_device_train_batch_size: 2        # Smaller batch — bigger model
+  gradient_accumulation_steps: 16       # Effective batch = 32
+  learning_rate: 1.5e-4
   lr_scheduler_type: "cosine"
   warmup_ratio: 0.05
   num_train_epochs: 3
@@ -59,7 +64,7 @@ training:
 data:
   train_path: "data/combined_sft_train.jsonl"
   eval_path: "data/combined_sft_eval.jsonl"
-  format: "chatml"                     # Match Qwen's chat template
+  format: "chatml"
   system_message: |
     You are Eden, a local AI coding assistant. You have access to tools
     that you can call using <tool_call> tags. Call the right tool with

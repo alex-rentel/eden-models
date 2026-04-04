@@ -1,0 +1,132 @@
+{
+  "tools": [
+    {
+      "name": "bash",
+      "description": "Execute a shell command and return stdout/stderr",
+      "parameters": {
+        "command": {"type": "string", "required": true, "description": "The shell command to execute"}
+      },
+      "risk": "write"
+    },
+    {
+      "name": "file_read",
+      "description": "Read the contents of a file at the given path",
+      "parameters": {
+        "path": {"type": "string", "required": true, "description": "Absolute path to the file"},
+        "offset": {"type": "integer", "description": "Line number to start reading from"},
+        "limit": {"type": "integer", "description": "Number of lines to read"}
+      },
+      "risk": "safe"
+    },
+    {
+      "name": "file_write",
+      "description": "Write content to a file, creating it if it doesn't exist",
+      "parameters": {
+        "path": {"type": "string", "required": true, "description": "Absolute path to the file"},
+        "content": {"type": "string", "required": true, "description": "Content to write"}
+      },
+      "risk": "write"
+    },
+    {
+      "name": "file_edit",
+      "description": "Search and replace a unique string in a file",
+      "parameters": {
+        "path": {"type": "string", "required": true, "description": "Absolute path to the file"},
+        "old_str": {"type": "string", "required": true, "description": "Exact string to find"},
+        "new_str": {"type": "string", "required": true, "description": "Replacement string"}
+      },
+      "risk": "write"
+    },
+    {
+      "name": "glob",
+      "description": "Find files matching a glob pattern",
+      "parameters": {
+        "pattern": {"type": "string", "required": true, "description": "Glob pattern (e.g. **/*.py)"},
+        "path": {"type": "string", "description": "Directory to search in"}
+      },
+      "risk": "safe"
+    },
+    {
+      "name": "grep",
+      "description": "Search for a regex pattern in files",
+      "parameters": {
+        "pattern": {"type": "string", "required": true, "description": "Regex pattern to search for"},
+        "path": {"type": "string", "description": "File or directory to search in"},
+        "include": {"type": "string", "description": "Glob filter for files (e.g. *.py)"}
+      },
+      "risk": "safe"
+    },
+    {
+      "name": "python_exec",
+      "description": "Execute Python code and return output",
+      "parameters": {
+        "code": {"type": "string", "required": true, "description": "Python code to execute"}
+      },
+      "risk": "write"
+    },
+    {
+      "name": "web_search",
+      "description": "Search the web and return results",
+      "parameters": {
+        "query": {"type": "string", "required": true, "description": "Search query"}
+      },
+      "risk": "safe"
+    },
+    {
+      "name": "web_fetch",
+      "description": "Fetch a web page and return its text content",
+      "parameters": {
+        "url": {"type": "string", "required": true, "description": "URL to fetch"}
+      },
+      "risk": "safe"
+    },
+    {
+      "name": "git_status",
+      "description": "Show the working tree status of the git repository",
+      "parameters": {},
+      "risk": "safe"
+    },
+    {
+      "name": "git_diff",
+      "description": "Show changes between commits, working tree, etc.",
+      "parameters": {
+        "target": {"type": "string", "description": "What to diff (e.g. HEAD, staged, file path)"}
+      },
+      "risk": "safe"
+    },
+    {
+      "name": "git_log",
+      "description": "Show recent commit history",
+      "parameters": {
+        "count": {"type": "integer", "description": "Number of commits to show"},
+        "path": {"type": "string", "description": "File path to show history for"}
+      },
+      "risk": "safe"
+    },
+    {
+      "name": "git_commit",
+      "description": "Create a git commit with the staged changes",
+      "parameters": {
+        "message": {"type": "string", "required": true, "description": "Commit message"}
+      },
+      "risk": "write"
+    },
+    {
+      "name": "list_directory",
+      "description": "List files and directories at a given path",
+      "parameters": {
+        "path": {"type": "string", "required": true, "description": "Directory path to list"}
+      },
+      "risk": "safe"
+    }
+  ],
+  "categories": {
+    "single_tool": "One tool call answering one question",
+    "multi_sequential": "Tool A result feeds into Tool B",
+    "multi_parallel": "Multiple independent tools in one response",
+    "error_recovery": "Tool fails, model tries alternative",
+    "no_tool": "Model answers directly without tools",
+    "refusal": "Dangerous request, model refuses",
+    "complex_chain": "3+ tools in a reasoning chain"
+  }
+}
