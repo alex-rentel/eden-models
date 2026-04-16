@@ -1,0 +1,41 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Agentic Planning,Simple task decomposition,Easy,True,"Should have numbered steps covering test, docker, deploy, monitor",14.67,47,1024,1071,69.8,"1. **Set Up Development Environment and Codebase**
+
+   - Initialize a clean, isolated Python project with proper structure (e.g., `app`, `requirements`, `test`, `config`, `static`).
+   - Ensure all dependencies are declared in a `requirements.txt` file.
+   - Use a version control system (e.g., Git) to manage code and collaborate with others.
+   - Create a `Dockerfile` for containerization (minimal base image, install Python, dependencies, run app).
+
+2. **Write and Run Comprehensive Unit and Inte",[],,
+2,Agentic Planning,API integration plan,Medium,False,"Should cover webhooks, secrets, errors, testing, routes (got 1/5)",14.77,74,1024,1098,69.3,"1. **Define Payment Flow Requirements**
+   - Identify supported payment methods (e.g., credit/debit cards, PayPal, Apple Pay, etc.)
+   - Determine transaction lifecycle (e.g., charge, refund, cancellation)
+   - Identify key business rules (e.g., transaction limits, fraud rules, return policies)
+   - Confirm supported currencies and supported payment gateway rules
+
+2. **Design Backend API Routes**
+   - Create a `/api/payments` endpoint to handle payment initiation
+   - Design `/api/payments/charg",[],,
+3,Agentic Planning,Debug workflow planning,Medium,True,"Should check logs, reproduce, inspect code. logs=True, reproduce=True, code=True",14.86,67,1024,1091,68.9,"To debug the issue where an app crashes when users upload files larger than 10MB, I would follow a structured, step-by-step debugging workflow using the available tools: **logs, application code, server metrics, and staging environment**. Here's a clear, logical sequence:
+
+---
+
+### **Step 1: Review App Crash Logs (Primary Focus)**
+**Objective:** Identify the root cause of the crash — what exactly happens during the upload.
+
+- **Action:** Review crash logs (especially those from the device or app",[],,
+4,Agentic Planning,Long context: needle in haystack (500 words),Hard,True,Should find BLUE-FALCON-42 buried in context,1.31,351,19,370,14.5,The secret code mentioned in the text is **BLUE-FALCON-42**.,[],,
+5,Agentic Planning,Long context: multi-fact retrieval,Hard,True,Should answer 4 questions from report. Got 4/4 correct.,3.26,346,134,480,41.1,"1. How many P1 incidents in Q3 vs Q2?  
+- Q3 had 7 P1 incidents (down from 12 in Q2).
+
+2. What percentage of services were migrated to Kubernetes?  
+- 60% of services were migrated to Kubernetes.
+
+3. What is Project Neptune about?  
+- Project Neptune is an ML-based recommendation system for projects, designed to provide intelligent suggestions based on historical data and project performance.
+
+4. What was the MTTR and was it within target?  
+- The average MTTR in Q3 was 23 minutes, which is with",[],,
+6,Agentic Planning,Action plan with dependencies,Hard,True,"parallel=True, deps=True, assign=True, weeks=4",14.82,94,1024,1118,69.1,"| Week | Focus Area | Who Works | Key Tasks | Dependencies | Parallelizable Elements | Notes |
+|------|-----------|-----------|-----------|---------------|---------------------------|--------|
+| **Week 1: Requirements & Technical Design** | Finalize product scope, wireframes, API specs, and architecture | **Designer**, **Backend Dev**, **Frontend Dev** | - Review and finalize feature requirements<br>- Create wireframes and high-fidelity mockups (auth, dashboard, billing, admin panel)<br>- Define",[],,

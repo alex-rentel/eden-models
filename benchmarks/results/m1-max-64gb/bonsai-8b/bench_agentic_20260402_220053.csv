@@ -1,0 +1,53 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Agentic Planning,Simple task decomposition,Easy,True,"Should have numbered steps covering test, docker, deploy, monitor",16.38,47,943,990,57.6,"Here's a breakdown of deploying a Python web app to production, including **testing**, **containerization**, **CI/CD**, and **monitoring**. The steps are ordered from preparation to deployment and ongoing maintenance.
+
+---
+
+### **1. Prepare Your Web App**
+
+- **Ensure your code is clean and well-structured.**
+- **Set up your development environment.**
+- **Write unit tests and integration tests.**
+- **Set up a `.env` file for storing sensitive configuration.**
+- **Ensure your web app is ready for ",[],,
+2,Agentic Planning,API integration plan,Medium,True,"Should cover webhooks, secrets, errors, testing, routes (got 5/5)",17.93,74,1024,1098,57.1,"Here's a **numbered checklist** for planning and implementing a **Stripe payment integration** for an e-commerce site. It covers all the key aspects you mentioned: **backend API routes**, **webhook handling**, **error cases**, **testing strategy**, and **security**.
+
+---
+
+### ✅ **1. Plan the Stripe Integration Requirements**
+
+- **Understand Stripe's API**:
+  - Familiarize yourself with Stripe's REST API (e.g., `charge`, `subscription`, `payment_intent`, `webhook`).
+  - Know the difference betwee",[],,
+3,Agentic Planning,Debug workflow planning,Medium,True,"Should check logs, reproduce, inspect code. logs=True, reproduce=True, code=True",17.85,67,1024,1091,57.4,"When a user reports that your app crashes when they upload files larger than 10MB, your debugging workflow should be methodical and data-driven. Here's a step-by-step breakdown of your approach, with a focus on the most critical checks first:
+
+---
+
+### **1. Check the Logs – First Priority**
+
+**Why?** Logs are your best bet for understanding what's going wrong. They often capture stack traces, error messages, and contextual information that can pinpoint the cause.
+
+**What to Check:**
+- **Crash lo",[],,
+4,Agentic Planning,Long context: needle in haystack (500 words),Hard,True,Should find BLUE-FALCON-42 buried in context,1.29,351,19,370,14.7,The secret code mentioned in the text is **BLUE-FALCON-42**.,[],,
+5,Agentic Planning,Long context: multi-fact retrieval,Hard,True,Should answer 4 questions from report. Got 4/4 correct.,3.16,346,130,476,41.1,"1. How many P1 incidents in Q3 vs Q2?  
+   - Q3: 7 P1 incidents  
+   - Q2: 12 P1 incidents  
+
+2. What percentage of services were migrated to Kubernetes?  
+   - 60% of services were migrated to Kubernetes in August.  
+
+3. What is Project Neptune about?  
+   - Project Neptune is an ML-based recommendations system.  
+
+4. What was the MTTR and was it within target?  
+   - The average MTTR in Q3 was 23 minutes, which is within the target of less than 30 minutes.",[],,
+6,Agentic Planning,Action plan with dependencies,Hard,False,"parallel=True, deps=True, assign=True, weeks=0",18.11,94,1024,1118,56.6,"Here's a week-by-week plan for your **SaaS product launch in 8 weeks**, with your team of **1 backend dev, 1 frontend dev, and 1 designer**. The plan includes **who works on what**, **dependencies**, and **parallelizable tasks**.
+
+---
+
+## 📌 **Week-by-Week Plan for SaaS Launch**
+
+| **Week** | **Task** | **Owner** | **Dependencies** | **Can Be Parallelized?** |
+|----------|----------|-----------|------------------|--------------------------|
+| **1** | Set up project structure and initial codebase ",[],,

@@ -1,0 +1,89 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Reasoning,River crossing,Medium,True,Expected 7 crossings,7.59,59,1024,1083,135.0,"We are given a scenario where a farmer must cross a river with:
+
+- A wolf
+- A goat
+- And a cabbage
+
+The boat can carry the farmer and **one item** (which could be the wolf, goat, or cabbage). And the rules are:
+
+1. **Wolf eats goat if alone**.
+2. **Goat eats cabbage if alone**.
+3. **Cabbage is eaten by nothing** (no one eats it unless they are on the boat with the farmer and the item).
+
+We need to determine the **minimum number of crossings** required, and the **sequence** of crossings that sati",[],,
+2,Reasoning,Syllogism chain,Medium,True,"Expected: Yes, rose has roots (transitive chain)",2.63,43,361,404,137.5,"Let's break down the reasoning step by step to answer whether a rose has roots:
+
+---
+
+### Step 1: Understand the relationships
+
+We are given the following statements:
+
+1. **All roses are flowers.**  
+   - This means that every rose belongs to the category of flowers.
+
+2. **All flowers need water.**  
+   - This means that every flower requires water.
+
+3. **All things that need water have roots.**  
+   - This means that any object that requires water must have roots.
+
+---
+
+### Step 2: Use the chai",[],,
+3,Reasoning,Constraint satisfaction,Hard,True,Must provide a valid arrangement and verify constraints,7.7,93,1024,1117,133.1,"We are given five people (A, B, C, D, E) sitting in a row of 5 seats (1–5). We are to find a valid arrangement that satisfies the following constraints:
+
+1. **A is not at either end.**  
+   → A must be in seat 2, 3, or 4.
+
+2. **B is to the left of C.**  
+   → B must be in a seat before C.
+
+3. **D is adjacent to E.**  
+   → D and E must be in adjacent seats (either D in seat 1 and E in 2, or D in seat 2 and E in 3, etc.).
+
+4. **C is not adjacent to A.**  
+   → C and A must not be in adjacent seat",[],,
+4,Reasoning,Temporal reasoning,Medium,True,"Alice should be first, Charlie last",3.28,47,448,495,136.6,"To solve this puzzle, let's list the people in order and determine their relationships based on the given conditions:
+
+### Given:
+1. **Alice finished before Bob** → Alice < Bob  
+2. **Charlie finished after Diana** → Charlie > Diana  
+3. **Bob finished before Diana** → Bob < Diana  
+4. **Eve finished after Alice but before Charlie** → Eve > Alice and Eve < Charlie  
+
+### Step-by-step reasoning:
+
+We need to list the people in order from **first to last** and assign the correct order based on the ",[],,
+5,Reasoning,Counterfactual reasoning,Hard,True,Sun rises in west; Coriolis reverses,7.51,62,1011,1073,134.7,"If the Earth rotated in the opposite direction (i.e., clockwise instead of counterclockwise), several changes would occur across the globe, primarily due to the Earth's rotational symmetry and the predictable nature of the Earth's orbital motion. Here's a detailed answer for each of your questions:
+
+---
+
+### (1) Sunrise/Sunset Direction
+
+**What would change?**  
+In a normal Earth rotation (counterclockwise), the equator shows sunrise on the eastern side and sunset on the western side. If the Ear",[],,
+6,Reasoning,Spatial reasoning: cube folding,Hard,True,Must identify 3 opposite-face pairs,7.7,76,1024,1100,133.1,"We are given a cube with numbered faces numbered from **1 to 6**. When the cube is flattened into a **cross shape** (a 3×3 grid), the cube becomes a **3×3 grid** with the following layout:
+
+```
+1 on top
+2 3 4 on left to right
+6 on bottom of 4
+```
+
+This is a **standard cube** with the cube's faces numbered from 1 to 6, and the cube's top face is numbered 1, and the bottom face is numbered 6. The cube's center is at the center of the square formed by the top and bottom faces.
+
+### Step-by-step:
+
+#",[],,
+7,Reasoning,Causal chain analysis,Medium,True,Should analyze tradeoffs and second-order effects,7.66,68,1024,1092,133.7,"To analyze the effectiveness of a city's ban on plastic bags and consider the second-order effects, we need to examine the causal chain and understand how the ban influenced behavior and environmental outcomes.
+
+---
+
+### **Causal Chain Analysis:**
+
+#### **1. Initial Ban on Plastic Bags**
+- **Cause:** A city implemented a ban on single-use plastic bags.
+- **Effect:** Waste decreased by 40% (from a volume of X to X/4).
+- **Second-order effect:** Waste decreased due to a reduction in plastic bag us",[],,

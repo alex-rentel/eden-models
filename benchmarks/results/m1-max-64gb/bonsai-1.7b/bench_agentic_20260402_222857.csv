@@ -1,0 +1,46 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Agentic Planning,Simple task decomposition,Easy,False,"Should have numbered steps covering test, docker, deploy, monitor",6.32,47,840,887,132.9,"Certainly! Below is a step-by-step guide to deploying a Python web app to production, broken into ordered steps:
+
+---
+
+### **Step 1: Plan and Design the Application**
+- Define the requirements and features of your Python web app.
+- Choose a framework (e.g., Django, Flask, FastAPI) and ensure it's compatible with your technology stack.
+- Decide on the deployment strategy (e.g., cloud hosting, on-premise, containerization).
+- Set up a CI/CD pipeline and monitoring strategy.
+
+---
+
+### **Step 2: Set",[],,
+2,Agentic Planning,API integration plan,Medium,True,"Should cover webhooks, secrets, errors, testing, routes (got 4/5)",7.7,74,1024,1098,133.0,"Here's a numbered checklist outlining the implementation of a Stripe payment integration for an e-commerce site, covering backend API routes, webhook handling, error cases, testing strategy, and security:
+
+---
+
+### 1. **Define Payment Integration Requirements**
+   - Understand the e-commerce site's payment processing needs.
+   - Determine which payment methods (credit cards, PayPal, etc.) will be supported.
+   - Decide on the payment gateway integration (Stripe, PayPal, etc.).
+
+---
+
+### 2. **Set",[],,
+3,Agentic Planning,Debug workflow planning,Medium,True,"Should check logs, reproduce, inspect code. logs=True, reproduce=True, code=True",7.66,67,1024,1091,133.6,"When a user reports that an app crashes when uploading files larger than 10MB, your debugging workflow should follow a structured approach to identify the root cause. Below is a step-by-step guide on how to proceed, along with the key things to check first, second, and third.
+
+---
+
+### 🔍 **Step-by-Step Debugging Workflow**
+
+#### **1. Review the Crash Logs**
+- **What to check:** Look at the crash logs (usually `app.log` or `staging.log`) to get a detailed report of the error.
+- **What to look for",[],,
+4,Agentic Planning,Long context: needle in haystack (500 words),Hard,True,Should find BLUE-FALCON-42 buried in context,0.96,351,92,443,95.5,"The secret code mentioned in the text is **""BLUE-FALCON-42""**. This code is noted as a ""theorem"" or ""secret code"" in the context of the text, and it is specifically noted as part of a code that is ""remembered for later."" The code is not a real code or a code in a technical sense, but rather a reference to a fictional or symbolic code used in a specific context.",[],,
+5,Agentic Planning,Long context: multi-fact retrieval,Hard,True,Should answer 4 questions from report. Got 4/4 correct.,0.92,346,86,432,93.4,"1. In Q3, there were 7 P1 incidents compared to 12 in Q2.  
+2. 60% of services were migrated to Kubernetes in Q3.  
+3. Project Neptune is an ML-based recommendation system that is about integrating machine learning into engineering workflows.  
+4. The MTTR was 23 minutes on average, which is below the target of 30 minutes.",[],,
+6,Agentic Planning,Action plan with dependencies,Hard,True,"parallel=True, deps=True, assign=True, weeks=8",7.73,94,1024,1118,132.5,"Certainly! Below is a **Week-by-Week Plan** for your SaaS product launch, structured as a table with responsibilities, dependencies, and parallelizable tasks. This plan is designed to ensure your team can deliver on your requirements within 8 weeks, while keeping your workflow efficient and scalable.
+
+---
+
+| **Week** | **Task** | **Owner** | **Dependencies** | **Parallelizable** | **Estimated Time** | **Estimated Budget** |
+|-----------|-----------|-----------|-------------------|---------------",[],,

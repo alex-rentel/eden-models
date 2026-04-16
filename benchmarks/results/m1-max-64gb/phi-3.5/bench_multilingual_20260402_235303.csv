@@ -1,0 +1,46 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Multilingual,English to Spanish,Easy,True,"Should contain parque, amigos, and a word for beautiful",11.48,26,1024,1050,89.2,"El clima es hermoso hoy y quiero ir al parque con mis amigos.
+
+
+This translation maintains the meaning and sentiment of the original English sentence, rendering it in proper Spanish. The phrase ""The weather is beautiful"" is translated to ""El clima es hermoso,"" which speaks to the pleasantness of the day. ""Today"" is ""hoy,"" and ""I want to go to the park"" is conveyed as ""ir al parque,"" with ""ir"" meaning to go, ""con"" meaning with, and ""mis amigos"" meaning my friends. The sentence structure is adapte",[],,
+2,Multilingual,Spanish to English,Easy,True,Should mention 'artificial intelligence' and 'world',1.65,28,154,182,93.2,"The phrase 'La inteligencia artificial está cambiando el mundo de maneras sorprendentes' translates to 'Artificial intelligence is changing the world in surprising ways' in English. Here's a breakdown of the translation:
+
+- 'La inteligencia artificial' = 'Artificial intelligence'
+- 'está cambiando' = 'is changing'
+- 'el mundo' = 'the world'
+- 'de maneras' = 'in ways'
+- 'sorprendentes' = 'surprising'
+
+So, the full translation maintains the meaning of the original sentence, which speaks to the une",[],,
+3,Multilingual,English to French,Medium,True,"Should contain pain (bread), fromage (cheese), vin (wine)",2.88,31,273,304,94.6,"J'ai besoin d'acheter des provisions, y compris du pain, du fromage et du vin pour le dîner de ce soir.
+
+(English to French translation breakdown:
+- I need to buy (J'ai besoin d'acheter)
+- groceries (des provisions)
+- including (y compris)
+- bread (du pain)
+- cheese (du fromage)
+- and (et)
+- wine (du vin)
+- for tonight's dinner (pour le dîner de ce soir)
+
+Note that in French, the adjective (du/de la, de l' when followed by a noun is used to show possession or quantity, and it agrees in gender an",[],,
+4,Multilingual,Japanese to English,Medium,True,"Should mention programming, career, and importance",1.83,43,163,206,89.3,"'プログラミングを学ぶことは、将来のキャリアにとって非常に重要です。' 
+
+Translation Breakdown:
+
+- プログラミング (Programming) - Programming
+- を学ぶ (to learn) - to learn
+- こと (thing) - is
+- 将来 (future) - future
+- 重要 (important) - important
+- です (polite suffix) - is/are (exists as a copula, linking the subject to the predicate)
+
+Putting it all together, it translates to ""Learning programming is extremely important for your future career."" in English.<|end|>",[],,
+5,Multilingual,Language detection,Medium,True,Should identify Dutch,0.55,33,42,75,76.1,The text is in Dutch. The phrase 'Ik hou van programmeren en het maken van nieuwe dingen' translates to 'I love programming and making new things' in English.<|end|>,[],,
+6,Multilingual,Respond in requested language,Medium,True,Should respond in German (found 13 German words),4.98,15,438,453,87.9,"Drei Vorteile des Sports sind:
+
+1. Verbesserte körperliche Gesundheit: Regelmäßige Bewegung hilft, die Muskeln zu stärken, die Knochen zu festigen und das Herz-Kreislauf-System zu stärken, was das Risiko vieler Krankheiten wie Diabetes, Herzkrankheiten und Schlaganfällen reduziert. Sie fördert außerdem die allgemeine körperliche Fitness und Ausdauer.
+
+2. Verbesserte geistige Gesundheit: Sport kann Stressabbau und Entspannung bewirken, was zur Verbesserung des Geistes hilft, Stress abbauen und da",[],,
+7,Multilingual,Idiomatic translation,Hard,True,"Should give idiomatic Spanish equivalent, not literal translation",2.66,29,252,281,94.7,"The English idiom ""It's raining cats and dogs"" is used to describe a heavy rain, and it doesn't have a direct translation that conveys the same imagery in Spanish. However, to express the same idea, you can use the phrase ""Está lloviendo a cántaros,"" which literally means ""It's pouring from pitchers."" This phrase carries a similar exaggeration to emphasize the intensity of the rainfall, much like the original English idiom. In Spanish, people often use vivid and imaginative language to describe ",[],,

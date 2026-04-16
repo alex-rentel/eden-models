@@ -1,0 +1,52 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Classification,Sentiment: clearly positive,Easy,True,Expected: positive,0.1,77,2,79,19.7,Positive,[],,
+2,Classification,Sentiment: clearly negative,Easy,True,Expected: negative,0.17,79,2,81,11.7,Negative,[],,
+3,Classification,Sentiment: subtle/mixed,Medium,True,"Expected: mixed, neutral, or negative",0.09,75,2,77,21.3,Negative,[],,
+4,Classification,Named Entity Recognition,Medium,False,"Must extract Tim Cook, Garcia, Apple, Goldman Sachs, Austin/Texas",1.24,101,339,440,274.1,"Here are the named entities extracted from the text in JSON format:
+
+```
+{
+    ""people"": [
+        {
+            ""id"": ""Tim Cook"",
+            ""name"": ""Tim Cook"",
+            ""title"": ""CEO of Apple"",
+            ""organization"": ""Apple"",
+            ""organizationType"": ""Company"",
+            ""unit"": ""Headquarters"",
+            ""unitType"": ""Location""
+        },
+        {
+            ""id"": ""Maria Garcia"",
+            ""name"": ""Maria Garcia"",
+            ""title"": ""Senator"",
+            ""organization""",[],,
+5,Classification,Intent detection: single,Easy,True,Expected: book_flight,0.12,85,5,90,43.4,'Book_flight',[],,
+6,Classification,Intent detection: ambiguous,Medium,True,Expected: refund_request or exchange_request,0.11,91,3,94,26.8,refund_request,[],,
+7,Classification,Topic classification: multi-label,Medium,False,Expected at least 'technology' and 'health',2.72,106,761,867,279.3,"{
+    ""topic_labels"": [
+        ""technology"",
+        ""business"",
+        ""health"",
+        ""politics"",
+        ""sports"",
+        ""science"",
+        ""entertainment"",
+        ""technology"",
+        ""business"",
+        ""health"",
+        ""politics"",
+        ""sports"",
+        ""science"",
+        ""entertainment"",
+        ""technology"",
+        ""business"",
+        ""health"",
+        ""politics"",
+        ""sports"",
+        ""science"",
+        ""entertainment"",
+        ""technology"",
+        ""business"",
+        ",[],,
+8,Classification,Spam detection,Easy,True,Expected: spam,0.12,101,2,103,16.6,spam,[],,

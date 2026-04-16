@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mlx-bonsai-benchmarks"
+version = "0.1.0"
+description = "Comprehensive benchmark suite for 1-bit Bonsai and other LLMs on Apple Silicon via MLX"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "alex-rentel"}
+]
+dependencies = [
+    "requests>=2.28.0",
+]
+
+[project.optional-dependencies]
+report = [
+    "matplotlib>=3.7.0",
+    "numpy>=1.24.0",
+]
+dev = [
+    "matplotlib>=3.7.0",
+    "numpy>=1.24.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/alex-rentel/mlx-bonsai-benchmarks"
+
+[project.scripts]
+mlx-bench = "run_all:main"
+
+[tool.setuptools]
+py-modules = ["run_all", "compare_results", "generate_report"]
+
+[tool.setuptools.packages.find]
+include = ["benchmarks*"]

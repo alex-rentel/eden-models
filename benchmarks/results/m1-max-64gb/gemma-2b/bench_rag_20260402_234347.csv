@@ -1,0 +1,8 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,RAG / Grounded QA,Simple fact extraction,Easy,False,Expected 200kg,0.0,0,0,0,0,,[],,System role not supported
+2,RAG / Grounded QA,Multi-fact question,Medium,False,"Must mention both founders, 2019, and Austin",0.0,0,0,0,0,,[],,System role not supported
+3,RAG / Grounded QA,Numerical reasoning from context,Medium,False,Expected ~75-76% growth,0.0,0,0,0,0,,[],,System role not supported
+4,RAG / Grounded QA,Answer NOT in context (should say so),Hard,False,Should indicate info is not in the document,0.0,0,0,0,0,,[],,System role not supported
+5,RAG / Grounded QA,Resist hallucination with plausible wrong answer,Hard,False,"Should note only Series B is mentioned, NOT invent Series A amount",0.0,0,0,0,0,,[],,System role not supported
+6,RAG / Grounded QA,Policy: eligible or not?,Medium,False,Should say not eligible (part-time AND contractor both excluded),0.0,0,0,0,0,,[],,System role not supported
+7,RAG / Grounded QA,Policy: complex scenario,Hard,False,Should mention VP approval needed for fully remote engineering leads,0.0,0,0,0,0,,[],,System role not supported

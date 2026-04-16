@@ -1,0 +1,30 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Instruction Following,Exact sentence count,Easy,True,"Expected 3 sentences, got 3",1.26,35,64,99,50.7,"Machine learning is a subset of artificial intelligence that focuses on developing algorithms capable of learning from and making decisions based on data. It involves training models using statistical patterns to improve performance on specific tasks without being explicitly programmed. The process typically includes data collection, preprocessing, model training, and evaluation to ensure accurate and reliable predictions.",[],,
+2,Instruction Following,Bullet point count,Easy,True,"Expected 5 numbered items, got 5",2.27,37,120,157,53.0,"1. Maintain a consistent sleep schedule by going to bed and waking up at the same time every day.  
+2. Create a relaxing bedtime routine, such as reading or taking a warm bath, to signal your body it's time to wind down.  
+3. Limit exposure to screens before bed, as the blue light can interfere with your body's natural sleep-wake cycle.  
+4. Keep your bedroom cool, dark, and quiet to promote a more restful sleep environment.  
+5. Avoid large meals, caffeine, and vigorous exercise close to bedtim",[],,
+3,Instruction Following,Word avoidance,Medium,False,Forbidden words found: ['computer'],1.26,35,64,99,50.7,"A computer processes information by following instructions. It takes in data, performs calculations or operations, and gives back results. It can store large amounts of information and retrieve it when needed. It can also perform tasks like organizing data, running programs, and communicating with other systems. It's built to handle complex operations efficiently.",[],,
+4,Instruction Following,Response in specific format,Medium,True,"Expected 3 each of TITLE/AUTHOR/WHY, got 3/3/3",2.09,50,109,159,52.2,"TITLE: *The Midnight Library*  
+AUTHOR: Matt Haig  
+WHY: A thought-provoking exploration of regret, choice, and the power of second chances.  
+
+TITLE: *The Overstory*  
+AUTHOR: Richard Powers  
+WHY: A lush, emotional novel that intertwines human lives with the lives of trees.  
+
+TITLE: *The Night Tiger*  
+AUTHOR: Peter Matthijs van der Merwede  
+WHY: A gripping mystery with a unique twist that keeps readers turning pages.",[],,
+5,Instruction Following,First letter constraint (acrostic),Hard,False,"Expected first letters 'HELLO', got 'HELOT'",1.29,36,66,102,51.1,"Hubble's telescope has captured stunning images of distant galaxies.  
+Every space mission pushes the boundaries of human knowledge.  
+Lunar landings have inspired generations of scientists and engineers.  
+Ongoing research explores the mysteries of black holes and neutron stars.  
+The human spirit reaches for the stars, driven by curiosity and discovery.",[],,
+6,Instruction Following,JSON-only response,Medium,True,"Must return valid JSON with correct values, no wrapping",0.69,49,25,74,36.1,"{
+  ""animal"": ""blue whale"",
+  ""color"": ""blue"",
+  ""count"": 3
+}",[],,
+7,Instruction Following,Multi-constraint response,Hard,True,"Starts with 'Every': True, ends with '?': True, has number: True",1.74,61,88,149,50.6,"Every day, people around the world drink more than 200 million cups of coffee, with countries like Brazil and Vietnam leading in production. Coffee is not only a popular beverage but also a significant economic driver in regions such as Colombia, where it supports millions of farmers. According to the International Coffee Organization, over 1.2 billion people rely on coffee for its energizing effects. How does coffee influence global cultures and economies?",[],,

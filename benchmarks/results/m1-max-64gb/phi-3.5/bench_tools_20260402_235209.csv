@@ -1,0 +1,52 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Tool Calling,Single tool: list directory,Easy,False,Should call list_files with correct path,4.14,13,422,435,101.9,"I'm Phi, an AI language model and do not have the capability to access your file system. However, I can guide you on how to find the files.
+
+If you're using a Unix-like operating system (like Linux or macOS), you can use the `ls` command to list the files in a directory:
+
+```bash
+ls /home/user/projects
+```
+
+If you want to see more information like file sizes and last modification dates, you can use `ls` with the `-l` option:
+
+```bash
+ls -l /home/user/projects
+```
+
+Remember to replace `user` with",[],,
+2,Tool Calling,Single tool: read specific file,Easy,False,Should call read_file with /etc/hostname,10.52,12,1024,1036,97.4,"As an AI language model, I don't have the ability to perform real-world actions, including accessing files on a computer. However, I can guide you on how to do it.
+
+To view the contents of the `/etc/hostname` file on your own system, you can use a terminal or command prompt. Here's how to do it on a Unix-like operating system such as Linux or macOS:
+
+1. Open your terminal.
+2. Type `sudo nano /etc/hostname` to open the file with nano (you can also use vim, emacs, or any other editor of your choic",[],,
+3,Tool Calling,Tool selection: weather (not file tools),Medium,False,"Should call get_weather, not search_web or file tools",1.38,14,121,135,87.6,"I'm sorry for any confusion, but as an AI, I don't have real-time capabilities to provide live updates or information. To find out the current weather in Tokyo or any location, please refer to a reliable weather forecasting service or website like The Weather Channel, BBC Weather, TimeAndDate, or a weather app on your smartphone or computer. You can also use search engines to find the latest weather updates for Tokyo by simply typing ""current weather in Tokyo"" into your browser. These sources wi",[],,
+4,Tool Calling,Tool selection: web search for current info,Medium,False,Should call search_web for current events,1.78,12,172,184,96.5,"The Los Angeles Lakers won the NBA Finals last year, which concluded on October 11, 2dedded the championship by defeating the Miami Heat with a series of 4-2 in the NBA Finals. The Lakers' triumph concluded their successful season, which included a notable performance from their star player, LeBron James, and their dynamic duo of Anthony Davis and Russell Westbrook, contributing to their back-to-back titles. The victory marked their 17th NBA championship, extending their dynasty era and setting ",[],,
+5,Tool Calling,Tool avoidance: simple question,Medium,True,Should answer directly without tools,1.89,10,177,187,93.5,"The capital of France is Paris. Paris is both a major European city and the seat of the French government, housing the official residences of the President of France and the French National Assembly. It is also a world-renowned center for art, fashion, cuisine, and culture. The city is famous for landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral. Paris is often referred to as a ""City of Light"" and is a significant hub for history, commerce, and diplomacy. The importance",[],,
+6,Tool Calling,Tool avoidance: math question,Medium,True,Should compute 345 without calling any tools,0.44,13,35,48,79.4,The product of 15 and 23 is 345.<|end|><|assistant|> 15 multiplied by 23 equals 345.<|end|>,[],,
+7,Tool Calling,Write file with specific content,Medium,False,Should call write_file with correct path and content,3.09,21,315,336,101.8,"To create a file named `hello.txt` inside the `/home/user` directory with the content 'Hello, World!' on a Unix-like operating system (such as Linux or macOS), you can use a terminal command. Here is how you can do it:
+
+1. Open your terminal.
+2. Navigate to the `/home` directory using the `cd` command:
+
+```bash
+cd /home/user
+```
+
+3. Use the `echo` command to create the file and add the content:
+
+```bash
+echo ""Hello, World!"" > hello.txt
+```
+
+This command will create a file named `hello.txt` in th",[],,
+8,Tool Calling,Multi-step: find and read,Hard,False,Should start with list_files or run_command,10.52,25,1024,1049,97.3,"To find all Python files in the `/home/user/projects` directory and read the `README.md` file within those directories, you can use a combination of shell commands in a Unix-like operating system (such as Linux or macOS) or a script in a programming language like Python. Below are examples of how to achieve this:
+
+### Using Shell Commands (Unix/Linux)
+
+```bash
+# Navigate to the projects directory
+cd /home/user/projects
+
+# Find all Python files (files with a `.py` extension) and README.md
+find . ",[],,

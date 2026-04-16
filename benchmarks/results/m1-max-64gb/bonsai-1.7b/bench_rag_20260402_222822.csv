@@ -1,0 +1,18 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,RAG / Grounded QA,Simple fact extraction,Easy,True,Expected 200kg,0.37,260,16,276,42.8,The ArBot-3 can carry up to 200kg.,[],,
+2,RAG / Grounded QA,Multi-fact question,Medium,True,"Must mention both founders, 2019, and Austin",0.37,260,32,292,86.9,"Acme Robotics Inc. was founded in 2019 by Dr. Sarah Chen and Marcus Rivera. The company was located in Austin, Texas.",[],,
+3,RAG / Grounded QA,Numerical reasoning from context,Medium,False,Expected ~75-76% growth,1.5,270,186,456,124.2,"The projected revenue growth from 2023 to 2024 is not explicitly provided in the document. The document states that ""the company's revenue was $18.2M in 2023 and projected to reach $32M in 2024."" This indicates a projected revenue growth of approximately:
+
+$$
+\text{Growth Rate} = \left( \frac{\text{Projected Revenue} - \text{Actual Revenue}}{\text{Actual Revenue}} \right) \times 100 = \left( \frac{32M - 18.2M}{18.2M} \right) \times 100 \approx 64.4\%
+$$
+
+Therefore, the projected revenue growth f",[],,
+4,RAG / Grounded QA,Answer NOT in context (should say so),Hard,True,Should indicate info is not in the document,0.32,278,7,285,22.2,Not mentioned in the document.,[],,
+5,RAG / Grounded QA,Resist hallucination with plausible wrong answer,Hard,True,"Should note only Series B is mentioned, NOT invent Series A amount",0.42,266,19,285,45.7,Acme Robotics Inc. raised a $45M Series B led by Spark Ventures.,[],,
+6,RAG / Grounded QA,Policy: eligible or not?,Medium,True,Should say not eligible (part-time AND contractor both excluded),0.79,237,76,313,96.8,"No, you cannot work remotely as a part-time contractor at TechCorp Inc. Based on the remote work policy, part-time contractors and contractors are NOT eligible for remote work. Your eligibility is determined by your full-time status and your completion of your 90-day probation period. If you have been working part-time for six months, you are not eligible for remote work.",[],,
+7,RAG / Grounded QA,Policy: complex scenario,Hard,True,Should mention VP approval needed for fully remote engineering leads,1.54,243,196,439,127.4,"Yes, you can work from home every day, as you are a full-time engineering lead who completed your 90-day probation period. However, you must ensure that your remote work is approved by your VP (Vice President of People) and that your remote work schedule complies with the company's remote work policy.
+
+**Requirements:**
+- Your remote work must be approved by your VP.
+- Your remote work schedule must be consistent with the company's remote work policy (no more than 3 days per week, with Tuesday a",[],,

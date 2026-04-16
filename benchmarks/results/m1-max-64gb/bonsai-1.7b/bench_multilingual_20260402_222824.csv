@@ -1,0 +1,8 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Multilingual,English to Spanish,Easy,True,"Should contain parque, amigos, and a word for beautiful",0.26,34,18,52,68.9,El clima es bonito hoy y quiero ir al parque con mis amigos.,[],,
+2,Multilingual,Spanish to English,Easy,True,Should mention 'artificial intelligence' and 'world',0.23,33,13,46,56.3,'Artificial intelligence is changing the world in surprising ways.',[],,
+3,Multilingual,English to French,Medium,True,"Should contain pain (bread), fromage (cheese), vin (wine)",0.31,34,26,60,82.9,"'Mon objectif est d'acheter des pains, fromage et vin pour cette nuit de dîner.'",[],,
+4,Multilingual,Japanese to English,Medium,True,"Should mention programming, career, and importance",0.22,35,12,47,55.3,"""Learning programming is very important for your future career.""",[],,
+5,Multilingual,Language detection,Medium,True,Should identify Dutch,0.25,39,12,51,48.7,This text is written in **Nederlands**.,[],,
+6,Multilingual,Respond in requested language,Medium,True,Should respond in German (found 4 German words),0.59,23,69,92,116.1,Zwei Vorteile der Übung sind: Erhöht das Gewichtsausstoß und fördert das Herzopferungsgefühl. Andere Vorteile sind das Verbesserung der Knochen und der Hautzustands sowie das Reduzieren des Schmerzes und der Schlafzeit.,[],,
+7,Multilingual,Idiomatic translation,Hard,False,"Should give idiomatic Spanish equivalent, not literal translation",0.2,34,11,45,53.9,Es caído como gatos y perros.,[],,

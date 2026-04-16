@@ -1,0 +1,18 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Writing,Product description,Easy,True,"Must mention all 3 features, under 600 chars",1.55,51,76,127,49.1,"Crafted for programmers, this wireless mechanical keyboard features hot-swappable switches for customizable actuation and a split design that optimizes space and ergonomics. Its programmable layers let you tailor your typing experience to your workflow—whether you're coding in a terminal or a full-featured IDE. Experience precision, speed, and control with a keyboard built for your coding lifestyle.",[],,
+2,Writing,Summarize to exact length,Medium,True,"Expected exactly 3 sentences, got 3",2.17,222,90,312,41.4,"The James Webb Space Telescope has revolutionized our understanding of the early universe by capturing galaxies forming just 300 million years after the Big Bang. It has also enabled groundbreaking observations of exoplanet atmospheres, detecting molecules like water vapor and sulfur dioxide. The $10 billion mission, operational for at least 20 years, has provided detailed images of solar system planets and is a joint effort by NASA, ESA, and CSA.",[],,
+3,Writing,Compress to word limit,Medium,True,"Expected ≤50 words, got 32",0.88,28,41,69,46.4,"A CPU processes data by executing instructions. It reads from memory, performs calculations, and writes results. It manages tasks, controls hardware, and coordinates operations. It uses clock signals to time its operations.",[],,
+4,Writing,Tone: formal to casual rewrite,Medium,False,"Should be shorter, more casual, with informal language",1.03,71,41,112,39.7,We’re rescheduling the quarterly financial review to the next Monday because of some unexpected issues. Your attendance at the new time would be really appreciated—please let us know your availability as soon as possible.,[],,
+5,Writing,Tone: technical to 5-year-old,Medium,True,"Must use analogy, ≤100 words (got 77)",1.68,40,85,125,50.6,"Imagine your house has a special phone number — your name. DNS is like a phone book that helps people find your house. When you type your name into a computer, DNS is like a helper who knows your phone number and finds your house for you. It makes it easy to remember your name instead of a long number. So, DNS is like a friendly helper who makes the internet more fun and easier to use!",[],,
+6,Writing,Creative: story with constraints,Hard,True,"Must be set on Mars, under 200 words (got 200)",5.05,60,285,345,56.4,"The air on Mars is thin, but it's enough. I'm adjusting my suit's oxygen filter as the rover's engine hums. The red dust is fine, but I'm used to it. I'm not. Not really.
+
+Dr. Elara Voss is my mission commander. She's sharp, decisive, and has a habit of saying things like, ""We need to move,"" even when we're standing in a crater. I've learned to listen. She's the only one who makes sense in this place.
+
+We've been here for three weeks. The mission is to search for signs of ancient life. I'm the g",[],,
+7,Writing,Email: professional with constraints,Medium,True,"Must have subject line, gratitude, ≤150 words (got 139)",3.43,49,184,233,53.6,"**Subject:** Thank You for the Opportunity – I’ve Decided to Pursue Another Path  
+
+Dear [Hiring Manager's Name],  
+
+Thank you for offering me the position at [Company Name]. I truly appreciate the time and effort you and your team invested in the hiring process. I’m grateful for the opportunity to learn more about your company and its mission.  
+
+After careful consideration, I’ve decided to pursue a different role that aligns more closely with my current career goals. This decision wasn’t made ",[],,

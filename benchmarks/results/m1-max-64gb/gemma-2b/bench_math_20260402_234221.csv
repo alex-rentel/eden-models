@@ -1,0 +1,157 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Math,Multi-step arithmetic,Easy,True,Expected 1226,1.55,43,118,161,76.1,"Here's how to solve the expression step-by-step:
+
+**1. Multiplication:**
+
+*  48 × 27 = 1296
+
+**2. Division:**
+
+*  156 ÷ 12 = 13
+
+**3.  Addition:**
+
+*  1296 + 13 = 1309
+
+**4. Subtraction:**
+
+*  1309 - 83 = 1226
+
+**Therefore, the answer is 1226.** 
+",[],,
+2,Math,Percentage word problem,Easy,True,Expected ~$58.10,2.68,66,233,299,86.9,"Here's how to break down the cost of the shirt:
+
+**1. Calculate the Discount:**
+
+* Discount amount: $85 * 0.30 = $25.50
+
+**2. Calculate the Sale Price:**
+
+* Sale price: $85 - $25.50 = $59.50
+
+**3. Calculate the Loyalty Card Discount:**
+
+* Loyalty card discount: $59.50 * 0.10 = $5.95
+
+**4. Calculate the Price After Loyalty Discount:**
+
+* Price after loyalty discount: $59.50 - $5.95 = $53.55
+
+**5. Calculate the Sales Tax:**
+
+* Sales tax amount: $53.55 * 0.085 = $4.56
+
+**6. Calculate the Final Pric",[],,
+3,Math,System of equations,Medium,False,"Expected x=3.6 (or 18/5), y=2.6 (or 13/5)",2.3,47,193,240,83.8,"Here's how to solve the system of equations:
+
+**1. Solve for 'x' in terms of 'y' in the second equation:**
+
+   x - y = 1
+   x = y + 1
+
+**2. Substitute this expression for 'x' into the first equation:**
+
+   3(y + 1) + 2y = 16
+
+**3. Simplify and solve for 'y':**
+
+   3y + 3 + 2y = 16
+   5y + 3 = 16
+   5y = 13
+   y = 13/5
+
+**4. Since 'y' must be an integer, there's no solution that satisfies both equations with whole number values.**
+
+**Conclusion:**
+
+This system of equations has no solution that sa",[],,
+4,Math,Probability with combinations,Medium,True,Expected 1/12 ≈ 0.0833,3.08,53,273,326,88.7,"Here's how to solve this probability problem:
+
+**1. Find the total number of ways to draw 3 marbles:**
+
+* There are 10 marbles in total (5 + 3 + 2).
+* The number of ways to choose 3 out of 10 is given by the combination formula:  ¹⁰C₃ = (10!)/(3!7!) = 120
+
+**2. Find the number of ways to draw 3 red marbles:**
+
+* There are 5 red marbles.
+* The number of ways to choose 3 out of 5 is given by the combination formula:  ⁵C₃ = (5!)/(3!2!) = 10
+
+**3. Calculate the probability:**
+
+* Probability = (Favor",[],,
+5,Math,Quadratic equation,Medium,True,Expected x=3 and x=0.5 (or 1/2),3.37,35,306,341,90.9,"Here's how to solve the quadratic equation 2x² - 7x + 3 = 0 using the quadratic formula:
+
+**1. Identify the coefficients:**
+
+*  In the quadratic equation ax² + bx + c = 0, we have:
+    *  a = 2
+    *  b = -7
+    *  c = 3
+
+**2. Apply the quadratic formula:**
+
+The quadratic formula is:
+
+x = (-b ± √(b² - 4ac)) / 2a
+
+Substitute the values of a, b, and c:
+
+x = (7 ± √((-7)² - 4 * 2 * 3)) / (2 * 2)
+
+**3. Simplify:**
+
+x = (7 ± √(49 - 24)) / 4
+
+x = (7 ± √25) / 4
+
+x = (7 ± 5) / 4
+
+**4. Solve for the two p",[],,
+6,Math,Geometry: composite area,Medium,True,Expected area = 120 sq ft,4.1,76,372,448,90.7,"Here's how to solve the problem:
+
+**1.  Area of the Rectangles:**
+
+* **Rectangle 1:** Area = length × width = 12 ft × 8 ft = 96 sq ft
+* **Rectangle 2:** Area = length × width = 6 ft × 4 ft = 24 sq ft
+
+**2.  Total Floor Area:**
+
+*  Total area = Area of Rectangle 1 + Area of Rectangle 2
+*  Total area = 96 sq ft + 24 sq ft = **120 sq ft**
+
+**3.  Perimeter of the L-Shape:**
+
+*  To find the perimeter, we need to consider all sides of the L-shape.
+*  We need to use the length and width of each rectang",[],,
+7,Math,Monty Hall: 5-door variant,Hard,False,"Switch=4/5, Stay=1/5",10.69,74,1024,1098,95.7,"This is a classic example of Bayes' Theorem in action!
+
+Here's how to break down the problem:
+
+**Understanding the Problem:**
+
+* **Initial Odds:**  You initially had a 1/5 chance of winning (the car).
+* **Host's Action:** The host opening 3 doors with goats tells us valuable information.
+
+**Key Insight:**
+
+The host's action changes our perception of what might be behind the remaining door.
+
+**Calculations:**
+
+Let's use Bayes' Theorem to calculate the exact probability of winning in each scenario",[],,
+8,Math,Logarithm & exponent simplification,Hard,True,Expected 7 (6 + 4 - 3),2.72,36,241,277,88.5,"Here's how to simplify the expression step-by-step:
+
+**1. Understand the Logarithm Basics:**
+
+* **log₂(64):**  This asks ""To what power must we raise 2 to get 64?""  The answer is 6, so log₂(64) = 6.
+
+* **log₃(81):**  This asks ""To what power must we raise 3 to get 81?"" The answer is 4, so log₃(81) = 4
+
+* **log₅(125):**  This asks ""To what power must we raise 5 to get 125?"" The answer is 3, so log₅(125) = 3
+
+**2.  Substitute the Results:**
+
+Now that we know the answers, our expression becomes:
+
+6",[],,

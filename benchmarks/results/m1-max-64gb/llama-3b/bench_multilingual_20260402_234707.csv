@@ -1,0 +1,45 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Multilingual,English to Spanish,Easy,True,"Should contain parque, amigos, and a word for beautiful",1.73,57,203,260,117.5,"The translation of the sentence in Spanish would be:
+
+""El clima es hermoso hoy y quiero ir al parque con mis amigos.""
+
+Here's a breakdown of the translation:
+
+- ""The weather is beautiful today"" becomes ""El clima es hermoso hoy""
+  - ""El clima"" means ""the weather""
+  - ""es hermoso"" means ""is beautiful""
+  - ""hoy"" means ""today""
+
+- ""I want to go to the park"" becomes ""quiero ir al parque""
+  - ""I want"" becomes ""quiero""
+  - ""to go"" becomes ""ir""
+  - ""to the park"" becomes ""al parque""
+
+- ""with my friends"" b",[],,
+2,Multilingual,Spanish to English,Easy,True,Should mention 'artificial intelligence' and 'world',0.3,56,23,79,78.0,The translation of the given sentence in English is: 'Artificial intelligence is changing the world in surprising ways.',[],,
+3,Multilingual,English to French,Medium,True,"Should contain pain (bread), fromage (cheese), vin (wine)",1.26,57,150,207,119.0,"Here's the translation:
+
+""Je dois acheter des denrées de base, notamment du pain, du fromage et de la vigne, pour ce dîner ce soir.""
+
+Here's a breakdown of the translation:
+
+- ""I need to buy"" is translated to ""Je dois acheter""
+- ""groceries"" is translated to ""denrées de base""
+- ""including"" is translated to ""notamment""
+- ""bread"" is translated to ""pain""
+- ""cheese"" is translated to ""fromage""
+- ""and wine"" is translated to ""et de la vigne""
+
+Note: In France, ""vigne"" is the plural form of ""vine"", so it'",[],,
+4,Multilingual,Japanese to English,Medium,False,"Should mention programming, career, and importance",0.36,63,25,88,70.4,"The translation of the given Japanese sentence to English is:
+
+""Learning to program is very important for one's future career.""",[],,
+5,Multilingual,Language detection,Medium,True,Should identify Dutch,0.15,62,3,65,19.8,Dutch,[],,
+6,Multilingual,Respond in requested language,Medium,True,Should respond in German (found 6 German words),1.78,46,193,239,108.6,"Es gibt drei wesentliche Vorteile des Sports: 
+
+1. Verbesserung des Stoffwechsels: Regelmäßiges Sporttreiben kann den Stoffwechsel verbessern und die Produktion von Insulin steigern, was zu einem gesünderen Blutwiderstand und einem geringeren Risiko für Diabetes führt.
+
+2. Steigerung des Selbstwertgefühls: Sport kann das Selbstwertgefühl steigern und die Selbstsicherheit erhöhen. Dies kann zu einem positiven Einfluss auf das allgemeine Wohlbefinden führen.
+
+3. Reduzierung des Stresspegels: Regel",[],,
+7,Multilingual,Idiomatic translation,Hard,True,"Should give idiomatic Spanish equivalent, not literal translation",0.4,57,30,87,75.2,"The Spanish equivalent of the idiom ""It's raining cats and dogs"" is ""Está lloviendo chivos y perros.""",[],,

@@ -1,0 +1,18 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Writing,Product description,Easy,True,"Must mention all 3 features, under 600 chars",1.02,68,49,117,47.8,"Experience unparalleled precision and efficiency with our wireless mechanical keyboard, designed specifically for programmers. Featuring hot-swappable switches for easy customization and a split design for optimal ergonomics, this keyboard also supports multiple programmable layers to streamline your coding workflow.",[],,
+2,Writing,Summarize to exact length,Medium,True,"Expected exactly 3 sentences, got 3",2.23,239,101,340,45.3,"The James Webb Space Telescope (JWST), deployed in 2022, has revolutionized our understanding of the early universe by revealing galaxies forming just 300 million years after the Big Bang and detecting atmospheres of exoplanets. It has also provided detailed views of planets in our solar system, such as Neptune and Jupiter. The $10 billion mission, a joint project between NASA, ESA, and CSA, is expected to operate for at least 20 years.",[],,
+3,Writing,Compress to word limit,Medium,True,"Expected ≤50 words, got 14",0.49,45,20,65,40.9,"A CPU fetches, decodes, and executes instructions by sequentially processing data and managing resources.",[],,
+4,Writing,Tone: formal to casual rewrite,Medium,True,"Should be shorter, more casual, with informal language",1.13,88,58,146,51.3,"Hey team,
+
+Just a quick update: the quarterly financial review has been moved to next Monday due to some unexpected stuff. We'd really appreciate it if you could try to make it. Could you let me know as soon as you can if you're available?
+
+Thanks! 🙏",[],,
+5,Writing,Tone: technical to 5-year-old,Medium,True,"Must use analogy, ≤100 words (got 80)",1.7,57,101,158,59.5,"Imagine the internet is a big playground, and DNS is like a friendly park guide. When you want to play at the ""Silly Stories"" slide, you know the slide's name. But the slide doesn't know your name! So, the park guide helps. You tell the guide, ""Silly Stories slide!"" and the guide finds it and tells you exactly where it is. DNS does the same thing with websites. You type a name, and it finds the right website for you!",[],,
+6,Writing,Creative: story with constraints,Hard,True,"Must be set on Mars, under 200 words (got 57)",1.59,77,82,159,51.6,"On Mars, dust clouds drift lazily. Alex and Jordan trek across the red landscape, their suits creaking. Suddenly, Alex stops. ""Look!"" Jordan turns, and together they watch a meteor streak across the sky. As it vanishes, a small metal box floats down. Jordan reaches for it. Inside, a note reads: ""Congratulations. You're the first. Welcome to Earth.""",[],,
+7,Writing,Email: professional with constraints,Medium,True,"Must have subject line, gratitude, ≤150 words (got 87)",2.2,66,112,178,50.9,"Subject: Declining the Job Offer at [Company Name]
+
+Dear [Hiring Manager's Name],
+
+Thank you for offering me the position at [Company Name]. I am grateful for the opportunity and appreciate the trust you placed in me. However, after careful consideration, I have decided to accept another offer that aligns better with my long-term career goals.
+
+I am excited about the opportunity and wish [Company Name] and its team great success. Please keep me informed of any future openings that may be a good ",[],,

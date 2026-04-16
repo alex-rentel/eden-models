@@ -1,0 +1,25 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Instruction Following,Exact sentence count,Easy,False,"Expected 3 sentences, got 4",1.5,27,135,162,90.3,"Machine learning is a subset of artificial intelligence that provides systems the ability to automatically learn and improve from experience without being explicitly programmed, using algorithms to detect patterns and make decisions with minimal human intervention. It encompasse various techniques like supervised, unsupervised, and reinforcement learning to process large amounts of data, discern insights, and predict outcomes. The ultimate goal is to enable machines to perform tasks that typical",[],,
+2,Instruction Following,Bullet point count,Easy,False,"Expected 5 numbered items, got 6",1.91,30,185,215,96.6,"1. Establish a consistent sleep schedule by going to bed and waking up at the same time every day, even on weekends.
+2. Create a bedtime routine to signal to your body it's time to wind down, which may include activities like reading or taking a warm bath.
+3. Make your sleep environment comfortable and conducifer to rest, with a cool, dark, and quiet room, and invest in a supportive mattress and pillows.
+4. Limit exposure to screens and bright lights before bedtime to avoid disrupting your natur",[],,
+3,Instruction Following,Word avoidance,Medium,True,No forbidden words,3.82,28,376,404,98.4,"In essence, it is a complex system of hardware and software that processes information using binary code to execute a variety of tasks, ranging from simple to advanced operations. It operates on a series of instructions to perform calculations, store and retrieve data, and apply algorithms to solve problems or create content. Through a series of electrical and optical components, it carries out operations at incredibly fast speeds, which allows it to undertake a vast array of functions, from bas",[],,
+4,Instruction Following,Response in specific format,Medium,True,"Expected 3 each of TITLE/AUTHOR/WHY, got 3/3/3",2.32,53,209,262,90.2,"TITLE: ""To Kill a Mockingbird""
+AUTHOR: Harper Lee
+WHY: A Pulitzer Prize-winning novel that explores themes of racial injustice and moral growth through the experiences of a young girl in the Deep South during the Great Depression.
+
+TITLE: ""1984""
+AUTHOR: George Orwell
+WHY: A dystopian cautionary tale about a totalitarian government and the dangers of oppressive surveillance and propaganda, inspired by the author's concerns about the political climate of his time.
+
+TITLE: ""The Catcher in the Rye""
+",[],,
+5,Instruction Following,First letter constraint (acrostic),Hard,True,"Expected first letters 'HELLO', got 'HELLO'",1.89,30,167,197,88.5,"Hovering above Earth, the spacecraft ventured into the vastness of the cosmos, its mission to unravel the mysteries of the universe. Every star and planet it encountered held secrets waiting to be uncovered. Life, as we know it, might exist elsewhere, fueling dreams of interstellar travel and colonization. Launching probes to distant worlds has been a key part of human curiosity for decades. Onboard sensors and instruments collected invaluable data to aid our understanding of the cosmos. Scienti",[],,
+6,Instruction Following,JSON-only response,Medium,False,"Must return valid JSON with correct values, no wrapping",0.48,45,32,77,67.3,"{
+  ""animal"": ""blue whale"",
+  ""color"": ""blue"",
+  ""count"": 3
+}
+<|end|>",[],,
+7,Instruction Following,Multi-constraint response,Hard,False,"Starts with 'Every': True, ends with '?': False, has number: True",1.49,59,138,197,92.5,"Every year, approximately 2.25 billion people worldwide consume coffee, with Brazil and Vietnam being the top producers, contributing to almost a third of the world's supply. The beverage, which originated in Ethiopia, has become a daily necessity for millions, with the United States leading in per capita consumption. The robust flavors and energizing effects of coffee have made it a staple in daily routines and a significant part of various cultures, influencing social interactions and daily ri",[],,

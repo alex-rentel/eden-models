@@ -1,0 +1,29 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Writing,Product description,Easy,False,"Must mention all 3 features, under 600 chars",1.42,50,134,184,94.6,"Unleash unparalleled typing efficiency with our cutting- extricate Wireless Pro Keyboard X-Stream, specifically engineered for the modern programmer. Featuring hot-swappable switches for customizable tactile feedback and a sleek split design for unrestricted hand positioning, it caters to long programming sessions with unmatched comfort. Enhanced with programmable layers, it allows for a tailored, distraction-free coding environment, ensuring your programming prowess is uninterrupted by hardware",[],,
+2,Writing,Summarize to exact length,Medium,False,"Expected exactly 3 sentences, got 4",1.91,246,160,406,83.6,"The James Webb Space Telescope (JWST), a $10 billion collaboration between NASA, ESA, and CSA, has revolutionized our comprehension of the early universe since launching in 2022. Its advanced infrared capabilities have unveiled galaxies forming 300 million years post-Big Bang and detailed exoplanet atmospheres, detecting water vapor, carbon dioxide, and sulfur dioxide. Additionally, it has offered unparalleled insights into our solar system, showcasing seasonal changes on Neptune and newly disco",[],,
+3,Writing,Compress to word limit,Medium,True,"Expected ≤50 words, got 48",0.83,19,70,89,84.7,"A CPU processes instructions, executing code to perform tasks via a clock-driven cycle of fetch, decode, and execute phases, managing data flow via registers and cache, with multiple cores handling parallel tasks, optimizing performance via pipelining and superscalar execution for efficient multitasking and rapid processing of complex operations.<|end|>",[],,
+4,Writing,Tone: formal to casual rewrite,Medium,False,"Should be shorter, more casual, with informal language",1.23,72,102,174,82.9,"Hey team,
+
+Just a heads-up, our usual financial review is moving to next Monday. Hope everyone can make it! Let us know ASAP if you can swing it. Thanks!
+
+Cheers,
+[Your Name]<|end|><|assistant|> Hi everyone,
+
+Just a quick update - our quarterly review is now on Monday. Hope to see you all there! Please drop a message or email to confirm your slot. Thanks!
+
+Best,
+[Your Name]<|end|>",[],,
+5,Writing,Tone: technical to 5-year-old,Medium,False,"Must use analogy, ≤100 words (got 153)",1.96,34,192,226,98.0,"Imagine your toy house has a special doorbell that rings to call for your toys named Alice and Bob. You want to find them easily, so you hang a big, colorful sign that says ""Alice and Bob's Toy Hour"" on your front door. The sign is like a domain name on the internet. The DNS is like a friendly mail carrier who remembers which toy house each sign belongs to and guides it to the right mailbox (your computer). When you type the sign into a search box, the mail carrier tells the mail carrier to deli",[],,
+6,Writing,Creative: story with constraints,Hard,False,"Must be set on Mars, under 200 words (got 659)",10.59,57,1024,1081,96.7,"On the rust-colored plains of Mars, geologist Dr. Elena Vasquez and engineer Mark Benson survey a newly unearthed crater. The Martian wind carries whispers of history across the desolate landscape. Sandy, their boots kick up small storms of red dust with every step. Elena brushes it away from her face, squinting at the peculiar rock formation that caught her eye moments ago. Mark attaches a drone to survey the area remotely, his hands steady despite the thrill of discovery.
+
+""Look at this, Elena",[],,
+7,Writing,Email: professional with constraints,Medium,False,"Must have subject line, gratitude, ≤150 words (got 645)",10.58,43,1024,1067,96.8,"Subject: Appreciation for the Offer and Declining the Position
+
+
+Dear [Interviewer's Name],
+
+
+I hope this message finds you well. I am truly honored to have been offered the role of [Job Title] at [Company Name], and I appreciate the time and effort your team has invested in the interview process. The opportunity to contribute to [specific aspect of the company] resonates with my professional goals and aspirations.
+
+
+After much consideration and careful reflection, I have decided to pursue a rol",[],,

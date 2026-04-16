@@ -1,0 +1,109 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Math,Multi-step arithmetic,Easy,False,Expected 1226,2.1,39,178,217,84.8,"First, we perform the multiplication and division operations according to the order of operations (PEMDAS/BODMAS/BIDMAS/PEMDAS):
+
+48 × 27 = 1296
+156 ÷ 12 = 13
+
+Now, we substitute these results back into the original expression and perform the addition and subtraction:
+
+1296 + 13 - 83
+
+= 1409 - 83
+
+Finally, subtract 83 from 1409 to get the final result:
+
+= 1326
+
+So, (48 × 27) + (156 ÷ 1 florin - 83 florins = 1326 florins.<|end|>",[],,
+2,Math,Percentage word problem,Easy,False,Expected ~$58.10,11.17,62,599,661,53.6,"Step 1: Calculate the discount amount and subtract it from the original price to find the sale price.
+The discount is 30% off the original price of $85.
+Discount amount = 30% of $85 = 0.30 × $85 = $25.50
+
+Sale price after discount = $85 - $25.50 = $59.50
+
+Step 2: Calculate the additional discount from the loyalty card of 10% on the already discounted sale price.
+Additional discount amount = 10% of $59.50 = 0.10 × $59.50 = $5.95
+
+Sale price after the additional discount = $59.50 - $5.95 = $53.55
+",[],,
+3,Math,System of equations,Medium,True,"Expected x=3.6 (or 18/5), y=2.6 (or 13/5)",4.8,42,448,490,93.3,"To solve this system of equations, we can use the substitution or elimination method. Here, I will use the elimination method.
+
+Given equations:
+
+1) 3x + 2y = 16
+2) x - y = 1
+
+First, let's isolate x in the second equation:
+
+x = y + 1
+
+Now substitute this expression for x into the first equation:
+
+3(y + 1) + 2y = 16
+
+Now, solve for y:
+
+3y + 3 + 2y = 16
+5y + 3 = 16
+5y = 16 - ized to:
+
+5y = 13
+y = 13/5
+y = 2.6
+
+Since we want integer solutions for x and y, we cannot have a non-integer value for y. T",[],,
+4,Math,Probability with combinations,Medium,False,Expected 1/12 ≈ 0.0833,2.98,49,281,330,94.2,"The total number of marbles in the bag is 5 + 3 + 2 = 10. The probability of drawing a red marble on the first draw is 5/10 or 1/2. After drawing one red marble, there are now 4 red marbles and 9 total marbles left. The probability of drawing a second red marble is 4/9. After drawing two red marbles, there are now 3 red marbles and 8 total marbles left. The probability of drawing a third red marble is 2/7.
+
+To find the probability of drawing three red marbles in a row, we multiply the probabilit",[],,
+5,Math,Quadratic equation,Medium,True,Expected x=3 and x=0.5 (or 1/2),2.98,30,289,319,97.0,"To solve the quadratic equation 2x² - 7x + 3 = 0 using the quadratic formula, we first need to identify the coefficients a, b, and c from the general quadratic equation format ax² + bx + c = 0. In this case, a = 2, b = -7, and c = 3. The quadratic formula is given by:
+
+x = (-b ± √(b² - 4ac) / 2a
+
+Now, we substitute these values into the formula:
+
+x = (-(-7) ± √((-7)² - 4*2*3) / 2*2
+x = (7 ± √(49 - 24)) / 4
+x = (7 ± √25) / 4
+x = (7 ± 5) / 4
+
+So we have two solutions:
+
+x₁ = (7 + 5) / 4 = 12 / 4 = ",[],,
+6,Math,Geometry: composite area,Medium,True,Expected area = 120 sq ft,4.54,74,431,505,95.0,"To find the total floor area of the L-shaped room, we can add the areas of the two rectangles together.
+
+The first rectangle has an area of:
+12 ft × 8 ft = 96 square ft
+
+The second rectangle has an area of:
+6 ft × 4 ft = 24 square ft
+
+Adding these two areas together gives us:
+96 sq ft + 24 sq ft = 120 square ft
+
+So, the total floor area of the L-shaped room is 120 square ft.
+
+To find the perimeter of the L-shape, we need to add the outer sides together, but we must be careful not to double-count",[],,
+7,Math,Monty Hall: 5-door variant,Hard,True,"Switch=4/5, Stay=1/5",4.7,72,460,532,97.8,"The scenario you're describing is a variation of the famous Monty Hall problem, which is a probability puzzle based on a television game show. Here's the breakdown of the probabilities:
+
+1. Initially, there is a 1/5 (20%) chance that the car is behind door 1 and a 4/5 (80%) chance that it's behind one of the other doors (2, 3, 4, or 5).
+
+2. If you stick with door 1 and it has a car behind it (which has a 1/5 chance to happen), the host's action doesn't change anything, and you win.
+
+3. If you st",[],,
+8,Math,Logarithm & exponent simplification,Hard,True,Expected 7 (6 + 4 - 3),2.35,32,233,265,99.0,"To simplify this expression, we will first evaluate each log term individually and then combine them.
+
+1. log₂(64):
+Since 64 = 2^6, we have log₂(64) = log₂(2^6. By the logarithmic power rule, which states that log_b(b^x) = x, we get:
+log₂(64) = 6.
+
+2. log₃(81):
+Since 81 = 3^4, we have log₃(8ized(81) = 4.
+
+3. log₅(125):
+Since 125 = 5^3, we have log₅(125) = 3.
+
+Now, substituting these values back into the original expression, we have:
+6 + 4 - 3.
+
+Finally, combining these values, we get:
+6 + 4 - 3 ",[],,

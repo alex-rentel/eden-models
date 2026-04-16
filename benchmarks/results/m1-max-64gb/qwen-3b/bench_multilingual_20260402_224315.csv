@@ -1,0 +1,18 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Multilingual,English to Spanish,Easy,True,"Should contain parque, amigos, and a word for beautiful",0.35,51,20,71,57.8,'El clima es hermoso hoy y quiero ir al parque con mis amigos.',[],,
+2,Multilingual,Spanish to English,Easy,True,Should mention 'artificial intelligence' and 'world',0.25,50,12,62,47.9,Artificial intelligence is changing the world in surprising ways.,[],,
+3,Multilingual,English to French,Medium,True,"Should contain pain (bread), fromage (cheese), vin (wine)",0.9,51,89,140,98.4,"Je needs acheter des courses, notamment du pain, du fromage et du vin, pour la dîner d'aujourd'hui. 
+
+Note: The translation provided in the instruction is not in French, but it is correct in terms of translating the content. Here is the correct French translation:
+
+Je dois acheter des courses, notamment du pain, du fromage et du vin, pour la dîner d'aujourd'hui.",[],,
+4,Multilingual,Japanese to English,Medium,True,"Should mention programming, career, and importance",0.25,52,12,64,48.6,Learning programming is very important for one's future career.,[],,
+5,Multilingual,Language detection,Medium,True,Should identify Dutch,0.16,56,3,59,18.4,Dutch,[],,
+6,Multilingual,Respond in requested language,Medium,True,Should respond in German (found 8 German words),2.78,40,314,354,112.9,"Drei Vorteile von Sportpraktiken sind:
+
+1. Kardiovaskuläre Gesundheit - Durch regelmäßigen Aktivitätsaufwand verbessert Sportpraktiken die Kardiovaskuläre Gesundheit. Sportpraktiken fördern die Kardiovaskuläre Zufuhr, verbessern die Kardiovaskuläre Kompartmentsfunktion und verbessern die Kardiovaskuläre Kompartmentsfunktion.
+
+2. Knochendichte - Sportpraktiken können die Knochendichte verbessern, da sie die Knochen in Bewegung hält. Durch Knochenpraktiken, die Knochen in Bewegung hält, können Kno",[],,
+7,Multilingual,Idiomatic translation,Hard,True,"Should give idiomatic Spanish equivalent, not literal translation",0.98,51,101,152,102.7,"The Spanish equivalent to ""It's raining cats and dogs"" is ""Está lloviendo a cántaros."" 
+
+This phrase, ""Está lloviendo a cántaros,"" is a colorful and vivid way to say that it is raining very heavily. The word ""cántaros"" is a colorful, informal, and somewhat archaic way to say ""very much,"" which is equivalent to the more literal ""a cántaros"" in English.",[],,

@@ -1,0 +1,15 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,RAG / Grounded QA,Simple fact extraction,Easy,True,Expected 200kg,0.44,256,14,270,31.5,The ArBot-3 can carry up to 200kg.,[],,
+2,RAG / Grounded QA,Multi-fact question,Medium,True,"Must mention both founders, 2019, and Austin",0.32,256,25,281,79.1,"Acme Robotics Inc. was founded in 2019 by Dr. Sarah Chen and Marcus Rivera in Austin, Texas.",[],,
+3,RAG / Grounded QA,Numerical reasoning from context,Medium,True,Expected ~75-76% growth,0.97,262,111,373,114.4,"According to the document, the projected revenue for 2024 was $32M, and the revenue in 2023 was $18.2M. To find the projected revenue growth percentage, we need to calculate the percentage increase.
+
+($32M - $18.2M) / $18.2M = $13.8M
+($13.8M / $18.2M) = 75.75%
+
+So, the projected revenue growth percentage from 2023 to 2024 is approximately 75.75%.",[],,
+4,RAG / Grounded QA,Answer NOT in context (should say so),Hard,True,Should indicate info is not in the document,0.4,274,7,281,17.3,Not mentioned in the document.,[],,
+5,RAG / Grounded QA,Resist hallucination with plausible wrong answer,Hard,False,"Should note only Series B is mentioned, NOT invent Series A amount",0.5,262,20,282,40.4,The document does not mention the number of Series A funding that Acme Robotics Inc. raised.,[],,
+6,RAG / Grounded QA,Policy: eligible or not?,Medium,True,Should say not eligible (part-time AND contractor both excluded),0.44,249,16,265,36.7,"No, you are not eligible for remote work as a part-time contractor.",[],,
+7,RAG / Grounded QA,Policy: complex scenario,Hard,True,Should mention VP approval needed for fully remote engineering leads,0.47,255,44,299,94.6,"Yes, as a full-time engineering lead who has completed the 90-day probation period, you are eligible for remote work. 
+
+According to the policy, engineering leads and above may work fully remote with VP approval.",[],,

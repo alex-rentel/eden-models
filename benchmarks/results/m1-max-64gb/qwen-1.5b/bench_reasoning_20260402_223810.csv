@@ -1,0 +1,89 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Reasoning,River crossing,Medium,True,Expected 7 crossings,6.84,76,1024,1100,149.8,"**Step-by-Step Solution**:
+
+**1**. The farmer must bring the cabbage and the goat to the other side first.
+
+**2**. The farmer then returns alone to the starting side.
+
+**3**. The farmer must bring the cabbage and the goat to the other side.
+
+**4**. The farmer then returns alone to the starting side.
+
+**5**. The farmer must bring the cabbage and the goat to the other side again.
+
+**6**. The farmer then leaves the cabbage and the goat on the other side.
+
+**7**. The farmer must bring the cabbage an",[],,
+2,Reasoning,Syllogism chain,Medium,False,"Expected: Yes, rose has roots (transitive chain)",1.13,60,163,223,144.9,"**Reasoning**:
+
+1. **All roses are flowers** - This is a general statement about the category of roses. Roses are part of the broader category of flowers.
+
+2. **All flowers need water** - This is a general statement about the category of flowers. Roses, as flowers, require water.
+
+3. **All things that need water have roots** - This is a general statement about the category of things that need water. Roses, as things that need water, have roots.
+
+**Conclusion**:
+
+**No** - Roses do not have roots.",[],,
+3,Reasoning,Constraint satisfaction,Hard,True,Must provide a valid arrangement and verify constraints,6.85,110,1024,1134,149.6,"**Solution**:
+
+**Constraints**:
+1. \(A\) is not at either end.
+2. \(B\) is to the left of \(C\).
+3. \(D\) is adjacent to \(E\).
+4. \(C\) is not adjacent to \(A\).
+5. \(E\) is at one of the ends.
+
+**Arrangement**:
+**1** - \(E\)
+**2** - \(D\)
+**3** - \(C\)
+**4** - \(A\)
+**5** - \(B\)
+
+**Verification**:
+
+**Constraints** verification:
+
+**1** - \(A\) is not at either end, \(E\) is at the end \(5\).
+**2** - \(B\) is to the left of \(C\), \(B = 2\), \(C = 3\).
+**3** - \(D\) is adjacent to \(E\), \(D = ",[],,
+4,Reasoning,Temporal reasoning,Medium,True,"Alice should be first, Charlie last",0.49,64,59,123,120.5,"Here is the list of people from first to last based on the finishing order you've provided:
+
+1. Eve
+2. Alice
+3. Bob
+4. Diana
+5. Charlie
+
+So the order from first to last is Eve, Alice, Bob, Diana, and Charlie.",[],,
+5,Reasoning,Counterfactual reasoning,Hard,True,Sun rises in west; Coriolis reverses,2.24,79,343,422,153.1,"**If the Earth rotated in the opposite direction**:
+
+**1. Sunrise/Sunset Direction**:
+- **Change** occurs when the Earth rotates from west to east. If the Earth rotated from east to west, the sunrise and sunset would occur when the sun is below the horizon when viewed from the observer's location. This would mean the sun would set when the observer is facing the sun and the sun would rise when the observer is facing the sun.
+
+**2. Prevailing Wind Patterns**:
+- **Change** occurs when the Earth ro",[],,
+6,Reasoning,Spatial reasoning: cube folding,Hard,False,Must identify 3 opposite-face pairs,6.87,93,1024,1117,149.0,"In the scenario you've described, when the cube is flattened into a cross shape, the arrangement of the numbers from top to bottom from left to right is as follows:
+
+**Top** (1)
+**Bottom** (6)
+**Left** (2)
+**Right** (3)
+**Top** (4)
+**Bottom** (5)
+
+**Top** (1) is the number on the top face of the cube when the cube is lying flat.
+
+**Top** (4) is the number on the bottom face when the cube is lying flat.
+
+**Top** (2) is the number on the left face when the cube is lying flat.
+
+**Top** (3) is the n",[],,
+7,Reasoning,Causal chain analysis,Medium,False,Should analyze tradeoffs and second-order effects,6.86,85,1024,1109,149.2,"**Causal Chain and Effect Analysis**:
+
+**1.** **Immediate Effect** - The direct impact of the city's ban on plastic bags is the significant decrease in litter when plastic bags are no longer available. This is the primary effect of the ban.
+
+**2.** **Behavior Change** - As the city saw a decrease in litter, the demand for alternatives became apparent. Stores and supermarkets became worried about keeping up with the demand for reusable bags, leading to an increase in sales of small trash bags.
+
+*",[],,

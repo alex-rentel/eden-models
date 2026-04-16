@@ -1,0 +1,26 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Instruction Following,Exact sentence count,Easy,True,"Expected 3 sentences, got 3",1.07,52,60,112,55.9,"Machine learning involves algorithms that enable computers to learn from and make predictions or decisions based on data, without being explicitly programmed. These algorithms identify patterns and insights from large datasets, improving their performance as they process more information. This technique is widely used in various applications, from recommendation systems to autonomous vehicles.",[],,
+2,Instruction Following,Bullet point count,Easy,True,"Expected 5 numbered items, got 5",1.72,54,104,158,60.6,"1. Establish a consistent sleep schedule by going to bed and waking up at the same time every day.
+2. Create a sleep-conducive environment that is dark, quiet, comfortable, and cool.
+3. Limit exposure to screens (like smartphones and computers) at least an hour before bedtime.
+4. Avoid large meals, caffeine, and alcohol close to bedtime as they can disrupt sleep.
+5. Incorporate relaxation techniques such as reading, deep breathing, or meditation to help wind down and fall asleep faster.",[],,
+3,Instruction Following,Word avoidance,Medium,True,No forbidden words,1.55,52,84,136,54.3,"Sure! Imagine a place where information is stored and tasks are carried out. This place can read and write on a special board. It follows a set of instructions, much like a recipe, to change the information. It can count, sort, and move the information around. By doing this, it helps people get things done, like organizing a list, playing a game, or finding a specific piece of information.",[],,
+4,Instruction Following,Response in specific format,Medium,True,"Expected 3 each of TITLE/AUTHOR/WHY, got 3/3/3",2.09,67,100,167,47.9,"TITLE: The Alchemist
+AUTHOR: Paulo Coelho
+WHY: A timeless tale of pursuing your dreams and personal legend.
+
+TITLE: Sapiens: A Brief History of Humankind
+AUTHOR: Yuval Noah Harari
+WHY: Explores the entire history of the human species with fascinating insights.
+
+TITLE: Thinking, Fast and Slow
+AUTHOR: Daniel Kahneman
+WHY: Offers a deep dive into the two systems that drive the way we think.",[],,
+5,Instruction Following,First letter constraint (acrostic),Hard,False,"Expected first letters 'HELLO', got 'HELOL'",1.24,53,58,111,46.9,"High-tech equipment is used for navigation in deep space. 
+Exploring distant planets is a thrilling challenge. 
+Landing on a comet is a complex and daring feat. 
+Observing distant stars helps us understand the universe. 
+Lunar bases could be humanity's next great leap.",[],,
+6,Instruction Following,JSON-only response,Medium,True,"Must return valid JSON with correct values, no wrapping",0.58,66,15,81,26.0,"{""animal"":""blue whales"",""color"":""blue"",""count"":3}",[],,
+7,Instruction Following,Multi-constraint response,Hard,True,"Starts with 'Every': True, ends with '?': True, has number: True",1.79,78,95,173,53.0,"Every morning, millions of people start their day with a cup of coffee, which is cultivated primarily in countries like Colombia and Ethiopia. Colombia is known for producing approximately 15 million bags of coffee annually, while Ethiopia, the birthplace of coffee, still leads in traditional coffee ceremonies. This practice not only sustains a cultural tradition but also supports the livelihoods of over 25 million people. How does your daily coffee consumption contribute to these global traditi",[],,

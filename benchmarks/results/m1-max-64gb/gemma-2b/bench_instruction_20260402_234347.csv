@@ -1,0 +1,35 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Instruction Following,Exact sentence count,Easy,True,"Expected 3 sentences, got 3",0.88,30,64,94,72.8,"Machine learning is a type of artificial intelligence that empowers computers to learn from data without explicit programming.  This involves algorithms that analyze vast datasets, identify patterns, and use those insights to make predictions or decisions.  Essentially, machine learning enables computers to become smarter by continuously refining their methods through exposure to information. 
+",[],,
+2,Instruction Following,Bullet point count,Easy,True,"Expected 5 numbered items, got 5",0.85,34,61,95,71.6,"1. Establish a regular sleep-wake routine.
+2. Create a relaxing bedtime routine.
+3. Optimize your bedroom environment for sleep.
+4. Limit caffeine and alcohol intake, especially in the evening.
+5. Get regular exercise, but avoid vigorous activity close to bedtime. 
+",[],,
+3,Instruction Following,Word avoidance,Medium,False,Forbidden words found: ['device'],1.63,31,136,167,83.5,"Imagine a very precise, very fast, and very organized way to solve problems.  
+
+This way works by following instructions, like a set of rules, in a very specific order.  
+
+This way also stores information in a way that makes it easy to use and change.  
+
+This way can use that information to perform tasks like answering questions, writing letters, playing games, and even controlling real-world devices like robots and cars.
+
+This way is what we use every day in our lives, in our homes, in our work",[],,
+4,Instruction Following,Response in specific format,Medium,True,"Expected 3 each of TITLE/AUTHOR/WHY, got 3/3/3",1.55,49,127,176,81.8,"TITLE: The Hitchhiker's Guide to the Galaxy
+AUTHOR: Douglas Adams
+WHY:  This satirical science fiction classic explores the absurdities of life in space with humor and wit.
+
+TITLE: Where the Crawdads Sing
+AUTHOR: Delia Owens
+WHY:  This coming-of-age story explores themes of family, resilience, and the mysteries of nature in a beautiful and poetic way.
+
+TITLE: The Nightingale
+AUTHOR: Kristin Hannah
+WHY:  This historical fiction novel tells the story of two sisters in Nazi-occupied France, showcas",[],,
+5,Instruction Following,First letter constraint (acrostic),Hard,False,"Expected first letters 'HELLO', got '12345'",1.75,32,145,177,82.8,"1. **H**undreds of satellites orbit our planet, mapping our skies and answering our questions about our place in the cosmos.
+2. **E**mergent technologies like ion thrusters promise faster and more efficient methods for space travel in the future.
+3. **L**arge-scale missions like the James Webb Telescope provide valuable insights into the early universe and its mysteries.
+4. **L**ife-sustaining experiments in space are crucial for answering fundamental questions about our planet's fragility and o",[],,
+6,Instruction Following,JSON-only response,Medium,True,"Must return valid JSON with correct values, no wrapping",0.46,46,20,66,43.8,"{""animal"": ""blue whale"", ""color"": ""blue"", ""count"": 3}",[],,
+7,Instruction Following,Multi-constraint response,Hard,True,"Starts with 'Every': True, ends with '?': True, has number: True",1.34,59,104,163,77.6,"Every day, over 2 billion cups of coffee are consumed globally, making it the second-most consumed beverage after water.  This beloved drink is enjoyed in countries like Vietnam and Italy, where coffee plays a central role in daily life.  From bustling streetside vendors in Vietnam to family-run cafés in Italy, coffee connects people through shared experiences and moments of joy.  But with such widespread consumption, what are the future implications for our planet's water resources and our soci",[],,

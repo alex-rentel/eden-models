@@ -1,0 +1,16 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Multilingual,English to Spanish,Easy,True,"Should contain parque, amigos, and a word for beautiful",0.89,51,48,99,54.1,"La weather en español se traduce como ""el clima"" o simplemente se puede decir ""el tiempo"". La frase en español sería:
+
+""El tiempo está hermoso hoy y quiero ir al parque con mis amigos.""",[],,
+2,Multilingual,Spanish to English,Easy,True,Should mention 'artificial intelligence' and 'world',0.55,50,23,73,41.7,"The translation of the given sentence to English is: ""Artificial intelligence is changing the world in surprising ways.""",[],,
+3,Multilingual,English to French,Medium,True,"Should contain pain (bread), fromage (cheese), vin (wine)",0.63,51,28,79,44.8,"Je dois acheter des aliments pour le dîner ce soir, y compris du pain, du fromage et du vin.",[],,
+4,Multilingual,Japanese to English,Medium,True,"Should mention programming, career, and importance",0.38,52,11,63,28.8,"""Programming is very important for your future career.""",[],,
+5,Multilingual,Language detection,Medium,True,Should identify Dutch,0.26,56,3,59,11.7,Dutch,[],,
+6,Multilingual,Respond in requested language,Medium,True,Should respond in German (found 9 German words),3.45,40,194,234,56.3,"Drei Vorteile von Sport und Exercise sind:
+
+1. Verbesserte Kondition: Regularer Sport hilft, die Kondition zu verbessern, indem er den Herz- und Atemzustand optimiert. Dies führt zu mehr Energie und weniger Ermüdung.
+
+2. Gesundheitliche Verbesserungen: Exercise kann das Immunsystem stärken, das Risiko von Erkrankungen reduzieren und das allgemeine Wohlbefinden erhöhen. Es kann auch das Risiko von Herz-Kreislauf-Erkrankungen, Diabetes und bestimmten Krebsarten senken.
+
+3. Stressreduktion: Sport i",[],,
+7,Multilingual,Idiomatic translation,Hard,True,"Should give idiomatic Spanish equivalent, not literal translation",0.97,51,43,94,44.4,"The Spanish equivalent for the English idiom ""It's raining cats and dogs"" is ""Está lloviendo a cántaros."" This idiom is used to describe a very heavy rain.",[],,

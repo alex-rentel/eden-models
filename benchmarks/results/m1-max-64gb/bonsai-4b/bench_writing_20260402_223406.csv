@@ -1,0 +1,22 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Writing,Product description,Easy,True,"Must mention all 3 features, under 600 chars",1.12,51,67,118,59.7,"Programming demands precision—introduced with a sleek split design and hot-swappable switches for customizable key responsiveness. Programmable layers let you tailor key mappings, macros, and key combinations to match your workflow, from debugging to coding in real time. Built for speed, control, and clarity, this keyboard is engineered for the modern developer.",[],,
+2,Writing,Summarize to exact length,Medium,True,"Expected exactly 3 sentences, got 3",1.96,222,110,332,56.1,"The James Webb Space Telescope has revolutionized our understanding of the early universe by observing galaxies forming 300 million years after the Big Bang. It has detected key atmospheric components like water vapor, carbon dioxide, and sulfur dioxide in exoplanet atmospheres, offering unprecedented insights into distant gas giants. Operating for at least 20 years, the $10 billion mission—jointly led by NASA, ESA, and CSA—has also captured detailed images of solar system planets, including sea",[],,
+3,Writing,Compress to word limit,Medium,True,"Expected ≤50 words, got 38",0.82,28,48,76,58.2,"A CPU executes instructions by fetching, decoding, and executing data, using registers and control units to coordinate operations. It processes binary instructions, performs arithmetic, logic, and comparison tasks, and manages program flow via instruction pointers and memory access.",[],,
+4,Writing,Tone: formal to casual rewrite,Medium,True,"Should be shorter, more casual, with informal language",0.82,71,42,113,51.3,"We’re moving the quarterly review to the next Monday due to some unexpected stuff. Just wanted to let you know — your attendance would be awesome! Confirm your availability when you can, thanks! 🚀",[],,
+5,Writing,Tone: technical to 5-year-old,Medium,True,"Must use analogy, ≤100 words (got 84)",1.7,40,110,150,64.5,"Imagine your house has a mailbox, but you don’t know the mailbox number. DNS is like a phone book that tells you where each mailbox is. When you call, it says, ""Go to mailbox 123,"" and you get the right one. DNS helps computers remember your website (like ""www.google.com"") so they can find it fast, just like you know your mom’s name and go to her house. It’s like a secret helper who makes things easier for computers to talk to each other. 🏡📱",[],,
+6,Writing,Creative: story with constraints,Hard,False,"Must be set on Mars, under 200 words (got 653)",14.71,60,1024,1084,69.6,"Dr. Elara Voss scans the red dust with a handheld device. Mars is silent, but the wind hums like a forgotten lullaby. She walks toward the base, her boots sinking slightly into the regolith. Beside her, Kip Rost watches the horizon, his eyes fixed on a pattern in the dust.
+
+“It’s not a storm,” Elara says, voice tight. “It’s a pattern.”
+
+Kip nods. “Like a heartbeat.”
+
+They move toward the observation tower. Inside, Elara finds a single photograph: a child, smiling, standing in front of a red moun",[],,
+7,Writing,Email: professional with constraints,Medium,True,"Must have subject line, gratitude, ≤150 words (got 110)",2.23,49,148,197,66.4,"Subject: Thank You for the Job Offer  
+
+Dear [Hiring Manager's Name],  
+
+Thank you so much for offering me the position at [Company Name] and for the time and effort you’ve invested in the process. I truly appreciate the opportunity and the confidence you placed in me.  
+
+After careful consideration, I’ve decided to accept a different role at [New Company Name], where I can leverage my experience in a different environment.  
+
+I’m grateful for the positive feedback and the chance to be part of y",[],,

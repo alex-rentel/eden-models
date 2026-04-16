@@ -1,0 +1,75 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Reasoning,River crossing,Medium,True,Expected 7 crossings,2.42,82,300,382,124.0,"This classic problem is known as the ""Wolf, Goat, and Cabbage Problem."" Here's the step-by-step solution:
+
+1. The farmer takes the goat across the river first. (1 crossing)
+   - Farmer: left bank
+   - Goat: right bank
+
+2. The farmer goes back alone to the left bank. (1 crossing)
+   - Farmer: left bank
+   - Goat: right bank
+
+3. The farmer picks up the cabbage and takes it across the river. (1 crossing)
+   - Farmer: left bank
+   - Goat: right bank
+   - Cabbage: right bank
+
+4. The farmer goes back ",[],,
+2,Reasoning,Syllogism chain,Medium,False,"Expected: Yes, rose has roots (transitive chain)",1.62,66,196,262,121.0,"To determine if a rose has roots, let's analyze the given statements step by step:
+
+1. ""All roses are flowers."" This statement is true. Roses are a type of flower.
+
+2. ""All flowers need water."" This statement is also true. Most flowers, including roses, require water to survive.
+
+3. ""All things that need water have roots."" This statement is a generalization and is true in the sense that roots are a common characteristic of plants that need water. However, it's essential to note that this stateme",[],,
+3,Reasoning,Constraint satisfaction,Hard,True,Must provide a valid arrangement and verify constraints,3.39,116,418,534,123.4,"Let's analyze the constraints:
+
+1. A is not at either end: This means A can only occupy seats 2, 3, or 4.
+
+2. B is to the left of C: This means the order is B-C.
+
+3. D is adjacent to E: This means D and E are next to each other.
+
+4. C is not adjacent to A: This means if C is at one of the ends (seats 1 or 5), A cannot be at the other end.
+
+5. E is at one of the ends: This means E is at either seat 1 or 5.
+
+Considering the constraints, the only way to satisfy all the conditions is to place E at o",[],,
+4,Reasoning,Temporal reasoning,Medium,True,"Alice should be first, Charlie last",0.86,70,95,165,110.1,"Based on the given information, we can determine the order of the people as follows:
+
+1. Alice finished before Bob (from the first statement).
+2. Alice finished before Eve (from the third statement).
+3. Eve finished before Charlie (from the third statement).
+4. Charlie finished after Diana (from the second statement).
+5. Bob finished before Diana (from the third statement).
+
+So, the correct order is: Alice, Bob, Eve, Diana, Charlie.",[],,
+5,Reasoning,Counterfactual reasoning,Hard,True,Sun rises in west; Coriolis reverses,2.51,85,312,397,124.3,"If the Earth rotated in the opposite direction (reversing the conventional clockwise rotation to counterclockwise), the following changes would occur:
+
+(1) Sunrise/sunset direction: 
+Sunrise would occur in the east (morning) and set in the west (evening). This is because the Earth would now rotate in the opposite direction, so the Sun would rise in the east and set in the west.
+
+(2) Prevailing wind patterns: 
+The prevailing wind patterns would also reverse. In the Northern Hemisphere, the prevai",[],,
+6,Reasoning,Spatial reasoning: cube folding,Hard,True,Must identify 3 opposite-face pairs,1.77,99,211,310,119.1,"To determine the opposite number of 1, we need to find the number that is the same distance from the top (1) as the bottom (6) is.
+
+In the cross shape, the numbers are arranged in the following way: 
+1 (top)
+2 3 4 5 (left to right)
+6 (bottom)
+
+The distance from the top (1) to the bottom (6) is 5 (1, 2, 3, 4, 5, 6).
+
+So, the number opposite 1 is 6.
+
+Following the same logic, the number opposite 3 is 4 (distance of 4: 1, 2, 3, 4, 5, 6).
+
+The number opposite 2 is 5 (distance of 5: 1, 2, 3, 4, 5, 6)",[],,
+7,Reasoning,Causal chain analysis,Medium,True,Should analyze tradeoffs and second-order effects,3.49,89,436,525,125.0,"To analyze the causal chain of the ban on plastic bags, we need to consider the short-term and long-term effects.
+
+Short-term effects (6 months after the ban):
+
+1. Litter decreased 40%: This suggests that the ban was effective in reducing the amount of plastic waste in the city.
+2. Sales of small trash bags increased 70%: This indicates that some residents were using the small trash bags more frequently, possibly as a temporary substitute for the banned plastic bags.
+
+Long-term effects (beyond 6",[],,

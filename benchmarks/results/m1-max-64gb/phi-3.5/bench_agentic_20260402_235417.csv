@@ -1,0 +1,33 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Agentic Planning,Simple task decomposition,Easy,True,"Should have numbered steps covering test, docker, deploy, monitor",10.51,39,964,1003,91.7,"1. **Develop and Test the Application:**
+   - Write the Python web application code following best practices and design patterns.
+   - Create a comprehensive suite of unit tests, integration tests, and end-to-end tests to ensure the application is robust and error-free.
+   - Use a testing framework like `pytest` to automate the testing process.
+
+2. **Code Review and Continuous Integration (CI):**
+   - Set up a Continuous Integration (CI) pipeline using a service like GitHub Actions, GitLab CI, o",[],,
+2,Agentic Planning,API integration plan,Medium,True,"Should cover webhooks, secrets, errors, testing, routes (got 4/5)",11.25,69,1024,1093,91.0,"1. **Backend API Routes Setup:**
+   1.1. Design RESTful API endpoints for handling payments on the server-side to accept payments and process credit card information.
+   1.2. Integrate with Stripe's APIs to create a payment intent and capture payments.
+   1.3. Create a route to receive payment confirmation and transaction details after successful payment processing.
+   1.4. Set up a route to receive webhooks for payment updates (e.g., payment confirmation, charge failed, refund issued).
+   1.5. ",[],,
+3,Agentic Planning,Debug workflow planning,Medium,True,"Should check logs, reproduce, inspect code. logs=True, reproduce=True, code=True",11.07,60,1024,1084,92.5,"Here is a structured debugging workflow to address the issue of the app crashing when uploading files larger than 10MB, using the available resources:
+
+1. **Initial Review of User Report and Error Messages:**
+   - Begin by reviewing the user report to understand the exact circumstances of the crash. Note any error messages or codes that appeared during the crash.
+   - Check if there is any additional information provided by the user, such as the type of file, operating system, and device used.
+
+",[],,
+4,Agentic Planning,Long context: needle in haystack (500 words),Hard,True,Should find BLUE-FALCON-42 buried in context,0.77,383,21,404,27.2,The secret code mentioned in the text is BLUE-FALCON-42.<|end|>,[],,
+5,Agentic Planning,Long context: multi-fact retrieval,Hard,True,Should answer 4 questions from report. Got 4/4 correct.,2.13,407,150,557,70.6,"1. In Q3, there were 7 P1 incidents, which is a decrease from the 12 incidents in Q2.
+
+2. In Q3, 60% of services were migrated to Kubernetes. The exact percentage is already provided in the information above.
+
+3. Project Neptune is about launching a Machine Learning-based recommendation system. The details of its functionality are not provided in the report.
+
+4. The Mean Time to Recovery (MTTR) in Q3 was 23 minutes on average, which is above the target of less than 30 minutes. Therefore, it was ",[],,
+6,Agentic Planning,Action plan with dependencies,Hard,False,"parallel=True, deps=True, assign=True, weeks=0",10.87,96,1024,1120,94.2,"Here is a structured plan for your SaaS product launch in 8 weeks, detailing the tasks to be completed by your team of backend and frontend developers, as well as your designer. The plan is designed to show task dependencies and opportunities for parallelization to optimize efficiency. The schedule is broken down into weeks, with a mixture of individual and collaborative tasks to ensure a smooth launch.
+
+| Week | Backend Developers | Frontend Developers | Designer | Notes |
+|------|-------------",[],,

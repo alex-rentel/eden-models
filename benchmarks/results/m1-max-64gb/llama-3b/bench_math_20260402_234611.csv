@@ -1,0 +1,135 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Math,Multi-step arithmetic,Easy,True,Expected 1226,1.1,64,119,183,108.1,"To calculate the given expression, we need to follow the order of operations (PEMDAS):
+
+1. Multiply 48 and 27:
+   48 × 27 = 1296
+
+2. Divide 156 by 12:
+   156 ÷ 12 = 13
+
+3. Now, add the results of the first two steps:
+   1296 + 13 = 1309
+
+4. Finally, subtract 83 from the previous result:
+   1309 - 83 = 1226
+
+Therefore, the final answer is: 1226",[],,
+2,Math,Percentage word problem,Easy,True,Expected ~$58.10,1.66,87,199,286,119.7,"To find the total amount you pay, we'll follow these steps:
+
+1. Calculate the discount amount:
+   Original price: $85
+   Discount percentage: 30%
+   Discount amount: $85 * 0.30 = $25.50
+
+   Sale price: $85 - $25.50 = $59.50
+
+2. Apply the extra 10% discount:
+   Discount percentage: 10%
+   Discount amount: $59.50 * 0.10 = $5.95
+
+   Final sale price: $59.50 - $5.95 = $53.55
+
+3. Calculate the sales tax:
+   Sales tax percentage: 8.5%
+   Sales tax amount: $53.55 * 0.085 = $4.57
+
+4. Calculate the total",[],,
+3,Math,System of equations,Medium,False,"Expected x=3.6 (or 18/5), y=2.6 (or 13/5)",1.35,73,157,230,116.5,"To solve the system of equations, we can use the substitution method. We'll solve the second equation for x and then substitute it into the first equation.
+
+First, solve the second equation for x:
+x - y = 1
+x = 1 + y
+
+Now, substitute x into the first equation:
+3(1 + y) + 2y = 16
+
+Expanding the equation:
+3 + 3y + 2y = 16
+
+Combine like terms:
+3y + 2y = 16 - 3
+5y = 13
+
+Divide both sides by 5:
+y = 13/5
+y = 2.6 (not an integer)
+
+This means the system of equations doesn't have integer solutions.",[],,
+4,Math,Probability with combinations,Medium,False,Expected 1/12 ≈ 0.0833,2.52,81,259,340,102.7,"To find the probability that all 3 marbles are red, we need to calculate the probability of drawing a red marble on the first draw, then a red marble on the second draw (given that the first was red), and then a red marble on the third draw (given that the first two were red).
+
+Total number of marbles: 5 (red) + 3 (blue) + 2 (green) = 10 marbles
+
+Probability of drawing a red marble on the first draw: 5/10 = 1/2
+
+Total number of marbles left: 9 (since one red marble is removed)
+
+Probability of dr",[],,
+5,Math,Quadratic equation,Medium,True,Expected x=3 and x=0.5 (or 1/2),2.08,62,240,302,115.1,"The quadratic formula is:
+
+x = (-b ± √(b² - 4ac)) / 2a
+
+In the given equation 2x² - 7x + 3 = 0, we have:
+
+a = 2 (coefficient of x²)
+b = -7 (coefficient of x)
+c = 3 (constant term)
+
+Now, let's plug these values into the quadratic formula:
+
+x = (7 ± √((-7)² - 4(2)(3))) / (2(2))
+x = (7 ± √(49 - 24)) / 4
+x = (7 ± √25) / 4
+x = (7 ± 5) / 4
+
+Now, we have two possible values for x:
+
+x = (7 + 5) / 4 = 12 / 4 = 3
+x = (7 - 5) / 4 = 2 / 4 = 0.5
+
+So, the solutions to the equation 2x² - 7x + 3 = 0 are x = 3 a",[],,
+6,Math,Geometry: composite area,Medium,True,Expected area = 120 sq ft,1.83,100,217,317,118.8,"To find the total floor area, you need to find the area of each rectangle and then add them together.
+
+The first rectangle is 12ft x 8ft, so its area is:
+12ft x 8ft = 96 sq ft
+
+The second rectangle is 6ft x 4ft, so its area is:
+6ft x 4ft = 24 sq ft
+
+Total floor area = 96 sq ft + 24 sq ft = 120 sq ft
+
+To find the perimeter of the L-shape, you need to find the perimeter of each rectangle and then subtract the length of the shared wall.
+
+The perimeter of the first rectangle is:
+2(12ft) + 2(8ft) = 2",[],,
+7,Math,Monty Hall: 5-door variant,Hard,False,"Switch=4/5, Stay=1/5",3.91,99,486,585,124.3,"This game is a classic example of the Monty Hall problem. Let's break it down step by step.
+
+Initially, there are 5 doors: 1 car and 4 goats.
+
+You choose door 1.
+
+The host opens 3 doors showing goats (doors 2, 3, and 4).
+
+Now, you have two possibilities: the car is behind one of the doors you didn't choose (doors 2, 3, or 4), or the car is behind the door you initially chose (door 1).
+
+The key insight here is that the host's action (opening 3 doors showing goats) gives you new information. If th",[],,
+8,Math,Logarithm & exponent simplification,Hard,False,Expected 7 (6 + 4 - 3),2.43,60,306,366,126.0,"To simplify the given expression, we'll use the properties of logarithms.
+
+Given: log₂(64) + log₃(81) - log₅(125)
+
+Step 1: Evaluate the first term (log₂(64))
+
+Since 64 = 2⁶, we can write:
+log₂(64) = log₂(2⁶)
+= 6 (using the property log₂(2⁸) = 8, and 2⁶ is half of 2⁸)
+
+So, the first term becomes: 6
+
+Step 2: Evaluate the second term (log₃(81))
+
+Since 81 = 3⁴, we can write:
+log₃(81) = log₃(3⁴)
+= 4 (using the property log₃(3⁸) = 8, and 3⁴ is one-fourth of 3⁸)
+
+So, the second term becomes: 4
+
+Step 3:",[],,

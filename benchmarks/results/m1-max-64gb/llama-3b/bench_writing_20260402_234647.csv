@@ -1,0 +1,29 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Writing,Product description,Easy,True,"Must mention all 3 features, under 600 chars",0.62,74,60,134,97.2,"Elevate your coding game with the CodeMaster wireless mechanical keyboard, engineered for programmers who demand precision and customization. Featuring hot-swappable switches, a split design for improved ergonomics, and programmable layers for tailored typing experiences, this keyboard is the ultimate tool for boosting productivity and performance.",[],,
+2,Writing,Summarize to exact length,Medium,True,"Expected exactly 3 sentences, got 3",1.22,238,119,357,97.8,"Here is a summary of the passage in exactly 3 sentences:
+
+The James Webb Space Telescope (JWST) has revolutionized our understanding of the early universe since its deployment in 2022, revealing galaxies forming just 300 million years after the Big Bang. JWST has also provided groundbreaking views of exoplanet atmospheres and the planets in our own solar system, capturing unprecedented details of seasonal changes and ring structures. With a design life of 5-10 years, the $10 billion mission is e",[],,
+3,Writing,Compress to word limit,Medium,True,"Expected ≤50 words, got 46",0.62,50,68,118,108.9,"A CPU (Central Processing Unit) processes information in a series of steps: 
+1. Fetches instructions from memory.
+2. Decodes and executes the instruction.
+3. Retrieves and stores data (inputs and outputs).
+4. Performs calculations (arithmetic and logic).
+5. Stores the result in memory.
+
+Total words: 39",[],,
+4,Writing,Tone: formal to casual rewrite,Medium,True,"Should be shorter, more casual, with informal language",0.44,94,38,132,85.8,"""Hey team, just a heads up that the quarterly review got pushed back to the next Monday. If you're free, please let us know ASAP so we can finalize the plan.""",[],,
+5,Writing,Tone: technical to 5-year-old,Medium,True,"Must use analogy, ≤100 words (got 82)",1.01,61,119,180,118.1,"Imagine you're at a big school with lots of classrooms. Each classroom has a special name, like ""Mrs. Smith's Class"" or ""The Playground"". But, you don't know the actual address of the classroom. 
+
+That's kind of like what DNS (Domain Name System) does. It helps computers find the ""address"" (or website) of a website, even if you don't know the actual words (like ""google.com""). DNS is like a special helper that says, ""Oh, you want 'google.com'? Okay, I'll show you the classroom!""",[],,
+6,Writing,Creative: story with constraints,Hard,False,"Must be set on Mars, under 200 words (got 172)",1.82,81,221,302,121.7,"As the Martian sun rises over the rust-red horizon, astronauts Emma and Ryan step out of their habitat module, eyes scanning the barren landscape. They're on a mission to collect samples and conduct experiments, hoping to unlock the secrets of the Red Planet.
+
+Emma, a geologist, kneels down to examine the Martian soil, her eyes lighting up with excitement. Ryan, a physicist, watches her closely, his eyes fixed on the strange readings on his scanner.
+
+""This is it, Ryan,"" Emma says, her voice fill",[],,
+7,Writing,Email: professional with constraints,Medium,True,"Must have subject line, gratitude, ≤150 words (got 132)",1.35,70,161,231,119.1,"Subject: Declining Job Offer for [Position]
+
+Dear [Hiring Manager's Name],
+
+I wanted to express my gratitude for offering me the [Position] role at [Company Name]. I was thrilled to learn about the opportunity and appreciate the time you took to speak with me about the position.
+
+After careful consideration, I have decided to decline the offer and pursue another opportunity that aligns more closely with my long-term career goals. I was impressed by the company culture and values, and I appreciat",[],,

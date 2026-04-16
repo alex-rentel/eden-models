@@ -1,0 +1,125 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Math,Multi-step arithmetic,Easy,True,Expected 1226,1.48,64,218,282,147.7,"Sure, let's break down the problem step by step:
+
+**Expression**:
+\[
+(48 \times 27) + (156 \div 12) - 83
+\]
+
+**Step 1**:
+**Multiply** \(48\) by \(27\):
+\[
+48 \times 27 = 1296
+\]
+
+**Step 2**:
+**Divide** \(156\) by \(12\):
+\[
+156 \div 12 = 13
+\]
+
+**Step 3**:
+**Add** the results from Step 1 and Step 2:
+\[
+1296 + 13 = 1309
+\]
+
+**Step 4**:
+**Subtract** \(83\) from the result of Step 3:
+\[
+1309 - 83 = 1226
+\]
+
+**Final** answer:
+\[
+\boxed{1226}
+\]",[],,
+2,Math,Percentage word problem,Easy,False,Expected ~$58.10,6.8,84,1024,1108,150.5,"Sure, let's break down the problem step by step.
+
+**Step 1: Calculate the sale price of the shirt.**
+The original price of the shirt is $85, and it is on sale for 30% off.
+
+**Formula**:
+**Sale Price** = **Original Price** - (**Original Price** * **Discount**)
+**Sale Price** = $85 - (85 * 0.30)
+**Sale Price** = $85 - $25.50
+**Sale Price** = $60
+
+**Step 2: Apply the loyalty card discount**.
+**Formula**:
+**Discount** = **Original Price** * **Loyalty Card** * **Discount** / 100
+**Discount** = $85 * ",[],,
+3,Math,System of equations,Medium,False,"Expected x=3.6 (or 18/5), y=2.6 (or 13/5)",2.68,68,412,480,153.5,"To solve the system of equations \(3x + 2y = 16\) and \(x - y = 1\), we can use the substitution method. Here's the step-by-step solution:
+
+**Step 1:** Solve the second equation \(x - y = 1\) for \(x\).
+\[x = y + 1\]
+
+**Step 2:** Substitute \(x = y + 1\) into the first equation \(3x + 2y = 16\).
+\[3(y + 1) + 2y = 16\]
+
+**Step 3:** Simplify the equation.
+\[3y + 3 + 2y = 16\]
+\[5y + 3 = 16\]
+
+**Step 4:** Solve for \(y\).
+\[5y = 16 - 3\]
+\[5y = 13\]
+\[y = \frac{13}{5}\]
+
+**Step 5:** Since \(y = \fr",[],,
+4,Math,Probability with combinations,Medium,True,Expected 1/12 ≈ 0.0833,2.98,75,461,536,154.5,"To find the probability that all three marbles drawn from the bag are red, we need to follow these steps:
+
+1. **Determine the total number of marbles**:
+   - Red marbles = 5
+   - Blue marbles = 3
+   - Green marbles = 2
+   - Total = \(5 + 3 + 2 = 10\)
+
+2. **Determine the number of ways to choose 3 marbles** from the total of 10 marbles**:
+   - This is a combination problem, where the order of selection does not matter.
+   - The number of ways to choose \(3\) marbles from \(10\) marbles is \(C(10,",[],,
+5,Math,Quadratic equation,Medium,False,Expected x=3 and x=0.5 (or 1/2),2.64,56,403,459,152.5,"Certainly! To solve the quadratic equation \(2x^2 - 7x + 3 = 0\) using the quadratic formula, we follow these steps:
+
+**Quadratic Formula** is \(x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\), where \(a = 2\), \(b = -7\), and \(c = 3\).
+
+**Step 1** - Identify \(a\), \(b\), and \(c\):
+- \(a = 2\)
+- \(b = -7\)
+- \(c = 3\)
+
+**Step 2** - Calculate the discriminant \(D = b^2 - 4ac\):
+\[D = (-7)^2 - 4(2)(3) = 49 - 24 = 25\]
+
+**Step 3** - Substitute \(a\), \(b\), and \(D\) into the quadratic formula:
+\[x = \",[],,
+6,Math,Geometry: composite area,Medium,True,Expected area = 120 sq ft,2.42,95,363,458,150.2,"**Total Floor Area**:
+
+To find the total floor area of the L-shaped room, you need to add the areas of the two rectangular sections:
+
+- The first rectangle is \(12\text{ft} \times 8\text{ft}\), so its area is \(12\text{ft} \times 8\text{ft} = 96\text{ft}^2\).
+- The second rectangle is \(6\text{ft} \times 4\text{ft}\), so its area is \(6\text{ft} \times 4\text{ft} = 24\text{ft}^2\).
+
+**Total Floor Area** = \(96\text{ft}^2 + 24\text{ft}^2 = 120\text{ft}^2\).
+
+**Perimeter**:
+
+To find the perimeter ",[],,
+7,Math,Monty Hall: 5-door variant,Hard,False,"Switch=4/5, Stay=1/5",2.45,93,370,463,151.2,"In the scenario you've described, when you initially pick door 1, the probability of winning the car is \( \frac{1}{5} = 20\% \). After you pick door 1, the host, who knows what's behind the doors, opens 3 other doors to reveal goats, leaving the car unopened behind the remaining door. Here's the detailed reasoning:
+
+**Probability of winning when you switch**:
+- There are \(5\) doors, and \(1\) of them has the car.
+- When you initially pick door 1, the probability of winning when you switch is \",[],,
+8,Math,Logarithm & exponent simplification,Hard,False,Expected 7 (6 + 4 - 3),2.42,59,369,428,152.5,"Certainly! Let's simplify the expression \( \log_2(64) + \log_3(81) - \log_5(125) \) step by step.
+
+### Step 1: Simplify \( \log_2(64) \)
+**2** is the base of the logarithm, so \( \log_2(2^6) = 6 \). This is because \(2^6 = 64\).
+
+**So** \( \log_2(64) = 6 \).
+
+### Step 2: Simplify \( \log_3(81) \)
+**3** is the base of the logarithm, so \( \log_3(3^4) = 4 \). This is because \(3^4 = 81\).
+
+**So** \( \log_3(81) = 4 \).
+
+### Step 3: Simplify \( \log_5(125) \)
+**5** is the base of the logarithm, so ",[],,

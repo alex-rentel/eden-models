@@ -1,0 +1,105 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Reasoning,River crossing,Medium,False,Expected 7 crossings,14.7,59,1024,1083,69.7,"We are given a classic **river crossing puzzle** involving a **wolf, a goat, and a cabbage**, with a boat that can carry **the farmer and one item at a time**.
+
+### Constraints:
+- **The boat fits the farmer plus one item** (so, at most 2 items at a time).
+- **Wolf eats goat if left alone**.
+- **Goat eats cabbage if left alone**.
+
+We must get **all three items across the river safely**, and we are to determine **how many crossings are needed**.
+
+---
+
+### Step-by-step solution:
+
+We assume:
+- The *",[],,
+2,Reasoning,Syllogism chain,Medium,True,"Expected: Yes, rose has roots (transitive chain)",5.54,43,387,430,69.9,"Let's go step by step to determine whether a rose has roots.
+
+1. **All roses are flowers.**  
+   This means that a rose is a type of flower.
+
+2. **All flowers need water.**  
+   This is a general biological fact — flowers are plants, and plants require water for growth, reproduction, and survival.
+
+3. **All things that need water have roots.**  
+   This is a general rule — if an object or entity requires water, it must have roots (in plants, roots are the primary structures for absorbing water a",[],,
+3,Reasoning,Constraint satisfaction,Hard,True,Must provide a valid arrangement and verify constraints,14.79,93,1024,1117,69.2,"We are given a puzzle involving **five people (A, B, C, D, E)** seated in a **row of 5 seats (1 to 5)**, with the following constraints:
+
+---
+
+### **Constraints:**
+
+1. **A is not at either end.**  
+→ A cannot be in seat 1 or seat 5.
+
+2. **B is to the left of C.**  
+→ B comes before C in the row (i.e., B is in a lower-numbered seat than C).
+
+3. **D is adjacent to E.**  
+→ D and E are in neighboring seats.
+
+4. **C is not adjacent to A.**  
+→ C is not seated next to A.
+
+5. **E is at one of the ends",[],,
+4,Reasoning,Temporal reasoning,Medium,True,"Alice should be first, Charlie last",14.69,47,1024,1071,69.7,"We are given a set of statements about the finishing order of 5 people: Alice, Bob, Charlie, Diana, and Eve.
+
+Let's list and analyze each statement step by step.
+
+---
+
+1. **Alice finished before Bob.**  
+→ Alice < Bob
+
+---
+
+2. **Charlie finished after Diana.**  
+→ Charlie > Diana
+
+---
+
+3. **Bob finished before Diana.**  
+→ Bob < Diana
+
+---
+
+4. **Eve finished after Alice but before Charlie.**  
+→ Alice < Eve < Charlie
+
+---
+
+We now have multiple inequalities:
+
+- From (1): Alice < Bob  
+- From (3):",[],,
+5,Reasoning,Counterfactual reasoning,Hard,True,Sun rises in west; Coriolis reverses,14.71,62,1024,1086,69.6,"If the Earth rotated in the opposite direction (i.e., **retrograde rotation**, spinning from west to east instead of east to west), while **everything else remained the same** (such as the shape of the continents, the mass distribution, or the gravitational field), the resulting changes would be significant and profound due to the Earth's rotation direction affecting **moving objects** and **local atmospheric dynamics**. Here are specific answers for each of the three questions:
+
+---
+
+**(1) Sunr",[],,
+6,Reasoning,Spatial reasoning: cube folding,Hard,True,Must identify 3 opposite-face pairs,14.77,76,1024,1100,69.3,"We are given a cube with faces numbered 1 to 6, and we are told it is **flattened into a cross shape**:
+
+- **1 is on top**
+- **2, 3, 4, 5 are in a row left to right**
+- **6 is on the bottom of 4**
+
+We are asked: **Which number is opposite 1? Which is opposite 3? Which is opposite 2?**
+
+---
+
+### Step 1: Understand the flat shape
+
+The cube is **flattened** into a **cross shape**, where:
+
+- **Top face**: 1
+- **Bottom face**: 6 (specifically, **on the bottom of 4**) — so 4 is at the bottom
+- **Left,",[],,
+7,Reasoning,Causal chain analysis,Medium,True,Should analyze tradeoffs and second-order effects,14.71,68,1024,1092,69.6,"To analyze whether the city's ban on plastic bags was effective overall—considering both first- and second-order effects—we must move beyond a simple ""before vs. after"" comparison and consider **causal mechanisms**, **time lag effects**, **behavioral adaptation**, and ** unintended consequences**.
+
+---
+
+### **1. First-Order Effects (Direct Causal Chain)**
+
+- **Initial ban (6 months ago)**: Plastic bags were banned, likely due to environmental concerns, public health, or waste management issues.
+",[],,

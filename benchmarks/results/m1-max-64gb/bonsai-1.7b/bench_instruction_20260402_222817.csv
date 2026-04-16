@@ -1,0 +1,21 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Instruction Following,Exact sentence count,Easy,True,"Expected 3 sentences, got 3",0.51,35,52,87,102.0,Machine learning involves the development of algorithms that enable systems to learn from data without being explicitly programmed. These systems use patterns and statistical relationships to make predictions or decisions. The process involves training models on a dataset to improve their accuracy and generalization capabilities over time.,[],,
+2,Instruction Following,Bullet point count,Easy,True,"Expected 5 numbered items, got 5",1.18,37,152,189,128.5,"1. Maintain a consistent sleep schedule by going to bed and waking up at the same time every day, even on weekends.  
+2. Create a relaxing bedtime routine that signals to your body that it's time to wind down, such as reading, taking a warm bath, or listening to calming music.  
+3. Limit your screen time before bed, especially on phones and tablets, as blue light from electronics can interfere with your ability to fall asleep.  
+4. Keep your bedroom dark, quiet, and cool. Use blackout curtains a",[],,
+3,Instruction Following,Word avoidance,Medium,False,Forbidden words found: ['computer'],0.94,35,109,144,115.7,"A computer processes information and carries out tasks by performing calculations and executing instructions. It uses a series of operations to solve problems and carry out tasks on a wide range of subjects. These operations involve working with data and performing calculations to arrive at answers. The computer also stores and retrieves information, which helps in executing tasks efficiently. Through a combination of hardware and software, a computer can handle complex tasks and perform various",[],,
+4,Instruction Following,Response in specific format,Medium,True,"Expected 3 each of TITLE/AUTHOR/WHY, got 3/3/3",1.2,50,140,190,117.0,"TITLE: *To Kill a Mockingbird*  
+AUTHOR: Harper Lee  
+WHY: A classic novel that explores themes of race, justice, and morality through the eyes of a young African American child in the 1930s.  
+
+TITLE: *The Alchemist*  
+AUTHOR: Paulo Coelho  
+WHY: A personal journey of self-discovery and achieving one's dreams, inspired by the life of a shepherd who follows his dreams.  
+
+TITLE: *The Alchemist*  
+AUTHOR: Paulo Coelho  
+WHY: A personal journey of self-discovery and achieving one's dreams, inspire",[],,
+5,Instruction Following,First letter constraint (acrostic),Hard,False,"Expected first letters 'HELLO', got 'HHHHH'",0.67,36,59,95,87.6,Helio is a fascinating planet that orbits the Sun. Helios has been studied for its potential to support life. Helios is a key part of the solar system's formation. Helios has been a subject of many scientific experiments. Helios is a symbol of human curiosity and exploration.,[],,
+6,Instruction Following,JSON-only response,Medium,False,"Must return valid JSON with correct values, no wrapping",0.3,49,21,70,69.8,"{""animal"": ""Three blue whales"", ""color"": ""blue"", ""count"": 3}",[],,
+7,Instruction Following,Multi-constraint response,Hard,True,"Starts with 'Every': True, ends with '?': True, has number: True",0.91,61,101,162,111.0,"Every morning, coffee lovers from Indonesia and Brazil gather at their favorite cafes to enjoy the brew, a tradition that has been passed down for generations. Indonesia's coffee is renowned for its rich flavor and bold aroma, while Brazil's coffee is celebrated for its smoothness and subtle sweetness. A recent survey shows that over 60% of coffee lovers in Indonesia and Brazil prefer a single-origin coffee, highlighting the deep connection between the two cultures. Do you ever wonder which coun",[],,

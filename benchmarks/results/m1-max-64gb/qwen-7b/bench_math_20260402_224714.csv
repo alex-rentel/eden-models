@@ -1,0 +1,117 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Math,Multi-step arithmetic,Easy,True,Expected 1226,4.28,64,263,327,61.4,"To solve the expression \((48 \times 27) + (156 \div 12) - 83\), we'll follow the order of operations, often remembered by the acronym PEMDAS (Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)).
+
+1. **Multiplication and Division** (from left to right):
+   - First, calculate \(48 \times 27\):
+     \[
+     48 \times 27 = 1296
+     \]
+   - Next, calculate \(156 \div 12\):
+     \[
+     156 \div 12 = 13
+     \]
+
+2. **Addition and S",[],,
+2,Math,Percentage word problem,Easy,True,Expected ~$58.10,8.01,84,518,602,64.7,"Sure, let's break down the problem step by step:
+
+1. **Original Price of the Shirt:**
+   The original price of the shirt is $85.
+
+2. **Calculate the Sale Price:**
+   The shirt is on sale for 30% off. To find the sale price, we subtract 30% of the original price from the original price.
+   \[
+   \text{Sale Price} = \text{Original Price} - (\text{Original Price} \times \text{Discount})
+   \]
+   \[
+   \text{Sale Price} = 85 - (85 \times 0.30) = 85 - 25.50 = 59.50
+   \]
+
+3. **Calculate the Price Aft",[],,
+3,Math,System of equations,Medium,False,"Expected x=3.6 (or 18/5), y=2.6 (or 13/5)",15.74,68,1024,1092,65.1,"To solve the system of equations:
+
+1. \(3x + 2y = 16\)
+2. \(x - y = 1\)
+
+We can use the substitution or elimination method. Here, I'll use the substitution method since the second equation is simple and can be easily solved for one variable.
+
+### Step 1: Solve the second equation for \(x\)
+
+From the second equation:
+\[x - y = 1\]
+
+We can add \(y\) to both sides to solve for \(x\):
+\[x = y + 1\]
+
+### Step 2: Substitute \(x\) into the first equation
+
+Now, substitute \(x = y + 1\) into the first eq",[],,
+4,Math,Probability with combinations,Medium,True,Expected 1/12 ≈ 0.0833,9.31,75,605,680,65.0,"To determine the probability that all 3 marbles drawn are red, we need to follow these steps:
+
+1. **Calculate the total number of marbles:**
+   \[
+   5 \text{ (red)} + 3 \text{ (blue)} + 2 \text{ (green)} = 10 \text{ marbles}
+   \]
+
+2. **Determine the number of ways to choose 3 red marbles out of 5:**
+   This is a combination problem, and we use the combination formula \( \binom{n}{k} \), which represents the number of ways to choose \( k \) items from \( n \) items without regard to order. The ",[],,
+5,Math,Quadratic equation,Medium,False,Expected x=3 and x=0.5 (or 1/2),5.06,56,333,389,65.8,"To solve the quadratic equation \(2x^2 - 7x + 3 = 0\) using the quadratic formula, we follow these steps:
+
+The quadratic formula is given by:
+\[ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]
+
+Here, the coefficients are:
+\[ a = 2, \quad b = -7, \quad c = 3 \]
+
+Now, let's substitute these values into the quadratic formula.
+
+1. **Calculate the discriminant:**
+\[ b^2 - 4ac = (-7)^2 - 4(2)(3) \]
+\[ = 49 - 24 \]
+\[ = 25 \]
+
+2. **Substitute the values into the quadratic formula:**
+\[ x = \frac{-(-7) \pm \s",[],,
+6,Math,Geometry: composite area,Medium,True,Expected area = 120 sq ft,7.97,95,519,614,65.1,"To determine the total floor area and the perimeter of the L-shaped room, let's break it down step by step.
+
+### Total Floor Area
+
+1. **Calculate the area of the first rectangle:**
+   - Dimensions: 12 ft × 8 ft
+   - Area: \( 12 \, \text{ft} \times 8 \, \text{ft} = 96 \, \text{ft}^2 \)
+
+2. **Calculate the area of the second rectangle:**
+   - Dimensions: 6 ft × 4 ft
+   - Area: \( 6 \, \text{ft} \times 4 \, \text{ft} = 24 \, \text{ft}^2 \)
+
+3. **Since the two rectangles share a wall, no area is sub",[],,
+7,Math,Monty Hall: 5-door variant,Hard,False,"Switch=4/5, Stay=1/5",7.2,93,469,562,65.2,"This problem is a classic example of the Monty Hall problem. Let's break it down step by step to calculate the exact probabilities of winning if you stay or switch.
+
+### Initial Setup
+- There are 5 doors.
+- Behind 1 door is a car.
+- Behind the other 4 doors are goats.
+- You initially pick door 1.
+
+### Host's Action
+- The host opens 3 doors showing goats. This is a critical step. The host will always open doors with goats, and he will not open the door with the car. Given that you initially picke",[],,
+8,Math,Logarithm & exponent simplification,Hard,True,Expected 7 (6 + 4 - 3),5.4,59,356,415,65.9,"To simplify the expression \(\log_2(64) + \log_3(81) - \log_5(125)\), we will break it down step by step.
+
+### Step 1: Simplify \(\log_2(64)\)
+
+We need to determine the power to which 2 must be raised to get 64. We know that:
+\[ 64 = 2^6 \]
+
+Therefore:
+\[ \log_2(64) = 6 \]
+
+### Step 2: Simplify \(\log_3(81)\)
+
+We need to determine the power to which 3 must be raised to get 81. We know that:
+\[ 81 = 3^4 \]
+
+Therefore:
+\[ \log_3(81) = 4 \]
+
+### Step 3: Simplify \(\log_5(125)\)
+
+We need to determin",[],,

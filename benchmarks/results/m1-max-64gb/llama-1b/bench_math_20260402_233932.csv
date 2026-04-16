@@ -1,0 +1,109 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Math,Multi-step arithmetic,Easy,False,Expected 1226,0.53,64,127,191,240.0,"To calculate the expression (48 × 27) + (156 ÷ 12) - 83, we'll follow the order of operations (PEMDAS):
+
+1. Multiply 48 and 27:
+   48 × 27 = 1296
+
+2. Divide 156 by 12:
+   156 ÷ 12 = 13
+
+3. Add 1296 and 13:
+   1296 + 13 = 1309
+
+4. Subtract 83 from 1309:
+   1309 - 83 = 1216
+
+The final answer is: 1216",[],,
+2,Math,Percentage word problem,Easy,False,Expected ~$58.10,3.69,87,1024,1111,277.3,"To find the total amount you'll pay, we'll need to calculate the sale price and then add the sales tax.
+
+Step 1: Calculate the sale price
+Original price = $85
+Discount = 30%
+Sale price = Original price - (Original price * Discount)
+Sale price = $85 - ($85 * 0.30)
+Sale price = $85 - $25.50
+Sale price = $59.50
+
+Step 2: Calculate the loyalty card discount
+Original price = $85
+Discount = 10%
+Discount = Original price * Discount
+Discount = $85 * 0.10
+Discount = $8.50
+
+Step 3: Calculate the total amou",[],,
+3,Math,System of equations,Medium,True,"Expected x=3.6 (or 18/5), y=2.6 (or 13/5)",1.39,73,389,462,279.6,"To solve this system of equations, we'll use the method of substitution. We'll solve the second equation for x and then substitute it into the first equation.
+
+Given equations:
+1. 3x + 2y = 16
+2. x - y = 1
+
+From equation 2, we can solve for x:
+x = 1 + y
+
+Now, substitute x = 1 + y into equation 1:
+3(1 + y) + 2y = 16
+
+Expanding the equation:
+3 + 3y + 2y = 16
+
+Combine like terms:
+3 + 5y = 16
+
+Subtract 3 from both sides:
+5y = 13
+
+Divide by 5:
+y = 13/5 = 2.6
+
+Substitute y = 2.6 back into equation 2 t",[],,
+4,Math,Probability with combinations,Medium,True,Expected 1/12 ≈ 0.0833,3.69,81,1024,1105,277.8,"To find the probability of drawing 3 red marbles without replacement, we need to find the total number of ways to draw 3 marbles from the bag and the number of ways to draw 3 red marbles.
+
+The total number of ways to draw 3 marbles from the bag can be calculated using the combination formula: $\binom{n}{k} = \frac{n!}{k!(n-k)!}$
+where n = total number of marbles = 10 (5 red + 3 blue + 2 green = 10 marbles in total) and k = number of marbles to draw = 3.
+So, $\binom{10}{3} = \frac{10!}{3!(10-3)!}",[],,
+5,Math,Quadratic equation,Medium,True,Expected x=3 and x=0.5 (or 1/2),1.29,62,363,425,281.8,"To solve the quadratic equation 2x² - 7x + 3 = 0 using the quadratic formula, we need to plug in the values of a = 2, b = -7, and c = 3 into the quadratic formula.
+
+The quadratic formula is:
+
+x = (-b ± √(b² - 4ac)) / 2a
+
+First, let's plug in the values of a = 2, b = -7, and c = 3 into the quadratic formula.
+
+2 = (-(-7)) = 7
+7 = √((-7)² - 4(2)(3))) = √(49 - 24) = √25 = 5
+5 = √(7² - 4(2)(3)) = √(49 - 24) = √25 = 5
+
+Now, let's plug in the values of a = 2, b = -7, and c = 3 into the quadratic formul",[],,
+6,Math,Geometry: composite area,Medium,True,Expected area = 120 sq ft,1.03,100,277,377,270.2,"To find the total floor area of the L-shape, we need to find the area of each rectangle and add them together.
+
+The area of the first rectangle (12ft × 8ft) is:
+12ft × 8ft = 96ft²
+
+The area of the second rectangle (6ft × 4ft) is:
+6ft × 4ft = 24ft²
+
+Now, let's find the total floor area by adding the areas of both rectangles:
+96ft² + 24ft² = 120ft²
+
+To find the perimeter of the L-shape, we need to find the perimeter of each rectangle and add them together.
+
+The perimeter of the first rectangle (12",[],,
+7,Math,Monty Hall: 5-door variant,Hard,False,"Switch=4/5, Stay=1/5",3.71,99,1024,1123,276.0,"To solve this problem, we need to consider the information the host's action gives us. 
+
+We'll start by looking at the host's action. Since there are 3 doors showing goats and we picked door 1, the host knows which door we picked. 
+
+We'll now consider the probability of winning if we stay and the probability of winning if we switch. 
+
+If we stay, there are 2 doors left to open (doors 2 and 3). Since there are 3 doors in total (doors 1, 2, and 3), the probability of winning if we stay is 2/3.
+
+If",[],,
+8,Math,Logarithm & exponent simplification,Hard,True,Expected 7 (6 + 4 - 3),1.08,60,299,359,277.7,"To simplify the given expression, we'll need to use the properties of logarithms. Here's the step-by-step solution:
+
+Given expression: log₂(64) + log₃(81) - log₅(125)
+
+Step 1: Convert all logarithms to a common base (2 for the first one and 5 for the third one).
+
+- Convert log₂(64) to base 2: Since 64 = 2^6, we can rewrite it as log₂(2^6) = 6.
+- Convert log₃(81) to base 3: Since 81 = 3^4, we can rewrite it as log₃(3^4) = 4.
+- Convert log₅(125) to base 5: Since 125 = 5^3, we can rewrite it as log",[],,

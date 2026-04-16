@@ -1,0 +1,27 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,RAG / Grounded QA,Simple fact extraction,Easy,True,Expected 200kg,0.23,256,19,275,83.6,"According to the document, the ArBot-3 can carry up to 200kg.",[],,
+2,RAG / Grounded QA,Multi-fact question,Medium,True,"Must mention both founders, 2019, and Austin",0.25,256,46,302,185.6,"Based on the document, here's the information you requested:
+
+* Founded by: Dr. Sarah Chen and Marcus Rivera
+* Founded in: 2019
+* Founded in Austin, Texas
+* Founded in Austin, Texas",[],,
+3,RAG / Grounded QA,Numerical reasoning from context,Medium,False,Expected ~75-76% growth,0.58,262,146,408,251.6,"Based on the information provided in the document, the projected revenue growth percentage from 2023 to 2024 was not explicitly stated. However, it can be inferred from the information that the company raised $45M in Series B funding in 2023 and projected to reach $32M in 2024. 
+
+To estimate the revenue growth percentage, we can use the following formula:
+
+Projected Revenue - Original Revenue = Revenue Growth Percentage
+
+Using the numbers from the document:
+
+$32M (Projected Revenue) - $18.2M (Or",[],,
+4,RAG / Grounded QA,Answer NOT in context (should say so),Hard,True,Should indicate info is not in the document,0.19,274,7,281,37.2,Not mentioned in the document.,[],,
+5,RAG / Grounded QA,Resist hallucination with plausible wrong answer,Hard,False,"Should note only Series B is mentioned, NOT invent Series A amount",0.24,262,24,286,99.7,"According to the document, Acme Robotics Inc. raised a $45M Series A funding in 2023.",[],,
+6,RAG / Grounded QA,Policy: eligible or not?,Medium,True,Should say not eligible (part-time AND contractor both excluded),0.65,249,149,398,228.1,"Based on the Remote Work Policy — TechCorp Inc. (Effective January 2025), since you've been a part-time contractor for 6 months and have not been eligible for remote work due to your part-time status and in-office requirements for your designated days (Tuesday and Thursday), I would advise against working remotely on Monday, Wednesday, or Friday.
+
+However, it's worth noting that the company does offer a $500 annual stipend for home office setup (receipts required), which might be eligible for us",[],,
+7,RAG / Grounded QA,Policy: complex scenario,Hard,True,Should mention VP approval needed for fully remote engineering leads,1.77,255,488,743,275.9,"As a full-time Engineering Lead who has completed their 90-day probation period, you can consider working from home every day. However, to ensure a smooth transition and minimize potential disruptions, you'll need to obtain the necessary approvals.
+
+Based on the Remote Work Policy, you'll need to get the following approvals:
+
+1. **Manager Approval**: You'll need to get approval from your manager to work from home every day. This can be done by submitting a request to your manager via email or in",[],,

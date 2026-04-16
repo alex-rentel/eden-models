@@ -1,0 +1,101 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Math,Multi-step arithmetic,Easy,True,Expected 1226,2.21,64,240,304,108.4,"To solve the given expression, we need to follow the order of operations, often remembered by the acronym PEMDAS (Parentheses, Exponents, Multiplication and Division (from left to right), Addition and Subtraction (from left to right)).
+
+The given expression is:
+\[
+(48 \times 27) + (156 \div 12) - 83
+\]
+
+First, we perform the multiplication inside the parentheses:
+\[
+48 \times 27 =  1296
+\]
+Next, we perform the division inside the parentheses:
+\[
+156 \div 12 = 13
+\]
+Now, we can rewrite the expres",[],,
+2,Math,Percentage word problem,Easy,False,Expected ~$58.10,3.96,84,447,531,112.9,"To determine the total cost, we need to follow these steps:
+
+1. Calculate the sale price after the 30% discount.
+2. Apply the 10% loyalty card discount to the sale price.
+3. Calculate the total cost including 8.5% sales tax.
+
+Let's go through each step in detail.
+
+### Step 1: Calculate the sale price after the 30% discount
+The original price of the shirt is $85. A 30% discount means you pay 70% of the original price.
+
+\[ 85 \times 0.70 = 85 - 85 \times 0.30 \]
+\[ 85 \times 0.70 = 60.5 \]
+So, the",[],,
+3,Math,System of equations,Medium,False,"Expected x=3.6 (or 18/5), y=2.6 (or 13/5)",9.11,68,1024,1092,112.4,"To solve the system of equations, we can use the substitution or elimination method. Let's use the elimination method for this system:
+
+The given system of equations is:
+\[ 3x + 2y = =”,  x - y = 1.\]
+
+First, let's rewrite the second equation to make it easier to eliminate one of the variables. We can rewrite the second equation as:
+\[ x - y - 1 =”  0 \]
+\[ 3x - 3y - 3 =”  0 \]
+\[ 3x - 3y - 3 = = =  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 0  0  0  0  0  0 ",[],,
+4,Math,Probability with combinations,Medium,True,Expected 1/12 ≈ 0.0833,6.47,75,732,807,113.1,"To determine the probability that all 3 marbles drawn are red, we need to follow these steps:
+
+1. Calculate the total number of marbles in the bag.
+2. Determine the number of ways to choose 3 red marbles from the 5 red marbles.
+3. Determine the number of ways to choose 3 marbles from the total 10 marbles.
+4. Compute the probability by dividing the number of favorable outcomes by the total number of outcomes.
+
+First, let's find the total number of marbles in the bag:
+\[ 5 \text{ (red)} + 3 \text{",[],,
+5,Math,Quadratic equation,Medium,True,Expected x=3 and x=0.5 (or 1/2),2.77,56,313,369,113.0,"To solve the quadratic equation \( 2x^2 - 7x + 3 = =式为 \(ax^2 + bx + c = 0 \)的形式, 我们可以直接应用二次方程公式 \(x = \frac{{-b \pm \sqrt{{b^2 - 4ac}}}}{2a}\) 来解决这个问题。
+
+对于给定的方程 \(2x^2 - 7x + 3 =式, 有 \(a = 2\), \(b = -7\), \(c = 3\)。
+
+首先, 计算判别式 \(b^2 - 4ac\):
+
+\[
+b^2 - 4ac = (-7)^2 - 4 \cdot 2 \cdot 3 =式, 也就是 49 - 24, 也就是 49 - 24, 也就是 25。
+\]
+
+因此, 二次方程的根是:
+
+\[
+x = =  \frac{{-(-7) \pm \sqrt{{25}}}}{2 \cdot 2}
+\]
+\[
+x = \frac{{7 \pm 5}}{4}
+\]
+因此, 有两个根, 一个是 \(x = 3\), 另一个是 \(x = 0.5\)。
+
+因此, 通过步骤, 该方程的根是 \(x = 3\) 以",[],,
+6,Math,Geometry: composite area,Medium,True,Expected area = 120 sq ft,4.5,95,505,600,112.3,"To find the total floor area and the perimeter of the L-shaped room, we can proceed as follows:
+
+### Step 1: Calculate the total floor area
+The room is composed of two rectangles. The area of the first rectangle is  12 feet by 8 feet, and the area of the second rectangle is 6 feet by 4 feet. We can sum these areas to find the total floor area.
+
+Area of the first rectangle:
+\[ 12 \, \text{ft} \times 8 \, \text{ft} = 96 \, \text{ft}^2
+\[ 6 \, \text{ft} \times 4 \, \text{ft} = 24 \, \text{ft}^2
+\]
+",[],,
+7,Math,Monty Hall: 5-door variant,Hard,False,"Switch=4/5, Stay=1/5",4.29,93,480,573,111.9,"To solve this problem, let's break it down step by -by- step, considering both scenarios: staying with the initial choice and switching to another door.
+
+### Initial Setup
+- There are 5 doors, with 1 door containing the car and 4 doors containing goats.
+- You pick door 1 initially.
+
+### Host's Action
+- The host, knowing what's behind each door, opens 3 doors showing goats. These 3 doors are guaranteed to contain goats, as the host can always open 3 doors showing goats, regardless of what's behin",[],,
+8,Math,Logarithm & exponent simplification,Hard,True,Expected 7 (6 + 4 - 3),4.33,59,492,551,113.5,"To simplify the expression \( \log_2(64) + \log_3(81) - \log_5(125) \), we can proceed as follows, breaking down each logarithmic term individually and simplifying them step by step.
+
+### Step 1: Simplify \( \log_2(64) \)
+To find \( \log_2(64) \), we need to determine the power to which 2 must be raised to get 64. We can express 64 as a power of 2:
+\[
+\[64 = 2^6.\]
+Therefore, 
+\[
+\log_2(64) = 6.\]
+So, \( \log_2(64) = 6.\)
+
+### Step 2: Simplify \( \log_3(81) \)
+To find \( \log_3(81) \), we need t",[],,

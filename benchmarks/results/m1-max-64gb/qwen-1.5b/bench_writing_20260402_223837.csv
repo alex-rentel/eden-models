@@ -1,0 +1,27 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Writing,Product description,Easy,False,"Must mention all 3 features, under 600 chars",6.86,68,1024,1092,149.3,"**Product Description**  
+**Hot-swappable** switch** design** for effortless keyboard customization** -**** Split***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************",[],,
+2,Writing,Summarize to exact length,Medium,False,"Expected exactly 3 sentences, got 4",1.13,239,146,385,129.1,"The James Webb Space Telescope, launched in 2022, has revolutionized our understanding of the early universe by revealing galaxies forming just 300 million years after the Big Bang, far earlier than previously thought possible. It has provided unprecedented views of exoplanet atmospheres, detecting water vapor, carbon dioxide, and even sulfur dioxide in the atmospheres of gas giants orbiting distant stars. Closer to home, the telescope has captured detailed images of planets in our own solar sys",[],,
+3,Writing,Compress to word limit,Medium,True,"Expected ≤50 words, got 40",0.41,45,50,95,122.6,"A CPU processes instructions by fetching them from memory, decoding them, and executing the instructions. It uses the ALU to perform arithmetic and logical operations. The CPU fetches instructions from memory when the ALU is idle, keeping the system responsive.",[],,
+4,Writing,Tone: formal to casual rewrite,Medium,True,"Should be shorter, more casual, with informal language",0.38,88,41,129,108.1,"Hey everyone,
+
+The Q4 financial review has been postponed to the upcoming Monday due to unexpected issues. If possible, please let me know when you can be available for the rescheduled meeting.
+
+Thanks!",[],,
+5,Writing,Tone: technical to 5-year-old,Medium,False,"Must use analogy, ≤100 words (got 118)",0.98,57,143,200,146.1,"Imagine the internet is like a big playground, and each playground is called a ""domain name"". To find your favorite slide, you need to know its name, right? Well, the internet uses something called the ""Domain Name System"" (DNS) to help you find the right slide when you type the slide's name into the internet's ""playground"". The DNS is like a big phone book for the internet, keeping track of all the different playgrounds and what slides are in each one. When you type a slide's name into the inte",[],,
+6,Writing,Creative: story with constraints,Hard,False,"Must be set on Mars, under 200 words (got 519)",6.9,77,1024,1101,148.3,"**Title:** *The Last Orchid*
+
+**Characters:**
+**E** - an astronaut from Earth, worried about the environment on Mars
+**N** - an AI scientist from Mars, worried about the AI's impact on the colony
+
+**In the barren red soil,** **E** worried**** worried** worried** worried** worried** worried** worried** worried** worried** worried** worried** worried** worried** worried** worried** worried** worried** worried** worried** worried** worried** worried** worried** worried** worried** worried** worried",[],,
+7,Writing,Email: professional with constraints,Medium,True,"Must have subject line, gratitude, ≤150 words (got 101)",0.89,66,124,190,139.5,"**Subject:** Declining Job Offer - Appreciation for Consideration
+
+Dear Hiring Manager and Team,
+
+Thank you for the opportunity to explore the role at your esteemed company. While we are grateful for the experience and the thought put into the position, we have decided to pursue opportunities elsewhere.
+
+Please accept our heartfelt thanks for the thought and consideration. We truly value the experience and the opportunity to bring our skills and expertise to your team.
+
+Please let us know when y",[],,

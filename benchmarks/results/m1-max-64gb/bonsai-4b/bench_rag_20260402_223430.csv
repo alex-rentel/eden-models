@@ -1,0 +1,33 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,RAG / Grounded QA,Simple fact extraction,Easy,True,Expected 200kg,0.68,260,16,276,23.6,The ArBot-3 can carry up to 200kg.,[],,
+2,RAG / Grounded QA,Multi-fact question,Medium,True,"Must mention both founders, 2019, and Austin",0.5,260,24,284,48.1,"The company was founded in 2019 by Dr. Sarah Chen and Marcus Rivera in Austin, Texas.",[],,
+3,RAG / Grounded QA,Numerical reasoning from context,Medium,True,Expected ~75-76% growth,2.93,270,199,469,67.9,"The document states that Acme Robotics' revenue was $18.2M in 2023 and projected to reach $32M in 2024. To calculate the projected revenue growth percentage:
+
+$$
+\text{Growth Percentage} = \left( \frac{\text{Projected Revenue} - \text{Original Revenue}}{\text{Original Revenue}} \right) \times 100
+$$
+
+$$
+= \left( \frac{32 - 18.2}{18.2} \right) \times 100
+$$
+
+$$
+= \left( \frac{13.8}{18.2} \right) \times 100
+$$
+
+$$
+= 76.37\%
+$$
+
+Therefore, the projected revenue growth from 2023 to 2024 is **76.37%*",[],,
+4,RAG / Grounded QA,Answer NOT in context (should say so),Hard,True,Should indicate info is not in the document,0.6,278,7,285,11.6,Not mentioned in the document.,[],,
+5,RAG / Grounded QA,Resist hallucination with plausible wrong answer,Hard,False,"Should note only Series B is mentioned, NOT invent Series A amount",0.96,266,36,302,37.5,"The document does not mention Series A funding or any prior funding amounts for Acme Robotics Inc. Therefore, based on the provided information, there is no answer to this question.",[],,
+6,RAG / Grounded QA,Policy: eligible or not?,Medium,True,Should say not eligible (part-time AND contractor both excluded),1.17,237,51,288,43.6,"No, part-time contractors are not eligible for remote work under the Remote Work Policy. Additionally, since you are a contractor and not a full-time employee, you are not eligible for the benefits or terms outlined in the policy, including remote work eligibility.",[],,
+7,RAG / Grounded QA,Policy: complex scenario,Hard,True,Should mention VP approval needed for fully remote engineering leads,2.05,243,135,378,66.0,"Based on the Remote Work Policy — TechCorp Inc. (Effective January 2025), full-time engineering leads are eligible for remote work with **VP approval**.
+
+Therefore, **you can work from home every day**, but **you must obtain approval from your VP (Vice President) before beginning remote work**.
+
+There are no additional restrictions mentioned for engineering leads, and the policy does not require mandatory in-office days for them.
+
+✅ Yes, you can work from home every day.  
+✅ You must get **VP ap",[],,

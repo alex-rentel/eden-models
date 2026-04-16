@@ -1,0 +1,13 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Classification,Sentiment: clearly positive,Easy,True,Expected: positive,0.24,54,2,56,8.4,Positive,[],,
+2,Classification,Sentiment: clearly negative,Easy,True,Expected: negative,0.23,56,2,58,8.8,negative,[],,
+3,Classification,Sentiment: subtle/mixed,Medium,True,"Expected: mixed, neutral, or negative",0.73,52,42,94,57.5,"The sentiment is 'negative' because although the camera is mentioned as 'amazing', the key criticism is about the battery drain being too fast for the price, which indicates dissatisfaction with the product's value.",[],,
+4,Classification,Named Entity Recognition,Medium,True,"Must extract Tim Cook, Garcia, Apple, Goldman Sachs, Austin/Texas",0.75,80,37,117,49.1,"{
+  ""people"": [""Tim Cook"", ""Maria Garcia""],
+  ""organizations"": [""Goldman Sachs"", ""Apple""],
+  ""locations"": [""Austin"", ""Texas""]
+}",[],,
+5,Classification,Intent detection: single,Easy,True,Expected: book_flight,0.25,62,3,65,11.9,book_flight,[],,
+6,Classification,Intent detection: ambiguous,Medium,True,Expected: refund_request or exchange_request,0.25,68,3,71,12.2,refund_request,[],,
+7,Classification,Topic classification: multi-label,Medium,True,Expected at least 'technology' and 'health',0.34,84,7,91,20.8,"[""health"", ""technology""]",[],,
+8,Classification,Spam detection,Easy,True,Expected: spam,0.27,82,2,84,7.3,spam,[],,

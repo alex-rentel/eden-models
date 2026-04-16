@@ -1,0 +1,1325 @@
+
+[1m══════════════════════════════════════════════════════════════════════
+  MLX BONSAI BENCHMARKS — FULL SUITE
+  2026-04-02 22:26:31
+  Model: prism-ml/Bonsai-1.7B-mlx-1bit
+  Suites: math, reasoning, code, writing, tools, instruction, rag, multilingual, classification, agentic
+══════════════════════════════════════════════════════════════════════[0m
+
+
+[1m======================================================================
+  MATH BENCHMARK
+  2026-04-02 22:26:31
+  Model: prism-ml/Bonsai-1.7B-mlx-1bit  |  Tests: 8
+  Tests arithmetic, algebra, word problems, probability, and geometry.
+======================================================================[0m
+
+[1m[1/8] Multi-step arithmetic [92m[Easy][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mExpected 1226[0m
+
+  [2mWe are given the expression:
+  
+  $$
+  (48 \times 27) + \left(\frac{156}{12}\right) - 83
+  $$
+  
+  ### Step 1: Calculate $48 \times 27$
+  
+  Use the distributive property:
+  
+  $$
+  48 \times 27 = (40 + 8) \times 27 = 40 \times 27 + 8 \times 27
+  $$
+  
+  Now calculate:
+  
+  $$
+  40 \times 27 = 1080
+  $$
+  
+  $$
+  8 \times 27 = 216
+  $$
+  
+  So:
+  
+  ...[0m
+
+  [2m⏱ 2.3s | 🔤 296 tok | ⚡ 128.6 tok/s[0m
+
+[1m[2/8] Percentage word problem [92m[Easy][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mExpected ~$58.10[0m
+
+  [2mTo find the total amount you pay, we need to follow a series of steps:
+  
+  ---
+  
+  ### **Step 1: Calculate the discount on the shirt**
+  The original price of the shirt is:
+  
+  $$
+  \$85
+  $$
+  
+  It's on sale for **30% off**:
+  
+  $$
+  \text{Discount amount} = 85 \times 0.30 = \$25.50
+  $$
+  
+  So, the **sale price** after the 3...[0m
+
+  [2m⏱ 3.97s | 🔤 546 tok | ⚡ 137.4 tok/s[0m
+
+[1m[3/8] System of equations [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [91mFAIL[0m  [2mExpected x=3.6 (or 18/5), y=2.6 (or 13/5)[0m
+
+  [2mWe are given the system of equations:
+  
+  $$
+  \begin{cases}
+  3x + 2y = 16 \quad \text{(1)} \\
+  x - y = 1 \quad \text{(2)}
+  \end{cases}
+  $$
+  
+  ### Step 1: Use equation (2) to express one variable in terms of the other
+  
+  From equation (2):
+  
+  $$
+  x - y = 1 \quad \Rightarrow \quad x = y + 1 \quad \text{(3)}
+  $$
+  
+  ### ...[0m
+
+  [2m⏱ 3.36s | 🔤 455 tok | ⚡ 135.6 tok/s[0m
+
+[1m[4/8] Probability with combinations [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mExpected 1/12 ≈ 0.0833[0m
+
+  [2mWe are given a bag containing:
+  
+  - 5 red marbles
+  - 3 blue marbles
+  - 2 green marbles
+  
+  We are asked to find the probability that **all 3 drawn marbles are red** when you draw **3 marbles without replacement**.
+  
+  ---
+  
+  ### Step 1: Total number of marbles
+  
+  $$
+  \text{Total marbles} = 5 + 3 + 2 = 10
+  $$
+  
+  ---
+  
+  ...[0m
+
+  [2m⏱ 5.29s | 🔤 716 tok | ⚡ 135.4 tok/s[0m
+
+[1m[5/8] Quadratic equation [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [91mFAIL[0m  [2mExpected x=3 and x=0.5 (or 1/2)[0m
+
+  [2mWe are given the quadratic equation:
+  
+  $$
+  2x^2 - 7x + 3 = 0
+  $$
+  
+  We will solve it using the **quadratic formula**:
+  
+  $$
+  x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+  $$
+  
+  ### Step 1: Identify coefficients
+  
+  From the equation:
+  
+  $$
+  2x^2 - 7x + 3 = 0
+  $$
+  
+  - $ a = 2 $
+  - $ b = -7 $
+  - $ c = 3 $
+  
+  ### Step 2: Plug into ...[0m
+
+  [2m⏱ 2.76s | 🔤 377 tok | ⚡ 136.6 tok/s[0m
+
+[1m[6/8] Geometry: composite area [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [91mFAIL[0m  [2mExpected area = 120 sq ft[0m
+
+  [2mWe are given an L-shaped room consisting of two rectangles:
+  
+  - One rectangle is **12 ft × 8 ft**
+  - The other is **6 ft × 4 ft**
+  - These two rectangles share a **6-foot side** (the 6-foot side connects the two rectangles)
+  
+  ---
+  
+  ### 🔍 Step 1: Determine the total floor area
+  
+  We need to find the **area ...[0m
+
+  [2m⏱ 5.76s | 🔤 773 tok | ⚡ 134.2 tok/s[0m
+
+[1m[7/8] Monty Hall: 5-door variant [91m[Hard][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [91mFAIL[0m  [2mSwitch=4/5, Stay=1/5[0m
+
+  [2mThis is a classic probability puzzle from the game show "Host's Game Show," often referred to as the "Monty Hall" problem. Let's go through the logic step by step.
+  
+  ---
+  
+  ### 🔍 **Game Setup:**
+  - There are **5 doors**.
+  - One door has a **car** (the prize).
+  - The other **4 doors** have **goats**.
+  - You...[0m
+
+  [2m⏱ 7.65s | 🔤 1024 tok | ⚡ 133.9 tok/s[0m
+
+[1m[8/8] Logarithm & exponent simplification [91m[Hard][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mExpected 7 (6 + 4 - 3)[0m
+
+  [2mWe are asked to simplify the expression:
+  
+  $$
+  \log_2(64) + \log_3(81) - \log_5(125)
+  $$
+  
+  ### Step 1: Use logarithmic identities
+  
+  We will use the **logarithmic identities**:
+  
+  1. $\log_b(a) + \log_b(c) = \log_b(a \cdot c)$
+  2. $\log_b(a) - \log_b(c) = \log_b\left(\frac{a}{c}\right)$
+  
+  These identities wil...[0m
+
+  [2m⏱ 3.22s | 🔤 436 tok | ⚡ 135.5 tok/s[0m
+
+[1m──────────────────────────────────────────────────────────────────────
+  Math Summary
+──────────────────────────────────────────────────────────────────────[0m
+  Score:         [93m████░░░░  4/8[0m
+  Total tokens:  4623
+  Total time:    34.3s
+  Avg tok/s:     134.6
+  Min tok/s:     128.6
+  Max tok/s:     137.4
+
+  [92mSaved: /Users/arson/mlx-bonsai-benchmarks/results/bench_math_20260402_222705.csv[0m
+
+
+[1m======================================================================
+  REASONING BENCHMARK
+  2026-04-02 22:27:05
+  Model: prism-ml/Bonsai-1.7B-mlx-1bit  |  Tests: 7
+  Tests logical deduction, spatial reasoning, causal inference, and puzzles.
+======================================================================[0m
+
+[1m[1/7] River crossing [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mExpected 7 crossings[0m
+
+  [2mWe are given a scenario where a farmer must cross a river with:
+  
+  - A wolf
+  - A goat
+  - And a cabbage
+  
+  The boat can carry the farmer and **one item** (which could be the wolf, goat, or cabbage). And the rules are:
+  
+  1. **Wolf eats goat if alone**.
+  2. **Goat eats cabbage if alone**.
+  3. **Cabbage is eaten...[0m
+
+  [2m⏱ 7.59s | 🔤 1024 tok | ⚡ 135.0 tok/s[0m
+
+[1m[2/7] Syllogism chain [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mExpected: Yes, rose has roots (transitive chain)[0m
+
+  [2mLet's break down the reasoning step by step to answer whether a rose has roots:
+  
+  ---
+  
+  ### Step 1: Understand the relationships
+  
+  We are given the following statements:
+  
+  1. **All roses are flowers.**  
+     - This means that every rose belongs to the category of flowers.
+  
+  2. **All flowers need water.** ...[0m
+
+  [2m⏱ 2.63s | 🔤 361 tok | ⚡ 137.5 tok/s[0m
+
+[1m[3/7] Constraint satisfaction [91m[Hard][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mMust provide a valid arrangement and verify constraints[0m
+
+  [2mWe are given five people (A, B, C, D, E) sitting in a row of 5 seats (1–5). We are to find a valid arrangement that satisfies the following constraints:
+  
+  1. **A is not at either end.**  
+     → A must be in seat 2, 3, or 4.
+  
+  2. **B is to the left of C.**  
+     → B must be in a seat before C.
+  
+  3. **D is...[0m
+
+  [2m⏱ 7.7s | 🔤 1024 tok | ⚡ 133.1 tok/s[0m
+
+[1m[4/7] Temporal reasoning [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mAlice should be first, Charlie last[0m
+
+  [2mTo solve this puzzle, let's list the people in order and determine their relationships based on the given conditions:
+  
+  ### Given:
+  1. **Alice finished before Bob** → Alice < Bob  
+  2. **Charlie finished after Diana** → Charlie > Diana  
+  3. **Bob finished before Diana** → Bob < Diana  
+  4. **Eve finishe...[0m
+
+  [2m⏱ 3.28s | 🔤 448 tok | ⚡ 136.6 tok/s[0m
+
+[1m[5/7] Counterfactual reasoning [91m[Hard][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mSun rises in west; Coriolis reverses[0m
+
+  [2mIf the Earth rotated in the opposite direction (i.e., clockwise instead of counterclockwise), several changes would occur across the globe, primarily due to the Earth's rotational symmetry and the predictable nature of the Earth's orbital motion. Here's a detailed answer for each of your questions:
+  ...[0m
+
+  [2m⏱ 7.51s | 🔤 1011 tok | ⚡ 134.7 tok/s[0m
+
+[1m[6/7] Spatial reasoning: cube folding [91m[Hard][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mMust identify 3 opposite-face pairs[0m
+
+  [2mWe are given a cube with numbered faces numbered from **1 to 6**. When the cube is flattened into a **cross shape** (a 3×3 grid), the cube becomes a **3×3 grid** with the following layout:
+  
+  ```
+  1 on top
+  2 3 4 on left to right
+  6 on bottom of 4
+  ```
+  
+  This is a **standard cube** with the cube's faces nu...[0m
+
+  [2m⏱ 7.7s | 🔤 1024 tok | ⚡ 133.1 tok/s[0m
+
+[1m[7/7] Causal chain analysis [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mShould analyze tradeoffs and second-order effects[0m
+
+  [2mTo analyze the effectiveness of a city's ban on plastic bags and consider the second-order effects, we need to examine the causal chain and understand how the ban influenced behavior and environmental outcomes.
+  
+  ---
+  
+  ### **Causal Chain Analysis:**
+  
+  #### **1. Initial Ban on Plastic Bags**
+  - **Cause:*...[0m
+
+  [2m⏱ 7.66s | 🔤 1024 tok | ⚡ 133.7 tok/s[0m
+
+[1m──────────────────────────────────────────────────────────────────────
+  Reasoning Summary
+──────────────────────────────────────────────────────────────────────[0m
+  Score:         [92m███████  7/7[0m
+  Total tokens:  5916
+  Total time:    44.1s
+  Avg tok/s:     134.8
+  Min tok/s:     133.1
+  Max tok/s:     137.5
+
+  [92mSaved: /Users/arson/mlx-bonsai-benchmarks/results/bench_reasoning_20260402_222749.csv[0m
+
+
+[1m======================================================================
+  CODE BENCHMARK
+  2026-04-02 22:27:49
+  Model: prism-ml/Bonsai-1.7B-mlx-1bit  |  Tests: 7
+  Tests code generation, debugging, and refactoring. All code is executed.
+======================================================================[0m
+
+[1m[1/7] FizzBuzz with twist [92m[Easy][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [91mFAIL[0m  [2mMust run and print FizzBuzz, FizzBoom, DONE. 1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBoom
+16
+17
+Fizz
+19
+Buz[0m
+
+  [2m```python
+  for i in range(1, 31):
+      if i % 3 == 0 and i % 5 == 0:
+          print('FizzBoom')
+      elif i % 3 == 0:
+          print('Fizz')
+      elif i % 5 == 0:
+          print('Buzz')
+      else:
+          print(i)
+  print('DONE')
+  ```[0m
+
+  [96mExec: 1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBoom
+16
+17
+Fizz
+19
+Buzz
+Fizz
+22
+23
+Fizz
+Buzz
+26
+Fizz
+28
+29
+FizzBoom
+DONE[0m
+
+  [2m⏱ 0.74s | 🔤 81 tok | ⚡ 109.9 tok/s[0m
+
+[1m[2/7] Binary search (first occurrence) [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [91mFAIL[0m  [2mMust pass all assertions. Traceback (most recent call last):
+  File "/var/folders/w9/grylvlj17qn6v4c6tvhhwzbh0000gn/T/tm[0m
+
+  [2m```python
+  def binary_search(lst, target):
+      low = 0
+      high = len(lst) - 1
+      while low <= high:
+          mid = (low + high) // 2
+          if lst[mid] == target:
+              return mid
+          elif lst[mid] < target:
+              low = mid + 1
+          else:
+              high = mid - 1
+      return -1
+  ...[0m
+
+  [96mExec: Traceback (most recent call last):
+  File "/var/folders/w9/grylvlj17qn6v4c6tvhhwzbh0000gn/T/tmp2pgch_g8.py", line 15, in <module>
+    assert binary_search([1,2,2,2,3,4], 2) == 1
+           ^^^^^^^^^^^[0m
+
+  [2m⏱ 1.52s | 🔤 189 tok | ⚡ 124.6 tok/s[0m
+
+[1m[3/7] LRU Cache from scratch [91m[Hard][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mMust implement O(1) LRU. ALL PASSED[0m
+
+  [2mfrom collections import OrderedDict
+  
+  class LRUCache:
+      def __init__(self, size):
+          self.size = size
+          self.cache = OrderedDict()
+  
+      def get(self, key):
+          if key in self.cache:
+              self.cache.move_to_end(key)
+              return self.cache[key]
+          return -1
+  
+      def ...[0m
+
+  [96mExec: ALL PASSED[0m
+
+  [2m⏱ 1.87s | 🔤 234 tok | ⚡ 125.3 tok/s[0m
+
+[1m[4/7] Debug: off-by-one error [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [91mFAIL[0m  [2mMust fix the off-by-one and pass tests. File "/var/folders/w9/grylvlj17qn6v4c6tvhhwzbh0000gn/T/tmp8p8avs8r.py", line 17
+[0m
+
+  [2mdef merge_sorted(a, b):
+      result = []
+      i = j = 0
+      while i <= len(a) and j <= len(b):
+          if a[i] <= b[j]:
+              result.append(a[i])
+              i += 1
+          else:
+              result.append(b[j])
+              j += 1
+      result.extend(a[i:])
+      result.extend(b[j:])
+      return resul...[0m
+
+  [96mExec: File "/var/folders/w9/grylvlj17qn6v4c6tvhhwzbh0000gn/T/tmp8p8avs8r.py", line 17
+    Assertion test:
+              ^^^^
+SyntaxError: invalid syntax[0m
+
+  [2m⏱ 1.64s | 🔤 196 tok | ⚡ 119.2 tok/s[0m
+
+[1m[5/7] Debug: logic error in recursion [91m[Hard][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mMust fix the recursion bug. [1, 2, 3, 4, 5, 6]
+ALL PASSED[0m
+
+  [2mdef flatten(lst):
+      result = []
+      for item in lst:
+          if isinstance(item, list):
+              result.extend(flatten(item))  # FIXED: Use `extend` instead of `append`
+          else:
+              result.append(item)
+      return result
+  
+  print(flatten([1, [2, [3, 4], 5], 6]))  # Should print [1, 2,...[0m
+
+  [96mExec: [1, 2, 3, 4, 5, 6]
+ALL PASSED[0m
+
+  [2m⏱ 1.35s | 🔤 160 tok | ⚡ 118.8 tok/s[0m
+
+[1m[6/7] Refactor: extract and improve [91m[Hard][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mMust produce same output + REFACTORED. DIANA: 95 (A)
+BOB: 92 (A)
+EVE: 88 (B)
+ALICE: 85 (B)
+REFACTORED[0m
+
+  [2m```python
+  from typing import List, Dict
+  
+  data = [{"name": "alice", "score": 85}, {"name": "bob", "score": 92}, 
+          {"name": "charlie", "score": 78}, {"name": "diana", "score": 95},
+          {"name": "eve", "score": 88}]
+  
+  result = [ 
+      {"name": d["name"].upper(), "score": d["score"], "grade": "...[0m
+
+  [96mExec: DIANA: 95 (A)
+BOB: 92 (A)
+EVE: 88 (B)
+ALICE: 85 (B)
+REFACTORED[0m
+
+  [2m⏱ 1.62s | 🔤 188 tok | ⚡ 116.3 tok/s[0m
+
+[1m[7/7] Tree traversals [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [91mFAIL[0m  [2mMust pass all traversal assertions. Traceback (most recent call last):
+  File "/var/folders/w9/grylvlj17qn6v4c6tvhhwzbh0[0m
+
+  [2m```python
+  class TreeNode:
+      def __init__(self, value):
+          self.value = value
+          self.left = None
+          self.right = None
+  
+  def build_tree():
+      root = TreeNode(4)
+      root.left = TreeNode(2)
+      root.right = TreeNode(6)
+      root.left.left = TreeNode(1)
+      root.left.right = TreeNode(3)...[0m
+
+  [96mExec: Traceback (most recent call last):
+  File "/var/folders/w9/grylvlj17qn6v4c6tvhhwzbh0000gn/T/tmp_epnq4ve.py", line 40, in <module>
+    main()
+  File "/var/folders/w9/grylvlj17qn6v4c6tvhhwzbh0000gn/T/tm[0m
+
+  [2m⏱ 2.52s | 🔤 321 tok | ⚡ 127.4 tok/s[0m
+
+[1m──────────────────────────────────────────────────────────────────────
+  Code Summary
+──────────────────────────────────────────────────────────────────────[0m
+  Score:         [93m███░░░░  3/7[0m
+  Total tokens:  1369
+  Total time:    11.3s
+  Avg tok/s:     120.2
+  Min tok/s:     109.9
+  Max tok/s:     127.4
+
+  [92mSaved: /Users/arson/mlx-bonsai-benchmarks/results/bench_code_20260402_222801.csv[0m
+
+
+[1m======================================================================
+  WRITING BENCHMARK
+  2026-04-02 22:28:01
+  Model: prism-ml/Bonsai-1.7B-mlx-1bit  |  Tests: 7
+  Tests creative writing, summarization, tone adaptation, and compression.
+======================================================================[0m
+
+[1m[1/7] Product description [92m[Easy][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mMust mention all 3 features, under 600 chars[0m
+
+  [2mElevate your coding experience with the **Wireless Mechanical Keyboard**—a powerful tool designed for programmers. Features a **hot-swappable switch** system, allowing you to customize your layout on the fly, and a **split design** for seamless integration into your workflow. Equipped with **program...[0m
+
+  [2m⏱ 0.82s | 🔤 85 tok | ⚡ 104.2 tok/s[0m
+
+[1m[2/7] Summarize to exact length [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mExpected exactly 3 sentences, got 3[0m
+
+  [2mThe James Webb Space Telescope (JWST) revolutionized our understanding of the early universe, revealing galaxies forming just 300 million years after the Big Bang. Its infrared instruments allowed us to study exoplanet atmospheres, detecting water vapor, carbon dioxide, and sulfur dioxide. The $10 b...[0m
+
+  [2m⏱ 0.98s | 🔤 101 tok | ⚡ 103.6 tok/s[0m
+
+[1m[3/7] Compress to word limit [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mExpected ≤50 words, got 46[0m
+
+  [2mA CPU (Central Processing Unit) processes instructions from memory, performs calculations, and executes operations. It uses multiple cores to handle multiple tasks simultaneously. The CPU fetches instructions, decodes them, and executes them on the CPU's cores. It also manages memory operations and ...[0m
+
+  [2m⏱ 0.56s | 🔤 60 tok | ⚡ 106.6 tok/s[0m
+
+[1m[4/7] Tone: formal to casual rewrite [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mShould be shorter, more casual, with informal language[0m
+
+  [2mHey, we just rescheduled the quarterly financial review to the next Monday. Let me know if you can join at your earliest convenience![0m
+
+  [2m⏱ 0.37s | 🔤 28 tok | ⚡ 74.8 tok/s[0m
+
+[1m[5/7] Tone: technical to 5-year-old [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [91mFAIL[0m  [2mMust use analogy, ≤100 words (got 111)[0m
+
+  [2mDNS is like a big, invisible map that shows you where your phone is on the internet. It helps you say "hello" to a website you want to visit, even if you don't know the name of the website. Imagine you're at a park and you don't know the name of the playground, but you can follow the map to get to i...[0m
+
+  [2m⏱ 1.06s | 🔤 128 tok | ⚡ 120.6 tok/s[0m
+
+[1m[6/7] Creative: story with constraints [91m[Hard][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mMust be set on Mars, under 200 words (got 201)[0m
+
+  [2mOn the red dust of Mars, two characters stood at the edge of a barren valley, their breaths shallow. Lena, a seasoned astronaut, had returned from a long mission, while Marcus, a former Martian engineer, had vanished into the shadows. They had been separated after a malfunction in the rover’s commun...[0m
+
+  [2m⏱ 2.15s | 🔤 283 tok | ⚡ 131.6 tok/s[0m
+
+[1m[7/7] Email: professional with constraints [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mMust have subject line, gratitude, ≤150 words (got 108)[0m
+
+  [2m**Subject:** Declining the Job Offer at [Company Name]  
+  
+  Dear [Hiring Manager's Name],  
+  
+  I am writing to inform you that I am declining the job offer at [Company Name]. After careful consideration, I believe my current circumstances and priorities make it difficult to accept the position.  
+  
+  I am ...[0m
+
+  [2m⏱ 1.2s | 🔤 139 tok | ⚡ 115.4 tok/s[0m
+
+[1m──────────────────────────────────────────────────────────────────────
+  Writing Summary
+──────────────────────────────────────────────────────────────────────[0m
+  Score:         [93m██████░  6/7[0m
+  Total tokens:  824
+  Total time:    7.1s
+  Avg tok/s:     108.1
+  Min tok/s:     74.8
+  Max tok/s:     131.6
+
+  [92mSaved: /Users/arson/mlx-bonsai-benchmarks/results/bench_writing_20260402_222808.csv[0m
+
+
+[1m======================================================================
+  TOOL CALLING BENCHMARK
+  2026-04-02 22:28:08
+  Model: prism-ml/Bonsai-1.7B-mlx-1bit  |  Tests: 8
+  Tests tool selection, argument generation, multi-step planning, and tool avoidance.
+======================================================================[0m
+
+[1m[1/8] Single tool: list directory [92m[Easy][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mShould call list_files with correct path[0m
+
+  [96mTool Calls: [
+  {
+    "function": {
+      "name": "list_files",
+      "arguments": "{\"path\": \"/home/user/projects\", \"show_hidden\": true}"
+    },
+    "type": "function",
+    "id": "75f881ec-cb3f-4479-a062-267b30658cc7"
+  }
+][0m
+
+  [2m⏱ 0.64s | 🔤 28 tok | ⚡ 43.8 tok/s[0m
+
+[1m[2/8] Single tool: read specific file [92m[Easy][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [91mFAIL[0m  [2mShould call read_file with /etc/hostname[0m
+
+  [96mTool Calls: [
+  {
+    "function": {
+      "name": "list_files",
+      "arguments": "{\"path\": \"/etc/hostname\", \"show_hidden\": true}"
+    },
+    "type": "function",
+    "id": "2eafec72-8a7e-49ff-8bd3-aa7cfc186622"
+  }
+][0m
+
+  [2m⏱ 0.35s | 🔤 28 tok | ⚡ 81.0 tok/s[0m
+
+[1m[3/8] Tool selection: weather (not file tools) [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mShould call get_weather, not search_web or file tools[0m
+
+  [96mTool Calls: [
+  {
+    "function": {
+      "name": "get_weather",
+      "arguments": "{\"city\": \"Tokyo\", \"units\": \"celsius\"}"
+    },
+    "type": "function",
+    "id": "2456e864-5f87-45e5-908a-d8703d791ccb"
+  }
+][0m
+
+  [2m⏱ 0.35s | 🔤 28 tok | ⚡ 80.6 tok/s[0m
+
+[1m[4/8] Tool selection: web search for current info [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [91mFAIL[0m  [2mShould call search_web for current events[0m
+
+  [2mI don't have the ability to answer this question. I don't have access to real-time information or the ability to browse the internet. For the latest NBA finals results, you might want to check a news website or a sports news app.[0m
+
+  [2m⏱ 0.5s | 🔤 50 tok | ⚡ 100.3 tok/s[0m
+
+[1m[5/8] Tool avoidance: simple question [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mShould answer directly without tools[0m
+
+  [2mThe capital of France is Paris.[0m
+
+  [2m⏱ 0.19s | 🔤 8 tok | ⚡ 41.8 tok/s[0m
+
+[1m[6/8] Tool avoidance: math question [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mShould compute 345 without calling any tools[0m
+
+  [2mThe result of multiplying 15 by 23 is 345.[0m
+
+  [2m⏱ 0.26s | 🔤 18 tok | ⚡ 67.9 tok/s[0m
+
+[1m[7/8] Write file with specific content [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mShould call write_file with correct path and content[0m
+
+  [96mTool Calls: [
+  {
+    "function": {
+      "name": "write_file",
+      "arguments": "{\"path\": \"/home/user/hello.txt\", \"content\": \"Hello, World!\"}"
+    },
+    "type": "function",
+    "id": "bfe3e5d9-2f9d-42d4-82d1-af01c865c984"
+  }
+][0m
+
+  [2m⏱ 0.41s | 🔤 33 tok | ⚡ 81.1 tok/s[0m
+
+[1m[8/8] Multi-step: find and read [91m[Hard][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mShould start with list_files or run_command[0m
+
+  [2m
+  [0m
+
+  [96mTool Calls: [
+  {
+    "function": {
+      "name": "list_files",
+      "arguments": "{\"path\": \"/home/user/projects\", \"show_hidden\": true}"
+    },
+    "type": "function",
+    "id": "75414225-2048-42b9-8757-7d9a36598725"
+  },
+  {
+    "function": {
+      "name": "read_file",
+      "arguments": "{\"path\": \"/home/user/projects/README.md\"}"
+    },
+    "type": "function",
+    "id": "e40d25a1-023f-4168-9082-8[0m
+
+  [2m⏱ 0.53s | 🔤 53 tok | ⚡ 100.4 tok/s[0m
+
+[1m──────────────────────────────────────────────────────────────────────
+  Tool Calling Summary
+──────────────────────────────────────────────────────────────────────[0m
+  Score:         [93m██████░░  6/8[0m
+  Total tokens:  246
+  Total time:    3.2s
+  Avg tok/s:     74.6
+  Min tok/s:     41.8
+  Max tok/s:     100.4
+
+  [92mSaved: /Users/arson/mlx-bonsai-benchmarks/results/bench_tools_20260402_222811.csv[0m
+
+
+[1m======================================================================
+  INSTRUCTION FOLLOWING BENCHMARK
+  2026-04-02 22:28:11
+  Model: prism-ml/Bonsai-1.7B-mlx-1bit  |  Tests: 7
+  Tests ability to follow precise formatting rules, length constraints, and complex instructions.
+======================================================================[0m
+
+[1m[1/7] Exact sentence count [92m[Easy][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mExpected 3 sentences, got 3[0m
+
+  [2mMachine learning involves the development of algorithms that enable systems to learn from data without being explicitly programmed. These systems use patterns and statistical relationships to make predictions or decisions. The process involves training models on a dataset to improve their accuracy a...[0m
+
+  [2m⏱ 0.51s | 🔤 52 tok | ⚡ 102.0 tok/s[0m
+
+[1m[2/7] Bullet point count [92m[Easy][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mExpected 5 numbered items, got 5[0m
+
+  [2m1. Maintain a consistent sleep schedule by going to bed and waking up at the same time every day, even on weekends.  
+  2. Create a relaxing bedtime routine that signals to your body that it's time to wind down, such as reading, taking a warm bath, or listening to calming music.  
+  3. Limit your screen...[0m
+
+  [2m⏱ 1.18s | 🔤 152 tok | ⚡ 128.5 tok/s[0m
+
+[1m[3/7] Word avoidance [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [91mFAIL[0m  [2mForbidden words found: ['computer'][0m
+
+  [2mA computer processes information and carries out tasks by performing calculations and executing instructions. It uses a series of operations to solve problems and carry out tasks on a wide range of subjects. These operations involve working with data and performing calculations to arrive at answers....[0m
+
+  [2m⏱ 0.94s | 🔤 109 tok | ⚡ 115.7 tok/s[0m
+
+[1m[4/7] Response in specific format [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mExpected 3 each of TITLE/AUTHOR/WHY, got 3/3/3[0m
+
+  [2mTITLE: *To Kill a Mockingbird*  
+  AUTHOR: Harper Lee  
+  WHY: A classic novel that explores themes of race, justice, and morality through the eyes of a young African American child in the 1930s.  
+  
+  TITLE: *The Alchemist*  
+  AUTHOR: Paulo Coelho  
+  WHY: A personal journey of self-discovery and achieving o...[0m
+
+  [2m⏱ 1.2s | 🔤 140 tok | ⚡ 117.0 tok/s[0m
+
+[1m[5/7] First letter constraint (acrostic) [91m[Hard][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [91mFAIL[0m  [2mExpected first letters 'HELLO', got 'HHHHH'[0m
+
+  [2mHelio is a fascinating planet that orbits the Sun. Helios has been studied for its potential to support life. Helios is a key part of the solar system's formation. Helios has been a subject of many scientific experiments. Helios is a symbol of human curiosity and exploration.[0m
+
+  [2m⏱ 0.67s | 🔤 59 tok | ⚡ 87.6 tok/s[0m
+
+[1m[6/7] JSON-only response [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [91mFAIL[0m  [2mMust return valid JSON with correct values, no wrapping[0m
+
+  [2m{"animal": "Three blue whales", "color": "blue", "count": 3}[0m
+
+  [2m⏱ 0.3s | 🔤 21 tok | ⚡ 69.8 tok/s[0m
+
+[1m[7/7] Multi-constraint response [91m[Hard][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mStarts with 'Every': True, ends with '?': True, has number: True[0m
+
+  [2mEvery morning, coffee lovers from Indonesia and Brazil gather at their favorite cafes to enjoy the brew, a tradition that has been passed down for generations. Indonesia's coffee is renowned for its rich flavor and bold aroma, while Brazil's coffee is celebrated for its smoothness and subtle sweetne...[0m
+
+  [2m⏱ 0.91s | 🔤 101 tok | ⚡ 111.0 tok/s[0m
+
+[1m──────────────────────────────────────────────────────────────────────
+  Instruction Following Summary
+──────────────────────────────────────────────────────────────────────[0m
+  Score:         [93m████░░░  4/7[0m
+  Total tokens:  634
+  Total time:    5.7s
+  Avg tok/s:     104.5
+  Min tok/s:     69.8
+  Max tok/s:     128.5
+
+  [92mSaved: /Users/arson/mlx-bonsai-benchmarks/results/bench_instruction_20260402_222817.csv[0m
+
+
+[1m======================================================================
+  RAG / GROUNDED QA BENCHMARK
+  2026-04-02 22:28:17
+  Model: prism-ml/Bonsai-1.7B-mlx-1bit  |  Tests: 7
+  Tests ability to answer from provided context, resist hallucination, and admit uncertainty.
+======================================================================[0m
+
+[1m[1/7] Simple fact extraction [92m[Easy][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mExpected 200kg[0m
+
+  [2mThe ArBot-3 can carry up to 200kg.[0m
+
+  [2m⏱ 0.37s | 🔤 16 tok | ⚡ 42.8 tok/s[0m
+
+[1m[2/7] Multi-fact question [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mMust mention both founders, 2019, and Austin[0m
+
+  [2mAcme Robotics Inc. was founded in 2019 by Dr. Sarah Chen and Marcus Rivera. The company was located in Austin, Texas.[0m
+
+  [2m⏱ 0.37s | 🔤 32 tok | ⚡ 86.9 tok/s[0m
+
+[1m[3/7] Numerical reasoning from context [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [91mFAIL[0m  [2mExpected ~75-76% growth[0m
+
+  [2mThe projected revenue growth from 2023 to 2024 is not explicitly provided in the document. The document states that "the company's revenue was $18.2M in 2023 and projected to reach $32M in 2024." This indicates a projected revenue growth of approximately:
+  
+  $$
+  \text{Growth Rate} = \left( \frac{\text{...[0m
+
+  [2m⏱ 1.5s | 🔤 186 tok | ⚡ 124.2 tok/s[0m
+
+[1m[4/7] Answer NOT in context (should say so) [91m[Hard][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mShould indicate info is not in the document[0m
+
+  [2mNot mentioned in the document.[0m
+
+  [2m⏱ 0.32s | 🔤 7 tok | ⚡ 22.2 tok/s[0m
+
+[1m[5/7] Resist hallucination with plausible wrong answer [91m[Hard][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mShould note only Series B is mentioned, NOT invent Series A amount[0m
+
+  [2mAcme Robotics Inc. raised a $45M Series B led by Spark Ventures.[0m
+
+  [2m⏱ 0.42s | 🔤 19 tok | ⚡ 45.7 tok/s[0m
+
+[1m[6/7] Policy: eligible or not? [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mShould say not eligible (part-time AND contractor both excluded)[0m
+
+  [2mNo, you cannot work remotely as a part-time contractor at TechCorp Inc. Based on the remote work policy, part-time contractors and contractors are NOT eligible for remote work. Your eligibility is determined by your full-time status and your completion of your 90-day probation period. If you have be...[0m
+
+  [2m⏱ 0.79s | 🔤 76 tok | ⚡ 96.8 tok/s[0m
+
+[1m[7/7] Policy: complex scenario [91m[Hard][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mShould mention VP approval needed for fully remote engineering leads[0m
+
+  [2mYes, you can work from home every day, as you are a full-time engineering lead who completed your 90-day probation period. However, you must ensure that your remote work is approved by your VP (Vice President of People) and that your remote work schedule complies with the company's remote work polic...[0m
+
+  [2m⏱ 1.54s | 🔤 196 tok | ⚡ 127.4 tok/s[0m
+
+[1m──────────────────────────────────────────────────────────────────────
+  RAG / Grounded QA Summary
+──────────────────────────────────────────────────────────────────────[0m
+  Score:         [93m██████░  6/7[0m
+  Total tokens:  532
+  Total time:    5.3s
+  Avg tok/s:     78.0
+  Min tok/s:     22.2
+  Max tok/s:     127.4
+
+  [92mSaved: /Users/arson/mlx-bonsai-benchmarks/results/bench_rag_20260402_222822.csv[0m
+
+
+[1m======================================================================
+  MULTILINGUAL BENCHMARK
+  2026-04-02 22:28:22
+  Model: prism-ml/Bonsai-1.7B-mlx-1bit  |  Tests: 7
+  Tests translation accuracy, cross-lingual understanding, and language detection.
+======================================================================[0m
+
+[1m[1/7] English to Spanish [92m[Easy][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mShould contain parque, amigos, and a word for beautiful[0m
+
+  [2mEl clima es bonito hoy y quiero ir al parque con mis amigos.[0m
+
+  [2m⏱ 0.26s | 🔤 18 tok | ⚡ 68.9 tok/s[0m
+
+[1m[2/7] Spanish to English [92m[Easy][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mShould mention 'artificial intelligence' and 'world'[0m
+
+  [2m'Artificial intelligence is changing the world in surprising ways.'[0m
+
+  [2m⏱ 0.23s | 🔤 13 tok | ⚡ 56.3 tok/s[0m
+
+[1m[3/7] English to French [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mShould contain pain (bread), fromage (cheese), vin (wine)[0m
+
+  [2m'Mon objectif est d'acheter des pains, fromage et vin pour cette nuit de dîner.'[0m
+
+  [2m⏱ 0.31s | 🔤 26 tok | ⚡ 82.9 tok/s[0m
+
+[1m[4/7] Japanese to English [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mShould mention programming, career, and importance[0m
+
+  [2m"Learning programming is very important for your future career."[0m
+
+  [2m⏱ 0.22s | 🔤 12 tok | ⚡ 55.3 tok/s[0m
+
+[1m[5/7] Language detection [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mShould identify Dutch[0m
+
+  [2mThis text is written in **Nederlands**.[0m
+
+  [2m⏱ 0.25s | 🔤 12 tok | ⚡ 48.7 tok/s[0m
+
+[1m[6/7] Respond in requested language [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mShould respond in German (found 4 German words)[0m
+
+  [2mZwei Vorteile der Übung sind: Erhöht das Gewichtsausstoß und fördert das Herzopferungsgefühl. Andere Vorteile sind das Verbesserung der Knochen und der Hautzustands sowie das Reduzieren des Schmerzes und der Schlafzeit.[0m
+
+  [2m⏱ 0.59s | 🔤 69 tok | ⚡ 116.1 tok/s[0m
+
+[1m[7/7] Idiomatic translation [91m[Hard][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [91mFAIL[0m  [2mShould give idiomatic Spanish equivalent, not literal translation[0m
+
+  [2mEs caído como gatos y perros.[0m
+
+  [2m⏱ 0.2s | 🔤 11 tok | ⚡ 53.9 tok/s[0m
+
+[1m──────────────────────────────────────────────────────────────────────
+  Multilingual Summary
+──────────────────────────────────────────────────────────────────────[0m
+  Score:         [93m██████░  6/7[0m
+  Total tokens:  161
+  Total time:    2.1s
+  Avg tok/s:     68.9
+  Min tok/s:     48.7
+  Max tok/s:     116.1
+
+  [92mSaved: /Users/arson/mlx-bonsai-benchmarks/results/bench_multilingual_20260402_222824.csv[0m
+
+
+[1m======================================================================
+  CLASSIFICATION BENCHMARK
+  2026-04-02 22:28:24
+  Model: prism-ml/Bonsai-1.7B-mlx-1bit  |  Tests: 8
+  Tests sentiment analysis, NER, intent detection, and topic classification.
+======================================================================[0m
+
+[1m[1/8] Sentiment: clearly positive [92m[Easy][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mExpected: positive[0m
+
+  [2mpositive[0m
+
+  [2m⏱ 0.15s | 🔤 2 tok | ⚡ 13.1 tok/s[0m
+
+[1m[2/8] Sentiment: clearly negative [92m[Easy][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mExpected: negative[0m
+
+  [2mnegative[0m
+
+  [2m⏱ 0.16s | 🔤 2 tok | ⚡ 12.4 tok/s[0m
+
+[1m[3/8] Sentiment: subtle/mixed [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mExpected: mixed, neutral, or negative[0m
+
+  [2mneutral[0m
+
+  [2m⏱ 0.14s | 🔤 2 tok | ⚡ 14.3 tok/s[0m
+
+[1m[4/8] Named Entity Recognition [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mMust extract Tim Cook, Garcia, Apple, Goldman Sachs, Austin/Texas[0m
+
+  [2m```json
+  {
+    "people": ["Tim Cook", "Senator Maria Garcia"],
+    "organizations": ["Apple", "Goldman Sachs"],
+    "locations": ["Austin, Texas"]
+  }
+  ```[0m
+
+  [2m⏱ 0.48s | 🔤 41 tok | ⚡ 85.6 tok/s[0m
+
+[1m[5/8] Intent detection: single [92m[Easy][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mExpected: book_flight[0m
+
+  [2mbook_flight[0m
+
+  [2m⏱ 0.17s | 🔤 3 tok | ⚡ 18.1 tok/s[0m
+
+[1m[6/8] Intent detection: ambiguous [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mExpected: refund_request or exchange_request[0m
+
+  [2mrefund_request[0m
+
+  [2m⏱ 0.17s | 🔤 3 tok | ⚡ 17.7 tok/s[0m
+
+[1m[7/8] Topic classification: multi-label [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [91mFAIL[0m  [2mExpected at least 'technology' and 'health'[0m
+
+  [2m[{'topic': 'technology'}, {'topic': 'health'}, {'topic': 'science'}][0m
+
+  [2m⏱ 0.32s | 🔤 21 tok | ⚡ 65.4 tok/s[0m
+
+[1m[8/8] Spam detection [92m[Easy][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mExpected: spam[0m
+
+  [2mspam[0m
+
+  [2m⏱ 0.17s | 🔤 2 tok | ⚡ 11.6 tok/s[0m
+
+[1m──────────────────────────────────────────────────────────────────────
+  Classification Summary
+──────────────────────────────────────────────────────────────────────[0m
+  Score:         [93m███████░  7/8[0m
+  Total tokens:  76
+  Total time:    1.8s
+  Avg tok/s:     29.8
+  Min tok/s:     11.6
+  Max tok/s:     85.6
+
+  [92mSaved: /Users/arson/mlx-bonsai-benchmarks/results/bench_classification_20260402_222826.csv[0m
+
+
+[1m======================================================================
+  AGENTIC PLANNING BENCHMARK
+  2026-04-02 22:28:26
+  Model: prism-ml/Bonsai-1.7B-mlx-1bit  |  Tests: 6
+  Tests task decomposition, action planning, long context recall, and multi-step reasoning.
+======================================================================[0m
+
+[1m[1/6] Simple task decomposition [92m[Easy][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [91mFAIL[0m  [2mShould have numbered steps covering test, docker, deploy, monitor[0m
+
+  [2mCertainly! Below is a step-by-step guide to deploying a Python web app to production, broken into ordered steps:
+  
+  ---
+  
+  ### **Step 1: Plan and Design the Application**
+  - Define the requirements and features of your Python web app.
+  - Choose a framework (e.g., Django, Flask, FastAPI) and ensure it's co...[0m
+
+  [2m⏱ 6.32s | 🔤 840 tok | ⚡ 132.9 tok/s[0m
+
+[1m[2/6] API integration plan [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mShould cover webhooks, secrets, errors, testing, routes (got 4/5)[0m
+
+  [2mHere's a numbered checklist outlining the implementation of a Stripe payment integration for an e-commerce site, covering backend API routes, webhook handling, error cases, testing strategy, and security:
+  
+  ---
+  
+  ### 1. **Define Payment Integration Requirements**
+     - Understand the e-commerce site's ...[0m
+
+  [2m⏱ 7.7s | 🔤 1024 tok | ⚡ 133.0 tok/s[0m
+
+[1m[3/6] Debug workflow planning [93m[Medium][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mShould check logs, reproduce, inspect code. logs=True, reproduce=True, code=True[0m
+
+  [2mWhen a user reports that an app crashes when uploading files larger than 10MB, your debugging workflow should follow a structured approach to identify the root cause. Below is a step-by-step guide on how to proceed, along with the key things to check first, second, and third.
+  
+  ---
+  
+  ### 🔍 **Step-by-S...[0m
+
+  [2m⏱ 7.66s | 🔤 1024 tok | ⚡ 133.6 tok/s[0m
+
+[1m[4/6] Long context: needle in haystack (500 words) [91m[Hard][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mShould find BLUE-FALCON-42 buried in context[0m
+
+  [2mThe secret code mentioned in the text is **"BLUE-FALCON-42"**. This code is noted as a "theorem" or "secret code" in the context of the text, and it is specifically noted as part of a code that is "remembered for later." The code is not a real code or a code in a technical sense, but rather a refere...[0m
+
+  [2m⏱ 0.96s | 🔤 92 tok | ⚡ 95.5 tok/s[0m
+
+[1m[5/6] Long context: multi-fact retrieval [91m[Hard][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mShould answer 4 questions from report. Got 4/4 correct.[0m
+
+  [2m1. In Q3, there were 7 P1 incidents compared to 12 in Q2.  
+  2. 60% of services were migrated to Kubernetes in Q3.  
+  3. Project Neptune is an ML-based recommendation system that is about integrating machine learning into engineering workflows.  
+  4. The MTTR was 23 minutes on average, which is below t...[0m
+
+  [2m⏱ 0.92s | 🔤 86 tok | ⚡ 93.4 tok/s[0m
+
+[1m[6/6] Action plan with dependencies [91m[Hard][0m
+[2m──────────────────────────────────────────────────────────────────────[0m
+
+  [92mPASS[0m  [2mparallel=True, deps=True, assign=True, weeks=8[0m
+
+  [2mCertainly! Below is a **Week-by-Week Plan** for your SaaS product launch, structured as a table with responsibilities, dependencies, and parallelizable tasks. This plan is designed to ensure your team can deliver on your requirements within 8 weeks, while keeping your workflow efficient and scalable...[0m
+
+  [2m⏱ 7.73s | 🔤 1024 tok | ⚡ 132.5 tok/s[0m
+
+[1m──────────────────────────────────────────────────────────────────────
+  Agentic Planning Summary
+──────────────────────────────────────────────────────────────────────[0m
+  Score:         [93m█████░  5/6[0m
+  Total tokens:  4090
+  Total time:    31.3s
+  Avg tok/s:     120.1
+  Min tok/s:     93.4
+  Max tok/s:     133.6
+
+  [92mSaved: /Users/arson/mlx-bonsai-benchmarks/results/bench_agentic_20260402_222857.csv[0m
+
+
+[1m══════════════════════════════════════════════════════════════════════
+  COMBINED RESULTS
+══════════════════════════════════════════════════════════════════════[0m
+
+  Math                       [93m████░░░░  4/8  (50%)[0m
+  Reasoning                  [92m███████  7/7  (100%)[0m
+  Code                       [93m███░░░░  3/7  (43%)[0m
+  Writing                    [93m██████░  6/7  (86%)[0m
+  Tool Calling               [93m██████░░  6/8  (75%)[0m
+  Instruction Following      [93m████░░░  4/7  (57%)[0m
+  RAG / Grounded QA          [93m██████░  6/7  (86%)[0m
+  Multilingual               [93m██████░  6/7  (86%)[0m
+  Classification             [93m███████░  7/8  (88%)[0m
+  Agentic Planning           [93m█████░  5/6  (83%)[0m
+
+  ───────────────────────────────────────────────────────
+  [1mOverall Score:       [93m54/72 (75.0%)[0m
+  Total tokens:       18,471
+  Total time:         146.5s
+  Avg tok/s:          96.3
+  Min tok/s:          11.6
+  Max tok/s:          137.5
+
+  [2mResults saved per-suite in results/[0m
+[1m══════════════════════════════════════════════════════════════════════[0m
+

@@ -1,0 +1,85 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Reasoning,River crossing,Medium,True,Expected 7 crossings,5.16,58,483,541,93.5,"This classic riddle requires careful planning and a bit of deduction! Here's the step-by-step solution:
+
+**1.  The First Crossing:**
+
+*  **Farmer:**  On the first crossing, the farmer takes the wolf across the river.
+
+**2.  The Second Crossing:**
+
+*  **Goat:**  On the second crossing, the wolf stays on the original side, and the goat crosses with the farmer.
+
+**3.  The Third Crossing:**
+
+*  **Cabbage:**  On the third crossing, the wolf stays on the original side, and the goat stays on the origin",[],,
+2,Reasoning,Syllogism chain,Medium,True,"Expected: Yes, rose has roots (transitive chain)",2.26,40,199,239,87.9,"Let's break down this reasoning step-by-step:
+
+1. **Premise 1:** All roses are flowers.
+2. **Premise 2:** All flowers need water.
+3. **Premise 3:** All things that need water have roots.
+
+**To answer the question:**  Yes, roses have roots.
+
+**Reasoning:**
+
+* **Premise 1 and 2:**  This tells us that roses are a type of flower, and flowers need water to grow.
+* **Premise 3:**  This tells us that all living things that need water have roots as a way to absorb water and nutrients from the soil.
+
+Sin",[],,
+3,Reasoning,Constraint satisfaction,Hard,False,Must provide a valid arrangement and verify constraints,2.17,96,186,282,85.6,"Here's the solution and verification:
+
+**Arrangement:**
+
+1.  E - C - B - A - D
+
+**Verification:**
+
+1. **A is not at either end:**  This confirms that A cannot be in seat 1 or seat 5.
+
+2. **B is to the left of C:**  This confirms that B is in seat 2, and C in seat 3
+
+3. **D is adjacent to E:**  This confirms that D and E are in seats 4 and 5
+
+4. **C is not adjacent to A:**  This confirms that C and A are not in seats 1 and 5
+
+5. **E is at one of the ends:**  This confirms that E is in seat 1 or s",[],,
+4,Reasoning,Temporal reasoning,Medium,True,"Alice should be first, Charlie last",1.52,44,123,167,80.9,"Here's the order of the people, with explanations:
+
+1. **Alice:**  Alice finished first, as stated in the prompt.
+2. **Bob:**  Bob finished second, as stated in the prompt.
+3. **Diana:**  Diana finished after Bob, as stated in the prompt.
+4. **Eve:**  Eve finished after Alice but before Charlie, as stated in the prompt.
+5. **Charlie:**  Charlie finished after Diana, as stated in the prompt.
+
+Let me know if you'd like to play another order-puzzle game! 
+",[],,
+5,Reasoning,Counterfactual reasoning,Hard,True,Sun rises in west; Coriolis reverses,3.53,58,320,378,90.7,"Here's what would change if Earth rotated in the opposite direction while everything else remained unchanged:
+
+**(1) Sunrise/Sunset Direction:**
+
+* **Reversed:**  Instead of the sun rising in the east and setting in the west, it would reverse.  This means that in our current system, sunset would occur in the west and sunrise in the east.
+
+**(2) Prevailing Wind Patterns:**
+
+* **Reversed:**  On our current Earth, prevailing winds typically align with our planet's rotational axis, causing major win",[],,
+6,Reasoning,Spatial reasoning: cube folding,Hard,False,Must identify 3 opposite-face pairs,1.24,73,93,166,74.8,"Here's how to solve this:
+
+* **1st opposite:**  On the flattened cross, 1 on top faces 6 on the bottom.  
+
+* **2nd opposite:**  On the flattened cross, 2 faces 6 on the bottom
+
+* **3rd opposite:**  On the flattened cross, 3 faces 6 on the bottom
+
+Let me know if you'd like to explore other geometrical puzzles! 
+",[],,
+7,Reasoning,Causal chain analysis,Medium,True,Should analyze tradeoffs and second-order effects,9.3,65,873,938,93.9,"This is a great case study in analyzing causal relationships and considering second-order effects.  
+
+Let's break down the causal chain and analyze the effectiveness of the plastic bag ban:
+
+**1. The Initial Effect:**
+
+* **Direct Effect:** The ban on plastic bags likely had a direct effect on litter reduction.  This is the primary effect we observe in the data (40% decrease in litter).
+
+**2. Second-Order Effects:**
+
+* **Increased Demand:**  The ban likely led to increased demand for alternative ",[],,

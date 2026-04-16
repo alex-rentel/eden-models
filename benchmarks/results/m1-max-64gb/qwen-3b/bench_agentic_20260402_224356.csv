@@ -1,0 +1,33 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Agentic Planning,Simple task decomposition,Easy,True,"Should have numbered steps covering test, docker, deploy, monitor",9.14,64,1024,1088,112.0,"Certainly! Deploying a Python web application to production involves several steps, including testing, containerization, CI/CD, and monitoring. Here’s how you can break it down into ordered steps, numbered for clarity:
+
+### 1. Testing
+Before deploying to production, it's essential to ensure that your application works as expected. Here are the steps to test your application:
+
+1. **Unit Testing:** Write unit tests for your application's components. These tests should verify that individual functi",[],,
+2,Agentic Planning,API integration plan,Medium,True,"Should cover webhooks, secrets, errors, testing, routes (got 4/5)",6.28,70,702,772,111.7,"1. **Define API Routes for Stripe Integration**
+   - Identify the routes needed for Stripe, such as creating a charge, retrieving charge information, etc. These routes will allow users to pay via Stripe and process payments.
+   - Example routes: `/create-charge`, `/retrieve-charge-status`.
+
+2. **Set Up Backend to Communicate with Stripe API**
+   - Integrate Stripe API keys into the application to authorize requests to the Stripe API.
+   - Use Stripe's Node.js SDK to make API calls from the serve",[],,
+3,Agentic Planning,Debug workflow planning,Medium,True,"Should check logs, reproduce, inspect code. logs=True, reproduce=True, code=True",9.35,84,1024,1108,109.5,"To debug the issue where the app crashes when uploading files larger than 10MB, I'll follow a structured debugging workflow. Here's how I would proceed, starting with the initial steps and working my way deeper into the problem.
+
+### Step 1: Analyze Application Logs
+I'll begin by reviewing the logs in the logs to identify any errors or crashes that occurred during the upload process. These logs can provide immediate evidence of what went wrong. Common log files to look in include:
+- Application-",[],,
+4,Agentic Planning,Long context: needle in haystack (500 words),Hard,True,Should find BLUE-FALCON-42 buried in context,0.75,347,18,365,24.0,The secret code mentioned in the text is: BLUE-FALCON-42.,[],,
+5,Agentic Planning,Long context: multi-fact retrieval,Hard,True,Should answer 4 questions from report. Got 4/4 correct.,2.39,342,168,510,70.2,"1. In Q3 2024, there were 7 P1 incidents, compared to 12 in Q2 2024.
+
+2. The report does not specify the exact percentage of services migrated to Kubernetes. However, it states that 60% of services were migrated by August, and 30% more (i.e., 60% + 30% = 90%) were migrated by September, which means 90% of services were migrated to Kubernetes by September. So, 90% of services were migrated to Kubernetes.
+
+3. Project Neptune is an upcoming project that involves launching ML-based recommendations.
+",[],,
+6,Agentic Planning,Action plan with dependencies,Hard,False,"parallel=True, deps=True, assign=True, weeks=0",11.1,111,1024,1135,92.3,"Certainly! Here's a 8-week plan for launching your SaaS product, broken down by week, with tasks, dependencies, and parallelization notes. Let's assume the following roles for simplicity: Backend, Frontend, and Designer. 
+
+### 8-Week SaaS Product Launch Plan
+
+| Week | Tasks | Responsible Person | Dependencies | Parallelizable Tasks |
+| ---- | ---- | ---- | ---- | ---- |
+| 1 | - Kick-off meeting - Define project scope - Identify dependencies - Create initial task breakdown | - Product Manager - B",[],,

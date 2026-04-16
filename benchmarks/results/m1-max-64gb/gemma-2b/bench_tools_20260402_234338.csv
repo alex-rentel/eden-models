@@ -1,0 +1,79 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Tool Calling,Single tool: list directory,Easy,False,Should call list_files with correct path,1.64,19,138,157,84.1,"I am sorry, but I cannot provide real-time information, including file contents in specific locations like ""/home/user/projects"".  
+
+This kind of information is typically not accessible through methods like answering questions in a text-based way.
+
+To see the files in that directory, you would typically use a command-line interface like:
+
+* **On Linux/macOS:**
+  ```bash
+  ls /home/user/projects
+  ```
+
+* **On Windows:**
+  ```cmd
+  dir /home/user/projects
+  ```
+
+Let me know if you have other quest",[],,
+2,Tool Calling,Single tool: read specific file,Easy,False,Should call read_file with /etc/hostname,2.24,18,193,211,86.0,"I am unable to provide real-time information, including file contents on your system.  
+
+To see the contents of /etc/hostname, you need to use a terminal on your computer.  
+
+Here's how you can do it:
+
+1. **Open a terminal:**  On most Linux-based systems, you can typically open a terminal by typing `Ctrl+Alt+T` in your keyboard.
+
+2. **Navigate to the directory:** Use the `cd` command to navigate to the directory where /etc/hostname is located.
+
+3. **View the contents:** Use the `cat` command to ",[],,
+3,Tool Calling,Tool selection: weather (not file tools),Medium,False,"Should call get_weather, not search_web or file tools",1.56,20,127,147,81.3,"I do not have real-time information, including weather conditions.  
+
+To get the current weather in Tokyo, I recommend checking a reliable weather website or app like:
+
+* **Google Weather:** Just search ""weather in Tokyo"" on Google
+* **AccuWeather:** https://www.accuweather.com/
+* **Weather.com:** https://weather.com/
+* **The Japan Meteorological Agency:** https://www.jma.go.jp/en/
+
+These sources will provide you with up-to-date information on temperature, humidity, precipitation, and other weat",[],,
+4,Tool Calling,Tool selection: web search for current info,Medium,False,Should call search_web for current events,0.51,17,29,46,56.8,"The **Denver Nuggets** won the NBA Finals last year (2023). They defeated the Miami Heat in five games. 
+",[],,
+5,Tool Calling,Tool avoidance: simple question,Medium,True,Should answer directly without tools,0.38,16,14,30,37.0,"The capital of France is **Paris**. 🇫🇷 
+",[],,
+6,Tool Calling,Tool avoidance: math question,Medium,True,Should compute 345 without calling any tools,0.36,19,14,33,38.8,"15 * 23 = 345 
+",[],,
+7,Tool Calling,Write file with specific content,Medium,False,Should call write_file with correct path and content,2.04,27,173,200,84.8,"I can't create files on your computer directly as I am a text-based AI.  
+
+However, I can provide you with the command-line instructions to create the file on your system:
+
+On most Linux-based systems (like Ubuntu, Debian, etc.), use the following command in your terminal:
+
+```bash
+touch /home/user/hello.txt
+```
+
+This command will create an empty file named ""hello.txt"" in the ""/home/user"" directory.
+
+On macOS, use the following command in your terminal:
+
+```bash
+touch /home/user/hello.txt
+```
+
+T",[],,
+8,Tool Calling,Multi-step: find and read,Hard,False,Should start with list_files or run_command,2.82,29,250,279,88.6,"I can't directly access files on your local system.  
+
+As a large language model, I don't have real-time access to your computer's files or the ability to execute commands like ""read"" files.
+
+To accomplish what you need, you would typically use a command-line tool like `find` in conjunction with `cat` in conjunction with `read`.
+
+Here's how you might do it in the terminal:
+
+```bash
+find /home/user/projects -type f -name ""*.py""
+```
+
+This command will:
+
+* **find:** Use the `find` command to search",[],,

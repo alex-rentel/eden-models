@@ -1,0 +1,34 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Instruction Following,Exact sentence count,Easy,True,"Expected 3 sentences, got 3",0.7,58,78,136,111.4,"Machine learning is a subset of artificial intelligence that enables computers to learn from data and improve their performance on a task without being explicitly programmed. It involves training models on large datasets, allowing the models to identify patterns and make predictions or decisions based on that information. Through this process, machine learning models can adapt and refine their performance over time, leading to improved accuracy and efficiency in various applications.",[],,
+2,Instruction Following,Bullet point count,Easy,True,"Expected 5 numbered items, got 5",1.45,60,177,237,122.1,"1. Establish a consistent sleep schedule: Go to bed and wake up at the same time every day, including weekends, to regulate your body's internal clock.
+
+2. Create a relaxing bedtime routine: Engage in calming activities such as reading, meditation, or a warm bath to signal to your brain that it's time to sleep.
+
+3. Limit exposure to screens before bed: The blue light emitted by smartphones, tablets, and computers can suppress the production of melatonin, the hormone that helps you fall asleep.
+
+",[],,
+3,Instruction Following,Word avoidance,Medium,True,No forbidden words,1.4,58,171,229,122.2,"This incredible tool is a complex system that processes and stores information, allowing humans to communicate, create, and solve problems more efficiently.
+
+It consists of a series of interconnected components that work together to perform various tasks, such as:
+
+- Storing and retrieving information (like a vast library)
+- Executing instructions (like a skilled assistant)
+- Communicating with other systems (like a messenger)
+- Analyzing and interpreting data (like a skilled analyst)
+- Creating",[],,
+4,Instruction Following,Response in specific format,Medium,False,"Expected 3 each of TITLE/AUTHOR/WHY, got 0/0/0",1.16,73,135,208,116.4,"The Seven Husbands of Evelyn Hugo: [Evelyn Hugo]
+Rebecca Skloot: This novel is a heartwarming and thought-provoking exploration of love, identity, and the power of storytelling.
+
+The Nightingale: [The Nightingale]
+Kristin Hannah: This historical fiction novel is a poignant and emotional portrayal of the struggles and triumphs of two sisters in France during World War II.
+
+The Power: [The Power]
+Naomi Alderman: This thought-provoking and timely novel explores a world where women suddenly develop ",[],,
+5,Instruction Following,First letter constraint (acrostic),Hard,False,"Expected first letters 'HELLO', got 'HHELL'",1.07,59,127,186,118.9,"Here are five sentences about space exploration, where the first letter of each sentence spells 'HELLO':
+
+H - Historically, humans have been fascinated by the stars and the mysteries of the universe.
+E - Early astronauts paved the way for future space explorers, pushing the boundaries of human knowledge.
+L - Launching spacecraft into orbit is a complex and delicate process that requires precise calculations and engineering.
+L - Last year, a team of scientists discovered a new planet in a nearby ",[],,
+6,Instruction Following,JSON-only response,Medium,True,"Must return valid JSON with correct values, no wrapping",0.3,72,20,92,66.7,"{""animal"": ""whales"", ""color"": ""blue"", ""count"": 3}",[],,
+7,Instruction Following,Multi-constraint response,Hard,True,"Starts with 'Every': True, ends with '?': True, has number: True",0.82,84,89,173,108.6,"Every morning, millions of people around the world rely on coffee to start their day. Brazil and Colombia are among the top coffee-producing countries, accounting for over 60% of the world's total coffee supply. According to the International Coffee Organization, the global coffee market is valued at over $80 billion annually. As the demand for specialty coffee continues to rise, will the traditional coffee industry be able to adapt and stay relevant in the market?",[],,

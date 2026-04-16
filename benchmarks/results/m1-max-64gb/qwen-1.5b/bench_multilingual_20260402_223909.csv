@@ -1,0 +1,12 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Multilingual,English to Spanish,Easy,False,"Should contain parque, amigos, and a word for beautiful",0.24,51,21,72,88.6,"""El clima es maravilloso hoy y quiero ir al parque con mis amigos.""",[],,
+2,Multilingual,Spanish to English,Easy,True,Should mention 'artificial intelligence' and 'world',0.44,50,55,105,124.4,"The English translation of 'La inteligencia artificial está cambiando el mundo de maneras sorprendentes.' is:
+
+""Artificial intelligence is changing the world in surprising ways.""
+
+This sentence highlights the novel and sometimes unexpected impact of AI on various aspects of life and society.",[],,
+3,Multilingual,English to French,Medium,False,"Should contain pain (bread), fromage (cheese), vin (wine)",0.28,51,31,82,108.8,"""Je doit acheter des provisions pour la cena de cette nuit, y compris de la pain, de la fromage et de l'alcool.""",[],,
+4,Multilingual,Japanese to English,Medium,True,"Should mention programming, career, and importance",0.18,52,12,64,66.3,"""Learning programming is very important for your future career.""",[],,
+5,Multilingual,Language detection,Medium,True,Should identify Dutch,0.13,56,3,59,23.7,Dutch,[],,
+6,Multilingual,Respond in requested language,Medium,False,Should respond in German (found 1 German words),0.43,40,55,95,126.8,"Siehe nicht als Antwort auf Ihre Frage, da ich nicht als KI-Assistent für Informationen zur Verfügung steht. Stattdessen kann ich Ihnen nicht mit Informationen zur Verfügung stellen, da ich nicht mit Informationen zur Verfügung steht, da ich nicht mit Informationen zur Verfügung steht.",[],,
+7,Multilingual,Idiomatic translation,Hard,True,"Should give idiomatic Spanish equivalent, not literal translation",0.33,51,38,89,115.5,"In Spanish, the idiom ""It's raining cats and dogs"" is translated as ""Está lloviendo como una fábrica de gata y perro.""",[],,

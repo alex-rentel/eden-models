@@ -1,0 +1,26 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Multilingual,English to Spanish,Easy,True,"Should contain parque, amigos, and a word for beautiful",0.4,31,17,48,42.1,"El clima está hermoso hoy y quiero ir al parque con mis amigos. 
+",[],,
+2,Multilingual,Spanish to English,Easy,True,Should mention 'artificial intelligence' and 'world',0.36,26,13,39,35.9,"Artificial intelligence is changing the world in surprising ways. 
+",[],,
+3,Multilingual,English to French,Medium,True,"Should contain pain (bread), fromage (cheese), vin (wine)",0.56,32,30,62,53.8,"""J'ai besoin d'acheter des produits alimentaires, notamment du pain, du fromage et du vin pour le dîner ce soir."" 
+",[],,
+4,Multilingual,Japanese to English,Medium,False,"Should mention programming, career, and importance",0.36,30,14,44,38.9,"""Learning to program is extremely important for future careers."" 
+",[],,
+5,Multilingual,Language detection,Medium,True,Should identify Dutch,0.27,35,4,39,15.0,"Dutch 
+",[],,
+6,Multilingual,Respond in requested language,Medium,True,Should respond in German (found 10 German words),1.45,20,117,137,80.7,"Hier sind drei Vorteile des Sports:
+
+1. **Verbesserte Fitness:** Bewegung stärkt die Muskeln und macht sie flexibler, was die Leistungsfähigkeit in verschiedenen Aktivitäten erhöht.
+2. **Gesundheits- und Wohlbefinden:** Sport begünstigt ein gesunderes Herz-Kreis-S-System und reduziert das Risiko für chronische Erkrankungen wie Diabetes und Herzkrankheiten.
+3. **Entspannung und Motivation:** Bewegung kann helfen, Stress abzubauen und die Stimmung zu verbessern. Außerdem fördert Sport Motivation u",[],,
+7,Multilingual,Idiomatic translation,Hard,True,"Should give idiomatic Spanish equivalent, not literal translation",2.49,31,217,248,87.0,"Here are some ways to translate ""it's raining cats and dogs"" in Spanish, capturing the idiom's meaning in a way that goes beyond a literal translation:
+
+**Options emphasizing the intensity:**
+
+* **Esta lloviendo como gatos y perros.**  (This is the most direct and literal translation, emphasizing the sheer volume.)
+* **Esta lloviendo como un huracán.** (This implies a wild, chaotic kind of rain.)
+
+**Options emphasizing the unusual aspect:**
+
+* **Esta lloviendo como locura.** (This suggests that ",[],,

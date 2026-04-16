@@ -1,0 +1,35 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Instruction Following,Exact sentence count,Easy,True,"Expected 3 sentences, got 3",0.4,58,94,152,236.9,"Machine learning is a subset of artificial intelligence that enables computers to learn from data and improve their performance over time, allowing them to make decisions or predictions without being explicitly programmed for each task. This is achieved through algorithms such as supervised learning, reinforcement learning, and deep learning, which allow machines to identify patterns and relationships in data. As a result, machine learning systems can become increasingly intelligent and autonomo",[],,
+2,Instruction Following,Bullet point count,Easy,True,"Expected 5 numbered items, got 5",0.62,60,162,222,260.9,"1. Establish a bedtime routine: Develop a calming pre-sleep routine, such as reading a book, taking a warm bath, or practicing gentle stretches.
+
+2. Create a sleep-conducive environment: Make your bedroom a sleep haven by ensuring it is dark, quiet, and at a comfortable temperature.
+
+3. Avoid screens before bedtime: The blue light emitted by smartphones, tablets, and computers can suppress melatonin production, making it harder to fall asleep.
+
+4. Limit caffeine and nicotine: Avoid consuming caf",[],,
+3,Instruction Following,Word avoidance,Medium,False,Forbidden words found: ['device'],0.66,58,175,233,265.0,"This magical box can perform a wide range of tasks. It can read and write information, solve problems, and even make decisions. It can access a vast amount of knowledge and information from all over the world in a matter of seconds.
+
+It can perform calculations and solve mathematical problems with incredible speed and accuracy. It can also process large amounts of data and information, making it a powerful tool for scientists, engineers, and researchers.
+
+This magical box can even communicate wi",[],,
+4,Instruction Following,Response in specific format,Medium,False,"Expected 3 each of TITLE/AUTHOR/WHY, got 0/0/0",0.51,73,126,199,248.7,"1. ""The Seven Husbands of Joseph Wright"" by Julian Barnes
+Barnes' novel explores the life of photographer Joseph Wright, who captures the seven wives of his husband in the 19th century.
+
+2. ""The Particular Lodge"" by Antonina Hart
+Hart's debut novel tells the story of a woman who returns to her family's summer lodge in the Canadian wilderness after her husband's death.
+
+3. ""The Blind Girl"" by Tessalett Spears
+ Spears' novel follows a young woman who discovers a magical book in her attic, which le",[],,
+5,Instruction Following,First letter constraint (acrostic),Hard,False,"Expected first letters 'HELLO', got 'HHELL'",0.4,59,95,154,240.3,"Here are five sentences about space exploration where the first letter of each sentence spells 'HELLO':
+
+H - Having a clear understanding of the universe's structure is crucial for future space missions.
+E - Engineering innovative technologies will be necessary to support deep space exploration.
+L - Launching new spacecraft will require significant advances in materials science.
+L - Long-duration spaceflight poses significant health risks for astronauts.
+O - Opportunities for scientific discover",[],,
+6,Instruction Following,JSON-only response,Medium,False,"Must return valid JSON with correct values, no wrapping",0.18,72,25,97,138.2,"{
+    ""animal"": ""blow"",
+    ""color"": ""blue"",
+    ""count"": 3
+}",[],,
+7,Instruction Following,Multi-constraint response,Hard,True,"Starts with 'Every': True, ends with '?': True, has number: True",0.37,84,85,169,227.9,"Every morning, millions of people around the world rely on their daily cup of coffee to get them going. In fact, it's estimated that over 2 billion cups of coffee are consumed globally every day. From the bustling streets of Tokyo to the quaint cafes of Paris, coffee is a beloved beverage in many countries. But what happens when the world runs out of coffee - will it be replaced by a new favorite beverage?",[],,

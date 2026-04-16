@@ -1,0 +1,29 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Agentic Planning,Simple task decomposition,Easy,False,"Should have numbered steps covering test, docker, deploy, monitor",6.78,64,1024,1088,150.9,"Certainly! Deploying a Python web app to production involves several steps, each with its own purpose and importance. Here is a detailed list of the steps involved, numbered for clarity:
+
+1. *********************************************************************************************************************************************************************************************************************************************************************************************************************",[],,
+2,Agentic Planning,API integration plan,Medium,False,"Should cover webhooks, secrets, errors, testing, routes (got 1/5)",6.86,70,1024,1094,149.2,"**Feature Implementation Plan** for Stripe Payment Integration on an e-commerce site:
+
+**1** - Define the Feature Scope
+**2** - Define Technical Requirements
+**3** - Define the Technical Design
+**4** - Define the Technical Implementation
+**5** - Define the Technical Testing
+**6** - Define the Technical Security Measures
+**7** - Define the Technical Documentation
+**8** - Define the Technical Documentation for end-users
+**9** - Define the Technical Documentation for end-users (continued)
+**10** - ",[],,
+3,Agentic Planning,Debug workflow planning,Medium,True,"Should check logs, reproduce, inspect code. logs=True, reproduce=True, code=True",6.83,84,1024,1108,150.0,"**First** step: Review the logs from the staging environment to see if there are any error messages when the app crashes when uploading files larger than 10MB. This will provide direct evidence of the problem and help pinpoint the source of the issue.
+
+**Second** step: Examine the application code to see if there are any direct limitations on file size when uploading files. Check the code for any direct constraints on the file size when the app crashes when uploading files larger than 10MB.
+
+**T",[],,
+4,Agentic Planning,Long context: needle in haystack (500 words),Hard,True,Should find BLUE-FALCON-42 buried in context,0.4,347,18,365,45.0,"The secret code mentioned in the text is ""BLUE-FALCON-42"".",[],,
+5,Agentic Planning,Long context: multi-fact retrieval,Hard,True,Should answer 4 questions from report. Got 4/4 correct.,0.84,342,89,431,105.5,"1. In Q3, the number of P1 incidents was 7, which is down from 12 in Q2.
+2. In Q3, the percentage of services migrated to Kubernetes was 60%.
+3. Project Neptune is an ML-based recommendation feature.
+4. The MTTR (Mean Time to Repair) in Q3 was 23 minutes, which is within the target of <30 minutes.",[],,
+6,Agentic Planning,Action plan with dependencies,Hard,False,"parallel=False, deps=False, assign=False, weeks=0",6.87,111,1024,1135,149.1,"**Launch SaaS Product** - Weekly Plan
+
+****Who****** | *************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************",[],,

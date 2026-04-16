@@ -1,0 +1,189 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Code,FizzBuzz with twist,Easy,False,"Must run and print FizzBuzz, FizzBoom, DONE. 1
+2
+Fizz
+4
+Buzz
+Fizz
+Boom
+8
+Fizz
+Buzz
+11
+Fizz
+13
+Boom
+FizzBuzz
+16
+17
+Fizz
+19
+Buzz
+Fizz
+22
+23
+Fizz
+Buzz
+26
+Fizz
+Boom
+29
+FizzBuzz
+DONE",2.04,103,96,199,47.1,"```python
+for i in range(1, 31):
+    if i % 3 == 0 and i % 5 == 0:
+        print(""FizzBuzz"")
+    elif i % 3 == 0:
+        print(""Fizz"")
+    elif i % 5 == 0:
+        print(""Buzz"")
+    elif i % 7 == 0:
+        print(""Boom"")
+    else:
+        print(i)
+print(""DONE"")
+```",[],"1
+2
+Fizz
+4
+Buzz
+Fizz
+Boom
+8
+Fizz
+Buzz
+11
+Fizz
+13
+Boom
+FizzBuzz
+16
+17
+Fizz
+19
+Buzz
+Fizz
+22
+23
+Fizz
+Buzz
+26
+Fizz
+Boom
+29
+FizzBuzz
+DONE",
+2,Code,Binary search (first occurrence),Medium,True,Must pass all assertions. ALL PASSED,3.94,164,204,368,51.8,"```python
+def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    result = -1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            result = mid
+            right = mid - 1  # Look for earlier occurrences
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return result
+
+assert binary_search([1,2,2,2,3,4], 2) == 1
+assert binary_search([1,2,3,4,5], 6) == -1
+assert binary_search([], 1",[],ALL PASSED,
+3,Code,LRU Cache from scratch,Hard,False,Must implement O(1) LRU. ,3.15,190,153,343,48.5,"```python
+from collections import OrderedDict
+
+class LRUCache:
+    def __init__(self, capacity):
+        self.cache = OrderedDict()
+        self.capacity = capacity
+
+    def get(self, key):
+        if key not in self.cache:
+            return -1
+        # Move key to end to mark as recently used
+        self.cache.move_to_end(key)
+        return self.cache[key]
+
+    def put(self, key, value):
+        if key in self.cache:
+            # Update value and move key to end
+            self.cache.move",[],,
+4,Code,Debug: off-by-one error,Medium,True,"Must fix the off-by-one and pass tests. [1, 2, 3, 4, 5, 6]
+ALL PASSED",3.86,251,185,436,47.9,"```python
+def merge_sorted(a, b):
+    result = []
+    i = j = 0
+    while i < len(a) and j < len(b):  # BUG: should be <, not <=
+        if a[i] <= b[j]:
+            result.append(a[i])
+            i += 1
+        else:
+            result.append(b[j])
+            j += 1
+    result.extend(a[i:])
+    result.extend(b[j:])
+    return result
+
+print(merge_sorted([1, 3, 5], [2, 4, 6]))
+
+assert merge_sorted([1,3,5], [2,4,6]) == [1,2,3,4,5,6]
+assert merge_sorted([], [1,2]) == [1,2]
+assert merge_sorted([1]",[],"[1, 2, 3, 4, 5, 6]
+ALL PASSED",
+5,Code,Debug: logic error in recursion,Hard,True,Must fix the recursion bug. ALL PASSED,2.48,219,108,327,43.6,"```python
+def flatten(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result
+
+assert flatten([1, [2, [3, 4], 5], 6]) == [1, 2, 3, 4, 5, 6]
+assert flatten([]) == []
+assert flatten([[[[1]]]]) == [1]
+print('ALL PASSED')
+```",[],ALL PASSED,
+6,Code,Refactor: extract and improve,Hard,True,"Must produce same output + REFACTORED. DIANA: 95 (A)
+BOB: 92 (A)
+EVE: 88 (B)
+ALICE: 85 (B)
+REFACTORED",4.18,235,204,439,48.9,"```python
+from typing import List, Dict
+
+data: List[Dict[str, str]] = [{""name"": ""alice"", ""score"": ""85""}, {""name"": ""bob"", ""score"": ""92""}, 
+                               {""name"": ""charlie"", ""score"": ""78""}, {""name"": ""diana"", ""score"": ""95""},
+                               {""name"": ""eve"", ""score"": ""88""}]
+
+result: List[Dict[str, str]] = [
+    {""name"": d[""name""].upper(), ""score"": d[""score""], ""grade"": ""A"" if int(d[""score""]) >= 90 else ""B""}
+    for d in data if int(d[""score""]) >= 80
+]
+
+result.sort(key=l",[],"DIANA: 95 (A)
+BOB: 92 (A)
+EVE: 88 (B)
+ALICE: 85 (B)
+REFACTORED",
+7,Code,Tree traversals,Medium,True,Must pass all traversal assertions. ALL PASSED,6.66,165,364,529,54.6,"```python
+class BinaryTreeNode:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+def build_tree():
+    # Create the tree from the given structure
+    root = BinaryTreeNode(4)
+    root.left = BinaryTreeNode(2)
+    root.right = BinaryTreeNode(6)
+    root.left.left = BinaryTreeNode(1)
+    root.left.right = BinaryTreeNode(3)
+    root.right.left = BinaryTreeNode(5)
+    root.right.right = BinaryTreeNode(7)
+    return root
+
+def inorder_traver",[],ALL PASSED,

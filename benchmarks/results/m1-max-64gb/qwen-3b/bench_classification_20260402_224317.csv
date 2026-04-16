@@ -1,0 +1,15 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Classification,Sentiment: clearly positive,Easy,True,Expected: positive,0.19,71,2,73,10.4,positive,[],,
+2,Classification,Sentiment: clearly negative,Easy,True,Expected: negative,0.16,73,2,75,12.5,negative,[],,
+3,Classification,Sentiment: subtle/mixed,Medium,True,"Expected: mixed, neutral, or negative",0.17,69,2,71,11.7,negative,[],,
+4,Classification,Named Entity Recognition,Medium,True,"Must extract Tim Cook, Garcia, Apple, Goldman Sachs, Austin/Texas",0.55,97,41,138,74.4,"```json
+{
+  ""people"": [""Tim Cook"", ""Senator Maria Garcia""],
+  ""organizations"": [""Apple"", ""Goldman Sachs""],
+  ""locations"": [""Austin, Texas""]
+}
+```",[],,
+5,Classification,Intent detection: single,Easy,False,Expected: book_flight,0.19,79,3,82,15.5,check_status,[],,
+6,Classification,Intent detection: ambiguous,Medium,True,Expected: refund_request or exchange_request,0.2,85,3,88,15.0,refund_request,[],,
+7,Classification,Topic classification: multi-label,Medium,True,Expected at least 'technology' and 'health',0.29,101,10,111,35.1,"[""health"", ""business"", ""technology""]",[],,
+8,Classification,Spam detection,Easy,True,Expected: spam,0.22,99,2,101,9.0,spam,[],,

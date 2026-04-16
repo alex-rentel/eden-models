@@ -1,0 +1,32 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Writing,Product description,Easy,True,"Must mention all 3 features, under 600 chars",0.75,48,49,97,65.3,"This cutting-edge wireless mechanical keyboard empowers programmers with cutting-edge performance.  Experience lightning-fast typing with hot-swappable switches, programmable layers, and a split design that fosters optimal ergonomics and cutting-edge programming efficiency.  
+",[],,
+2,Writing,Summarize to exact length,Medium,True,"Expected exactly 3 sentences, got 3",1.38,212,97,309,70.3,"The James Webb Space Telescope (JWST) has revolutionized our understanding of the early universe by capturing images of galaxies forming shortly after the Big Bang and providing insights into exoplanet atmospheres.  JWST has also enabled detailed observations of our own solar system, capturing images of planets like Neptune and revealing new ring structures around Jupiter.  This cutting-edge space telescope, with its cutting-edge technology and extended lifespan, promises to provide valuable dat",[],,
+3,Writing,Compress to word limit,Medium,True,"Expected ≤50 words, got 31",0.73,24,48,72,65.9,"A CPU fetches instructions, decodes them, and executes commands by manipulating data within its registers.  This process, called ""transitio"",  occurs in cycles, delivering instructions and completing tasks to run your computer.  
+",[],,
+4,Writing,Tone: formal to casual rewrite,Medium,True,"Should be shorter, more casual, with informal language",0.71,66,45,111,63.4,"Hey team! 👋  Just a heads-up, our quarterly review gets pushed to the following Monday due to some last-minute stuff.  Let me know if you can make it. 👍  Thanks!  
+",[],,
+5,Writing,Tone: technical to 5-year-old,Medium,True,"Must use analogy, ≤100 words (got 84)",1.31,38,105,143,79.9,"Imagine you want to play with your friends in a big park called ""Wonderland"".  But, the park is huge, with lots of houses and trees!
+
+DNS is like a special map that tells you where each house in Wonderland is.  When you type in ""Wonderland"" on your computer, DNS helps you find the exact address to go to each house in the park.
+
+So, next time you use the internet, think of DNS as the map that helps you find the right websites! 😊
+",[],,
+6,Writing,Creative: story with constraints,Hard,False,"Must be set on Mars, under 200 words (got 948)",10.82,58,1024,1082,94.6,"The red dust swirls around Anya's boot as she examines the rock face.  ""This is weird,"" she mutters, adjusting her goggles.
+
+""Weird?""  Elias chuckles, adjusting his own goggles.  ""This is Mars, Anya. Weird is our daily dose.""
+
+Anya sighs, scanning the rock face again.  ""But this one...it feels different.  This one feels...alive?""
+
+Elias shrugs, adjusting his boot boot again.  ""Maybe?""
+
+Anya continues to stare, her face creased in concentration.  Suddenly, the rock face begins to glow, pulsing wi",[],,
+7,Writing,Email: professional with constraints,Medium,True,"Must have subject line, gratitude, ≤150 words (got 97)",1.59,47,127,174,80.0,"Subject Line: Regarding Job Offer - [Your Name]
+
+Dear [Hiring Manager Name],
+
+Thank you so much for offering me the position of [Job Title] at [Company Name]. I truly appreciate you taking the time to interview me and share more about the role and the team.
+
+After careful consideration, I have decided to accept another opportunity that aligns more closely with my current career goals.
+
+I was very impressed with [Company Name] and the team, and I remain very interested in future opportunities wit",[],,

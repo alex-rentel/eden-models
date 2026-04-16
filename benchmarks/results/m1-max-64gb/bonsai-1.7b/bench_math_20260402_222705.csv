@@ -1,0 +1,237 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Math,Multi-step arithmetic,Easy,True,Expected 1226,2.3,47,296,343,128.6,"We are given the expression:
+
+$$
+(48 \times 27) + \left(\frac{156}{12}\right) - 83
+$$
+
+### Step 1: Calculate $48 \times 27$
+
+Use the distributive property:
+
+$$
+48 \times 27 = (40 + 8) \times 27 = 40 \times 27 + 8 \times 27
+$$
+
+Now calculate:
+
+$$
+40 \times 27 = 1080
+$$
+
+$$
+8 \times 27 = 216
+$$
+
+So:
+
+$$
+48 \times 27 = 1080 + 216 = 1296
+$$
+
+### Step 2: Calculate $\frac{156}{12}$
+
+$$
+\frac{156}{12} = 13
+$$
+
+### Step 3: Combine the results
+
+Now add:
+
+$$
+1296 + 13 - 83
+$$
+
+First, add:
+
+$$
+1296 + 13 = ",[],,
+2,Math,Percentage word problem,Easy,True,Expected ~$58.10,3.97,67,546,613,137.4,"To find the total amount you pay, we need to follow a series of steps:
+
+---
+
+### **Step 1: Calculate the discount on the shirt**
+The original price of the shirt is:
+
+$$
+\$85
+$$
+
+It's on sale for **30% off**:
+
+$$
+\text{Discount amount} = 85 \times 0.30 = \$25.50
+$$
+
+So, the **sale price** after the 30% discount is:
+
+$$
+\$85 - \$25.50 = \$59.50
+$$
+
+---
+
+### **Step 2: Apply the loyalty card discount**
+You have a loyalty card that gives you an **additional 10% off** on the sale price:
+
+$$
+\text{Loya",[],,
+3,Math,System of equations,Medium,False,"Expected x=3.6 (or 18/5), y=2.6 (or 13/5)",3.36,51,455,506,135.6,"We are given the system of equations:
+
+$$
+\begin{cases}
+3x + 2y = 16 \quad \text{(1)} \\
+x - y = 1 \quad \text{(2)}
+\end{cases}
+$$
+
+### Step 1: Use equation (2) to express one variable in terms of the other
+
+From equation (2):
+
+$$
+x - y = 1 \quad \Rightarrow \quad x = y + 1 \quad \text{(3)}
+$$
+
+### Step 2: Substitute equation (3) into equation (1)
+
+Substitute equation (3) into equation (1):
+
+$$
+3(y + 1) + 2y = 16
+$$
+
+### Step 3: Expand and simplify
+
+$$
+3y + 3 + 2y = 16 \quad \Rightarrow \quad 5y",[],,
+4,Math,Probability with combinations,Medium,True,Expected 1/12 ≈ 0.0833,5.29,58,716,774,135.4,"We are given a bag containing:
+
+- 5 red marbles
+- 3 blue marbles
+- 2 green marbles
+
+We are asked to find the probability that **all 3 drawn marbles are red** when you draw **3 marbles without replacement**.
+
+---
+
+### Step 1: Total number of marbles
+
+$$
+\text{Total marbles} = 5 + 3 + 2 = 10
+$$
+
+---
+
+### Step 2: Favorable outcomes
+
+We want to draw **3 red marbles** from the **5 red** marbles.
+
+This is a simple **combinatorics** problem:
+
+$$
+\text{Favorable outcomes} = \binom{5}{3}
+$$
+
+We calculate",[],,
+5,Math,Quadratic equation,Medium,False,Expected x=3 and x=0.5 (or 1/2),2.76,39,377,416,136.6,"We are given the quadratic equation:
+
+$$
+2x^2 - 7x + 3 = 0
+$$
+
+We will solve it using the **quadratic formula**:
+
+$$
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+$$
+
+### Step 1: Identify coefficients
+
+From the equation:
+
+$$
+2x^2 - 7x + 3 = 0
+$$
+
+- $ a = 2 $
+- $ b = -7 $
+- $ c = 3 $
+
+### Step 2: Plug into the quadratic formula
+
+$$
+x = \frac{-(-7) \pm \sqrt{(-7)^2 - 4(2)(3)}}{2(2)}
+$$
+
+Simplify:
+
+$$
+x = \frac{7 \pm \sqrt{49 - 24}}{4}
+$$
+
+$$
+x = \frac{7 \pm \sqrt{25}}{4}
+$$
+
+### Step 3: Simplify the squa",[],,
+6,Math,Geometry: composite area,Medium,False,Expected area = 120 sq ft,5.76,78,773,851,134.2,"We are given an L-shaped room consisting of two rectangles:
+
+- One rectangle is **12 ft × 8 ft**
+- The other is **6 ft × 4 ft**
+- These two rectangles share a **6-foot side** (the 6-foot side connects the two rectangles)
+
+---
+
+### 🔍 Step 1: Determine the total floor area
+
+We need to find the **area of the two rectangles** and then **subtract the overlapping part** (the 6-foot side) to avoid double-counting.
+
+#### Area of the first rectangle:
+$$
+12 \text{ ft} \times 8 \text{ ft} = 96 \text{ ft}^2",[],,
+7,Math,Monty Hall: 5-door variant,Hard,False,"Switch=4/5, Stay=1/5",7.65,76,1024,1100,133.9,"This is a classic probability puzzle from the game show ""Host's Game Show,"" often referred to as the ""Monty Hall"" problem. Let's go through the logic step by step.
+
+---
+
+### 🔍 **Game Setup:**
+- There are **5 doors**.
+- One door has a **car** (the prize).
+- The other **4 doors** have **goats**.
+- You pick **door 1**.
+- The **host** opens **3 doors** showing **goats**.
+- You are asked: Should you **switch** to the **remaining door**?
+
+---
+
+### 🔍 **What Do We Know?**
+1. Initially, you pick **door 1",[],,
+8,Math,Logarithm & exponent simplification,Hard,True,Expected 7 (6 + 4 - 3),3.22,42,436,478,135.5,"We are asked to simplify the expression:
+
+$$
+\log_2(64) + \log_3(81) - \log_5(125)
+$$
+
+### Step 1: Use logarithmic identities
+
+We will use the **logarithmic identities**:
+
+1. $\log_b(a) + \log_b(c) = \log_b(a \cdot c)$
+2. $\log_b(a) - \log_b(c) = \log_b\left(\frac{a}{c}\right)$
+
+These identities will help us simplify the expression.
+
+### Step 2: Use identities on the logs
+
+First, simplify each term:
+
+#### a) $\log_2(64)$
+
+We know that:
+
+$$
+64 = 2^6 \Rightarrow \log_2(64) = \log_2(2^6) = 6
+$$
+
+##",[],,

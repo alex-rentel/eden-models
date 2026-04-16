@@ -1,0 +1,10 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Multilingual,English to Spanish,Easy,True,"Should contain parque, amigos, and a word for beautiful",0.52,34,19,53,36.7,'El tiempo es hermoso hoy y quiero ir al parque con mis amigos.',[],,
+2,Multilingual,Spanish to English,Easy,True,Should mention 'artificial intelligence' and 'world',0.42,33,13,46,31.2,'Artificial intelligence is changing the world in surprising ways.',[],,
+3,Multilingual,English to French,Medium,True,"Should contain pain (bread), fromage (cheese), vin (wine)",0.73,34,32,66,43.7,"« J'ai besoin d'acheter des courses, notamment du pain, du fromage et du vin pour le dîner de ce soir. »",[],,
+4,Multilingual,Japanese to English,Medium,True,"Should mention programming, career, and importance",0.38,35,11,46,28.8,Learning programming is very important for your future career.,[],,
+5,Multilingual,Language detection,Medium,True,Should identify Dutch,0.32,39,3,42,9.2,Dutch,[],,
+6,Multilingual,Respond in requested language,Medium,True,Should respond in German (found 5 German words),1.15,23,57,80,49.7,"1. Verbessert die allgemeine Gesundheit und Stärke.  
+2. Unterstützt ein gesundes Gewicht und die Zufuhr von Kalorien.  
+3. Verbesserung der Stimmung und Reduktion von Stress.",[],,
+7,Multilingual,Idiomatic translation,Hard,False,"Should give idiomatic Spanish equivalent, not literal translation",0.45,34,15,49,33.2,"""Está lloviendo gatitos y perros.""",[],,

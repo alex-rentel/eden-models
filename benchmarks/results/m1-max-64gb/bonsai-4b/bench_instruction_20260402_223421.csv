@@ -1,0 +1,26 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Instruction Following,Exact sentence count,Easy,True,"Expected 3 sentences, got 3",1.23,35,78,113,63.6,"Machine learning is a branch of artificial intelligence that enables computers to learn patterns from data and improve performance over time without being explicitly programmed. It involves algorithms that identify relationships in datasets and adjust their models based on feedback, such as errors or successes, to make accurate predictions or decisions. Common applications include image recognition, natural language processing, and fraud detection, where models continuously adapt to new inputs.",[],,
+2,Instruction Following,Bullet point count,Easy,True,"Expected 5 numbered items, got 5",1.5,37,95,132,63.4,"1. Maintain a consistent bedtime and wake-up schedule, even on weekends.  
+2. Create a relaxing bedtime routine, such as reading or taking a warm shower.  
+3. Limit screen time before bed by avoiding phones, tablets, and TVs at least one hour prior.  
+4. Keep your bedroom cool, dark, and quiet; use a comfortable mattress and pillows.  
+5. Avoid caffeine and heavy meals in the evening, as they can disrupt sleep quality.",[],,
+3,Instruction Following,Word avoidance,Medium,False,Forbidden words found: ['computer'],1.72,35,114,149,66.4,"A computer processes information by following a set of instructions, known as code, to perform tasks. It receives data from various sources, such as sensors or user input, and converts it into meaningful outputs. Inside, it uses electronic components to store and manipulate data, allowing it to run programs or respond to commands. When a request is sent, it breaks it down into smaller steps, executes each one, and returns a result. This ability to store, organize, and respond to input makes it a",[],,
+4,Instruction Following,Response in specific format,Medium,True,"Expected 3 each of TITLE/AUTHOR/WHY, got 3/3/3",1.77,50,114,164,64.4,"TITLE: The Alchemist  
+AUTHOR: Paulo Coelho  
+WHY: A timeless journey of self-discovery and following one's dreams, blending philosophy with a compelling story of transformation.
+
+TITLE: 1984  
+AUTHOR: George Orwell  
+WHY: A chilling exploration of surveillance and loss of freedom, offering a powerful warning about authoritarian control.
+
+TITLE: To Kill a Mockingbird  
+AUTHOR: Harper Lee  
+WHY: A profound and accessible tale of justice, morality, and the complexities of growing up in a deeply di",[],,
+5,Instruction Following,First letter constraint (acrostic),Hard,False,"Expected first letters 'HELLO', got 'HHHHH'",1.56,36,102,138,65.5,"Hello, astronauts are currently exploring the icy moons of Jupiter's moon Europa to search for signs of ancient life.  
+Hello, scientists have used telescopes to observe distant exoplanets, hoping to find Earth-like worlds.  
+Hello, the Mars rover Perseverance has been collecting rock samples for future return to Earth.  
+Hello, space missions are advancing with new propulsion systems designed for deep space travel.  
+Hello, Earth's orbit around the Sun is continuously monitored to ensure safety",[],,
+6,Instruction Following,JSON-only response,Medium,True,"Must return valid JSON with correct values, no wrapping",0.48,49,20,69,41.8,"{""animal"": ""blue whale"", ""color"": ""blue"", ""count"": 3}",[],,
+7,Instruction Following,Multi-constraint response,Hard,True,"Starts with 'Every': True, ends with '?': True, has number: True",1.72,61,111,172,64.6,"Every morning, people around the world drink coffee, with Brazil being the top producer globally, serving over 19 billion cups annually. In Brazil, coffee is a cultural staple, deeply woven into daily life and traditions, while in Ethiopia, it is believed to be the first invention of coffee, with over 70% of the population consuming it daily. Although coffee is grown in many countries, Brazil remains the largest exporter, accounting for nearly 70% of global coffee sales. How does coffee change p",[],,

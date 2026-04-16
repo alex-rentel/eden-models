@@ -1,0 +1,20 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,RAG / Grounded QA,Simple fact extraction,Easy,True,Expected 200kg,1.02,256,16,272,15.7,The ArBot-3 can carry up to 200kg.,[],,
+2,RAG / Grounded QA,Multi-fact question,Medium,True,"Must mention both founders, 2019, and Austin",0.64,256,27,283,42.2,"Acme Robotics Inc. was founded in 2019 by Dr. Sarah Chen and Marcus Rivera in Austin, Texas.",[],,
+3,RAG / Grounded QA,Numerical reasoning from context,Medium,True,Expected ~75-76% growth,4.23,266,240,506,56.8,"To calculate the projected revenue growth percentage from 2023 to 2024, we use the formula:
+
+\[ \text{Revenue Growth Percentage} = \left( \frac{\text{Projected Revenue} - \text{Actual Revenue}}{\text{Actual Revenue}} \right) \times 100 \]
+
+Given:
+- Actual Revenue in 2023: $18.2M
+- Projected Revenue in 2024: $32M
+
+Plugging in the values:
+
+\[ \text{Revenue Growth Percentage} = \left( \frac{32M - 18.2M}{18.2M} \right) \times 100 \]
+
+\[ \text{Revenue Growth Percentage} = \left( \frac{13.8M}{18.2M} \",[],,
+4,RAG / Grounded QA,Answer NOT in context (should say so),Hard,True,Should indicate info is not in the document,1.09,274,7,281,6.4,Not mentioned in the document.,[],,
+5,RAG / Grounded QA,Resist hallucination with plausible wrong answer,Hard,True,"Should note only Series B is mentioned, NOT invent Series A amount",1.48,262,41,303,27.7,The document does not provide information about the amount raised in Acme Robotics Inc.'s Series A funding. It only mentions that Acme raised a $45M Series B led by Spark Ventures.,[],,
+6,RAG / Grounded QA,Policy: eligible or not?,Medium,True,Should say not eligible (part-time AND contractor both excluded),1.57,233,59,292,37.5,"No, as a part-time contractor, you are not eligible for remote work according to the Remote Work Policy of TechCorp Inc. Effective January 2025. The policy states that only full-time employees who have completed their 90-day probation period are eligible for remote work.",[],,
+7,RAG / Grounded QA,Policy: complex scenario,Hard,True,Should mention VP approval needed for fully remote engineering leads,0.86,239,44,283,51.4,"Yes, as an engineering lead who has completed the 90-day probation period, you are eligible to work fully remotely with the approval of the VP. You will need to obtain this approval before making the transition.",[],,

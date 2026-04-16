@@ -1,0 +1,75 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Reasoning,River crossing,Medium,True,Expected 7 crossings,15.46,76,1024,1100,66.2,"To solve this classic puzzle, we need to ensure that the wolf and goat are never left alone together, and the goat and cabbage are never left alone together. Here is the step-by-step solution:
+
+1. **First Crossing:**
+   - The farmer takes the goat across the river.
+   - **Current state:** Farmer and goat on the other side, wolf and cabbage remain on the original side.
+
+2. **Second Crossing:**
+   - The farmer returns alone.
+   - **Current state:** Farmer on the original side, goat and wolf on the",[],,
+2,Reasoning,Syllogism chain,Medium,False,"Expected: Yes, rose has roots (transitive chain)",6.16,60,406,466,65.9,"Certainly! Let's break down the logical reasoning step by step:
+
+1. **Premise 1**: All roses are flowers.
+   - This means that if something is a rose, then it is also a flower. We can denote this as: 
+     - If X is a rose, then X is a flower. (R → F)
+
+2. **Premise 2**: All flowers need water.
+   - This means that if something is a flower, then it needs water. We can denote this as:
+     - If X is a flower, then X needs water. (F → W)
+
+3. **Premise 3**: All things that need water have roots.
+   ",[],,
+3,Reasoning,Constraint satisfaction,Hard,True,Must provide a valid arrangement and verify constraints,9.89,110,650,760,65.7,"To find a valid arrangement that satisfies all the given constraints, let's analyze and place the individuals step by step.
+
+### Given Constraints:
+1. A is not at either end.
+2. B is to the left of C.
+3. D is adjacent to E.
+4. C is not adjacent to A.
+5. E is at one of the ends.
+
+### Step-by-Step Analysis:
+
+1. **E is at one of the ends.**
+   - Possible positions for E: 1 or 5.
+
+2. **D is adjacent to E.**
+   - If E is at position 1, D must be at position 2.
+   - If E is at position 5, D must be at",[],,
+4,Reasoning,Temporal reasoning,Medium,True,"Alice should be first, Charlie last",3.38,64,216,280,63.9,"To determine the order of the five people, let's analyze the given information step by step:
+
+1. Alice finished before Bob.
+2. Charlie finished after Diana.
+3. Bob finished before Diana.
+4. Eve finished after Alice but before Charlie.
+
+We can summarize these as follows:
+
+- From (1) and (3), we know that Alice and Bob both finished before Diana. So, Alice < Bob < Diana.
+- From (2), we know that Charlie finished after Diana. So, Diana < Charlie.
+- From (4), we know that Eve finished after Alice an",[],,
+5,Reasoning,Counterfactual reasoning,Hard,True,Sun rises in west; Coriolis reverses,8.24,79,547,626,66.4,"If the Earth rotated in the opposite direction while everything else remained the same, several significant changes would occur. Let's examine each of the three aspects you mentioned:
+
+1. **Sunrise and Sunset Direction:**
+   - If the Earth rotated in the opposite direction, the direction of sunrise and sunset would be reversed. Instead of the Sun rising in the east and setting in the west, it would rise in the west and set in the east. This is because the rotation of the Earth is what causes the",[],,
+6,Reasoning,Spatial reasoning: cube folding,Hard,True,Must identify 3 opposite-face pairs,6.34,93,411,504,64.8,"To determine which numbers are opposite each other when the cube is flattened into a cross shape, let's first visualize the arrangement. When the cube is flattened, the numbers are arranged as follows:
+
+```
+  1
+2 3 4 5
+  6
+```
+
+Here, the number 1 is at the top, and the numbers 2, 3, 4, and 5 are in a row. The number 6 is at the bottom, directly below the number 4. 
+
+Now, let's identify the numbers that are opposite each other:
+
+1. **Opposite 1**: The number directly opposite 1 is 6. This is beca",[],,
+7,Reasoning,Causal chain analysis,Medium,True,Should analyze tradeoffs and second-order effects,11.25,85,733,818,65.2,"To analyze the effectiveness of the city's ban on plastic bags and the overall impact, let's break down the causal chain and consider both the intended and unintended effects.
+
+### Initial Impact: Banning Plastic Bags
+
+1. **Intended Goal**: The primary goal of the ban was to reduce litter and waste. By banning plastic bags, the city aimed to reduce the number of plastic bags that end up as litter.
+
+2. **Short-term Outcome**: Six months after the ban, litter decreased by 40%. This is a positive o",[],,

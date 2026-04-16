@@ -1,0 +1,16 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Multilingual,English to Spanish,Easy,True,"Should contain parque, amigos, and a word for beautiful",0.43,34,19,53,44.4,El clima es hermoso hoy y quiero ir al parque con mis amigos.,[],,
+2,Multilingual,Spanish to English,Easy,True,Should mention 'artificial intelligence' and 'world',0.32,33,12,45,37.1,Artificial intelligence is changing the world in surprising ways.,[],,
+3,Multilingual,English to French,Medium,False,"Should contain pain (bread), fromage (cheese), vin (wine)",0.43,34,20,54,46.3,"I need to buy groceries, including bread, cheese, and wine, for tonight's dinner.",[],,
+4,Multilingual,Japanese to English,Medium,True,"Should mention programming, career, and importance",0.3,35,10,45,33.8,Programming is extremely important for future career success.,[],,
+5,Multilingual,Language detection,Medium,True,Should identify Dutch,0.25,39,3,42,12.2,Dutch,[],,
+6,Multilingual,Respond in requested language,Medium,True,Should respond in German (found 9 German words),2.26,23,154,177,68.3,"1. Verbesserung des Gesundheitszustands – Regularer Sport schließt sich an die Gesundheitsaufrechterhaltung ein und verringert das Risiko von Krankheiten wie Herzenschlag, Diabetes und bestimmten Krebsarten.
+
+2. Verbesserung des Mentalgesundens – Bewegung hilft bei der Reduzierung von Stress, Angst und Depressionen und fördert die Selbstwirksamkeit und das Selbstwertgefühl.
+
+3. Verbesserung des Gewichts und des Körperfalls – Durch körperliche Aktivität können Menschen helfen, zu viel Gewicht zu ",[],,
+7,Multilingual,Idiomatic translation,Hard,False,"Should give idiomatic Spanish equivalent, not literal translation",2.53,34,172,206,68.0,"En español, ""It's raining cats and dogs"" se traduce como **""Está lloviendo gatos y gatos""**, aunque no se le da una traducción literal en ese sentido. Esta frase metáfora significa que está lloviendo muy intensamente, con tan mucha lluvia que se parece a gatos en desfileo.
+
+Sin embargo, en español se utiliza más naturalmente **""Está lloviendo con lluvia de gatos""** o **""Está lloviendo como gatos en desfileo""**, con el último siendo una versión más coloquial y común en el habla cotidiana.
+
+👉 **Re",[],,

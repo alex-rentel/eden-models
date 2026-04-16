@@ -1,0 +1,66 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Reasoning,River crossing,Medium,True,Expected 7 crossings,3.69,82,1024,1106,277.8,"To solve this problem, we need to find a solution that satisfies the given conditions. Since the boat fits the farmer plus one item, we'll need to find a combination of three items that satisfy the following conditions:
+
+1. The farmer can cross the river.
+2. The wolf can cross the river.
+3. The goat can cross the river.
+4. The goat can eat the cabbage.
+5. The wolf can eat the goat.
+6. The goat can eat the cabbage.
+7. The wolf can eat the cabbage.
+
+Let's break down the solution step by step:
+
+**S",[],,
+2,Reasoning,Syllogism chain,Medium,True,"Expected: Yes, rose has roots (transitive chain)",0.76,66,199,265,260.2,"I'll break down the statement step by step to answer whether a rose has roots.
+
+1. **Understanding the statement**: The statement says ""All roses are flowers."" This means roses are a type of flower.
+
+2. **Understanding the second statement**: The statement then says ""All flowers need water."" This implies that all types of flowers require water to grow.
+
+3. **Understanding the third statement**: The third statement says ""All things that need water have roots."" This means that if something needs w",[],,
+3,Reasoning,Constraint satisfaction,Hard,True,Must provide a valid arrangement and verify constraints,0.95,116,254,370,267.1,"To find a valid arrangement of the 5 people in a row of 5 seats (1-5), we need to satisfy the given constraints.
+
+1. A is not at either end.
+   Valid arrangement: A in seat 2, B in seat 1, C in seat 4, D in seat 3, E in seat 5.
+
+2. B is to the left of C.
+   Valid arrangement: A in seat 2, B in seat 1, C in seat 4, D in seat 3, E in seat 5.
+
+3. D is adjacent to E.
+   Valid arrangement: A in seat 2, B in seat 1, C in seat 4, D in seat 3, E in seat 5.
+
+4. C is not adjacent to A.
+   Valid arrangemen",[],,
+4,Reasoning,Temporal reasoning,Medium,True,"Alice should be first, Charlie last",0.36,70,79,149,219.8,"Based on the information provided:
+
+1. Alice finished before Bob.
+2. Bob finished before Diana.
+3. Diana finished after Charlie.
+4. Charlie finished after Eve.
+5. Eve finished after Alice but before Charlie.
+
+Here's the list of 5 people in order from first to last:
+
+1. Alice
+2. Bob
+3. Charlie
+4. Diana
+5. Eve",[],,
+5,Reasoning,Counterfactual reasoning,Hard,True,Sun rises in west; Coriolis reverses,1.24,85,345,430,277.9,"If the Earth were to rotate in the opposite direction (i.e., clockwise instead of counterclockwise), several changes would occur. Here are the specific effects on each aspect:
+
+1. **Sunrise/Sunset direction**: If the Earth were to rotate in the opposite direction, the sunrise and sunset directions would be reversed. Instead of sunrise in the East and sunset in the West, it would be sunrise in the West and sunset in the East. This would cause the day to begin in the West and end in the East.
+
+2. ",[],,
+6,Reasoning,Spatial reasoning: cube folding,Hard,True,Must identify 3 opposite-face pairs,0.34,99,71,170,208.8,"When flattened into a cross shape, the numbers on the cube are arranged in a checkerboard pattern.
+
+- Opposite 1: 2 and 6
+- Opposite 2: 3 and 5
+- Opposite 3: 4 and 1
+
+So, the numbers opposite 1 are 2 and 6.",[],,
+7,Reasoning,Causal chain analysis,Medium,False,Should analyze tradeoffs and second-order effects,3.7,89,1024,1113,277.0,"To analyze the causal chain of the ban on plastic bags in the city, we need to consider the following components:
+
+1. **Initial Decrease in Plastic Bag Sales**: The ban on plastic bags resulted in a 40% decrease in sales over the first six months.
+2. **Second-Order Effect: Decrease in Sales among Non-Reusable Bag Users**: As residents switched to using reusable bags, there was a corresponding decrease in sales among non- reusable bag users.
+3. **Second-Order Effect: Decrease in Sales among Non-R",[],,

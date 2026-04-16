@@ -1,0 +1,41 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Agentic Planning,Simple task decomposition,Easy,True,"Should have numbered steps covering test, docker, deploy, monitor",11.74,64,659,723,56.1,"Sure! Here is a breakdown of the steps to deploy a Python web app to production, including testing, containerization, CI/CD, and monitoring:
+
+1. **Prepare the Development Environment:**
+   - Ensure your development environment is set up with the necessary dependencies and tools.
+   - Write and test your application locally.
+
+2. **Testing:**
+   - Write unit tests and integration tests to ensure your application works as expected.
+   - Perform end-to-end testing and test the application with vario",[],,
+2,Agentic Planning,API integration plan,Medium,True,"Should cover webhooks, secrets, errors, testing, routes (got 5/5)",10.82,70,588,658,54.4,"1. **Define Requirements and Scope:**
+   - Identify which payment methods and features will be supported initially.
+   - Define the checkout flow and user experience.
+   - List the specific events that need to be handled (e.g., successful payment, failed payment, order status changes).
+
+2. **Set Up Stripe Account and API Keys:**
+   - Obtain a Stripe account and API keys (Publishable and Secret keys).
+   - Configure the environment variables to store these keys securely.
+
+3. **Backend API Routes:",[],,
+3,Agentic Planning,Debug workflow planning,Medium,True,"Should check logs, reproduce, inspect code. logs=True, reproduce=True, code=True",19.53,84,762,846,39.0,"To debug the issue where the app crashes when uploading files larger than 10MB, I would follow a structured approach. Here is a step-by-step workflow:
+
+### Step 1: Initial Investigation and Reproduction
+1. **Ask the User for Details:**
+   - Ask the user for more details about the crash. Specifically, ask for:
+     - The exact error message (if any).
+     - The device and operating system.
+     - The app version.
+     - Any error logs or stack traces.
+2. **Reproduce the Issue:**
+   - Try to repro",[],,
+4,Agentic Planning,Long context: needle in haystack (500 words),Hard,True,Should find BLUE-FALCON-42 buried in context,3.13,347,18,365,5.7,"The secret code mentioned in the text is ""BLUE-FALCON-42.""",[],,
+5,Agentic Planning,Long context: multi-fact retrieval,Hard,True,Should answer 4 questions from report. Got 4/4 correct.,4.16,342,93,435,22.4,"1. In Q3, there were 7 P1 incidents, which is down from 12 P1 incidents in Q2.
+2. In Q3, 60% of services were migrated to Kubernetes.
+3. Project Neptune is about launching ML-based recommendations.
+4. The MTTR (Mean Time To Restore) was 23 minutes on average. The target was less than 30 minutes, so it was within the target.",[],,
+6,Agentic Planning,Action plan with dependencies,Hard,True,"parallel=True, deps=True, assign=True, weeks=8",23.33,111,857,968,36.7,"Certainly! Below is a structured plan for your 8-week SaaS product launch. This plan outlines who works on what, dependencies between tasks, and what can be parallelized. Note that the exact tasks and dependencies may vary based on the specific requirements and the developers' skills. This is a general guideline.
+
+| Week | Task Description | Responsible | Dependencies | Parallel Tasks |
+|------|-----------------|-------------|--------------|----------------|
+| 1    | Requirements gathering and p",[],,

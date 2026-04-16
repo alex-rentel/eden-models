@@ -1,0 +1,12 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,RAG / Grounded QA,Simple fact extraction,Easy,True,Expected 200kg,1.0,260,16,276,16.1,The ArBot-3 can carry up to 200kg.,[],,
+2,RAG / Grounded QA,Multi-fact question,Medium,True,"Must mention both founders, 2019, and Austin",0.71,260,30,290,42.3,"The company, Acme Robotics Inc., was founded in 2019 by Dr. Sarah Chen and Marcus Rivera in Austin, Texas.",[],,
+3,RAG / Grounded QA,Numerical reasoning from context,Medium,False,Expected ~75-76% growth,1.35,270,68,338,50.4,The projected revenue growth from 2023 to 2024 is an increase from $18.2M to $32M. This represents a growth percentage of (32 - 18.2)/18.2 * 100 = 70.82% growth.,[],,
+4,RAG / Grounded QA,Answer NOT in context (should say so),Hard,True,Should indicate info is not in the document,0.92,278,7,285,7.6,Not mentioned in the document.,[],,
+5,RAG / Grounded QA,Resist hallucination with plausible wrong answer,Hard,False,"Should note only Series B is mentioned, NOT invent Series A amount",1.08,266,20,286,18.6,The document does not mention the amount of Series A funding that Acme Robotics Inc. raised.,[],,
+6,RAG / Grounded QA,Policy: eligible or not?,Medium,True,Should say not eligible (part-time AND contractor both excluded),1.47,237,44,281,29.9,"No, you cannot work remotely. The policy states that only full-time employees who have completed their 90-day probation period are eligible for remote work. Part-time employees and contractors are not eligible for remote work.",[],,
+7,RAG / Grounded QA,Policy: complex scenario,Hard,True,Should mention VP approval needed for fully remote engineering leads,2.5,243,136,379,54.3,"Under TechCorp Inc.'s Remote Work Policy, engineering leads and above may work fully remote with VP approval. Since you are a full-time engineering lead who completed your probation period, you are eligible for remote work.
+
+However, the policy specifies that remote work is allowed up to **3 days per week**. Therefore, you **cannot** work from home every day.
+
+To work from home more than 3 days per week, you need **VP approval**. Additionally, your remote work must still comply with the policy's",[],,

@@ -1,0 +1,259 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Math,Multi-step arithmetic,Easy,True,Expected 1226,5.37,47,291,338,54.2,"We are asked to calculate:
+
+$$
+(48 \times 27) + (156 \div 12) - 83
+$$
+
+---
+
+### Step 1: Multiply $ 48 \times 27 $
+
+First, break it down using the distributive property or simplify:
+
+$$
+48 \times 27 = (50 - 2) \times 27 = 50 \times 27 - 2 \times 27
+$$
+
+Calculate each part:
+
+- $ 50 \times 27 = 1350 $
+- $ 2 \times 27 = 54 $
+
+Now subtract:
+
+$$
+1350 - 54 = 1296
+$$
+
+---
+
+### Step 2: Divide $ 156 \div 12 $
+
+$$
+156 \div 12 = 13
+$$
+
+---
+
+### Step 3: Now combine all terms
+
+$$
+1296 + 13 - 83
+$$
+
+First, add",[],,
+2,Math,Percentage word problem,Easy,True,Expected ~$58.10,7.41,67,423,490,57.1,"Let's break down the problem step by step.
+
+---
+
+### **1. Original price of the shirt:**
+$$
+\$85
+$$
+
+---
+
+### **2. Apply the 30% sale discount:**
+
+First, find the amount of the discount:
+$$
+30\% \text{ of } \$85 = 0.30 \times 85 = \$25.50
+$$
+
+Now subtract the discount from the original price:
+$$
+\$85 - \$25.50 = \$59.50
+$$
+
+So, the **sale price** is:
+$$
+\$59.50
+$$
+
+---
+
+### **3. Apply the additional 10% loyalty card discount:**
+
+First, find the amount of the loyalty discount:
+$$
+10\% \text{ of }",[],,
+3,Math,System of equations,Medium,False,"Expected x=3.6 (or 18/5), y=2.6 (or 13/5)",5.53,51,313,364,56.6,"We are given the system of equations:
+
+1. $ 3x + 2y = 16 $  
+2. $ x - y = 1 $
+
+---
+
+### Step 1: Solve Equation (2) for one variable
+
+From Equation (2):  
+$$
+x - y = 1 \Rightarrow x = y + 1
+$$
+
+---
+
+### Step 2: Substitute into Equation (1)
+
+Substitute $ x = y + 1 $ into Equation (1):  
+$$
+3x + 2y = 16
+$$
+
+Substitute $ x $:
+$$
+3(y + 1) + 2y = 16
+$$
+
+Distribute:
+$$
+3y + 3 + 2y = 16
+$$
+
+Combine like terms:
+$$
+5y + 3 = 16
+$$
+
+Subtract 3 from both sides:
+$$
+5y = 13
+$$
+
+---
+
+### Step 3: Solve for $ y $",[],,
+4,Math,Probability with combinations,Medium,True,Expected 1/12 ≈ 0.0833,6.94,58,395,453,56.9,"We are given a bag containing:
+
+- **5 red marbles**
+- **3 blue marbles**
+- **2 green marbles**
+
+So, the total number of marbles is:
+
+$$
+5 + 3 + 2 = 10
+$$
+
+We are to draw **3 marbles without replacement** and find the probability that **all 3 are red**.
+
+---
+
+### Step 1: Total number of ways to draw 3 marbles from 10
+
+This is a combination problem because the order of drawing does not matter.
+
+$$
+\text{Total combinations} = \binom{10}{3} = \frac{10 \times 9 \times 8}{3 \times 2 \times 1} = 120
+$$",[],,
+5,Math,Quadratic equation,Medium,False,Expected x=3 and x=0.5 (or 1/2),6.34,39,360,399,56.8,"We are given the quadratic equation:
+
+$$
+2x^2 - 7x + 3 = 0
+$$
+
+We will solve this using the **quadratic formula**:
+
+$$
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+$$
+
+---
+
+### Step 1: Identify coefficients
+
+From the equation $2x^2 - 7x + 3 = 0$, we have:
+
+- $a = 2$
+- $b = -7$
+- $c = 3$
+
+---
+
+### Step 2: Plug into the quadratic formula
+
+$$
+x = \frac{-(-7) \pm \sqrt{(-7)^2 - 4(2)(3)}}{2(2)}
+$$
+
+First simplify the numerator and the square root:
+
+- $-(-7) = 7$
+- $(-7)^2 = 49$
+- $4(2)(3) = 24$
+- $\sqrt{49",[],,
+6,Math,Geometry: composite area,Medium,False,Expected area = 120 sq ft,12.02,78,686,764,57.1,"We are given an **L-shaped room** made up of two rectangles:
+
+- **First rectangle**: 12 ft × 8 ft  
+- **Second rectangle**: 6 ft × 4 ft
+
+The two rectangles **share a wall** — specifically, the **6 ft side** of the second rectangle connects to the **8 ft side** of the first rectangle. This means they are **not completely separate**; they overlap.
+
+---
+
+### ✅ **1. Total Floor Area**
+
+To find the **total floor area**, we need to **add the areas of both rectangles** and **subtract the overlapping ar",[],,
+7,Math,Monty Hall: 5-door variant,Hard,True,"Switch=4/5, Stay=1/5",15.88,76,908,984,57.2,"Yes, **you should switch doors**. The probability of winning is **higher if you switch**.
+
+---
+
+### 🧠 Game Show Context
+
+This is a classic **Monty Hall Problem** with **5 doors** instead of 3. The setup is:
+
+- **5 doors**: 1 **car** (prize), 4 **goats** (prizes).
+- You **pick one door** (say, door 1).
+- The host **opens 3 doors** that **show goats**.
+- The host **always opens doors that are not your chosen door** and **always reveals a goat**.
+- The **host does not open your chosen door**.
+
+You ",[],,
+8,Math,Logarithm & exponent simplification,Hard,True,Expected 7 (6 + 4 - 3),6.69,42,383,425,57.3,"We are asked to simplify the expression:
+
+$$
+\log_2(64) + \log_3(81) - \log_5(125)
+$$
+
+---
+
+### **Step 1: Evaluate each logarithm separately**
+
+We need to simplify each term using logarithmic identities or known values.
+
+---
+
+#### **First term: $\log_2(64)$**
+
+We know that:
+$$
+64 = 2^6
+$$
+
+So:
+$$
+\log_2(64) = \log_2(2^6) = 6
+$$
+
+---
+
+#### **Second term: $\log_3(81)$**
+
+We know that:
+$$
+81 = 3^4
+$$
+
+So:
+$$
+\log_3(81) = \log_3(3^4) = 4
+$$
+
+---
+
+#### **Third term: $\log_5(125)$**
+
+We know that:
+$$
+",[],,

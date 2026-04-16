@@ -1,0 +1,217 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Code,FizzBuzz with twist,Easy,False,"Must run and print FizzBuzz, FizzBoom, DONE. 1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBoom
+16
+17
+Fizz
+19
+Buzz
+Fizz
+22
+23
+Fizz
+Buzz
+26
+Fizz
+28
+29
+FizzBoom
+DONE",0.74,103,81,184,109.9,"```python
+for i in range(1, 31):
+    if i % 3 == 0 and i % 5 == 0:
+        print('FizzBoom')
+    elif i % 3 == 0:
+        print('Fizz')
+    elif i % 5 == 0:
+        print('Buzz')
+    else:
+        print(i)
+print('DONE')
+```",[],"1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBoom
+16
+17
+Fizz
+19
+Buzz
+Fizz
+22
+23
+Fizz
+Buzz
+26
+Fizz
+28
+29
+FizzBoom
+DONE",
+2,Code,Binary search (first occurrence),Medium,False,"Must pass all assertions. Traceback (most recent call last):
+  File ""/var/folders/w9/grylvlj17qn6v4c6tvhhwzbh0000gn/T/tmp2pgch_g8.py"", line 15, in <module>
+    assert binary_se",1.52,164,189,353,124.6,"```python
+def binary_search(lst, target):
+    low = 0
+    high = len(lst) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if lst[mid] == target:
+            return mid
+        elif lst[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+
+# Test cases
+assert binary_search([1,2,2,2,3,4], 2) == 1
+assert binary_search([1,2,3,4,5], 6) == -1
+assert binary_search([], 1) == -1
+assert binary_search([5], 5) == 0
+assert binary_search([1,1,1,1,1",[],"Traceback (most recent call last):
+  File ""/var/folders/w9/grylvlj17qn6v4c6tvhhwzbh0000gn/T/tmp2pgch_g8.py"", line 15, in <module>
+    assert binary_search([1,2,2,2,3,4], 2) == 1
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError",
+3,Code,LRU Cache from scratch,Hard,True,Must implement O(1) LRU. ALL PASSED,1.87,190,234,424,125.3,"from collections import OrderedDict
+
+class LRUCache:
+    def __init__(self, size):
+        self.size = size
+        self.cache = OrderedDict()
+
+    def get(self, key):
+        if key in self.cache:
+            self.cache.move_to_end(key)
+            return self.cache[key]
+        return -1
+
+    def put(self, key, value):
+        if key in self.cache:
+            self.cache.move_to_end(key)
+        self.cache[key] = value
+        if len(self.cache) > self.size:
+            self.cache.popitem(last",[],ALL PASSED,
+4,Code,Debug: off-by-one error,Medium,False,"Must fix the off-by-one and pass tests. File ""/var/folders/w9/grylvlj17qn6v4c6tvhhwzbh0000gn/T/tmp8p8avs8r.py"", line 17
+    Assertion test:
+              ^^^^
+SyntaxError: invalid syntax",1.64,251,196,447,119.2,"def merge_sorted(a, b):
+    result = []
+    i = j = 0
+    while i <= len(a) and j <= len(b):
+        if a[i] <= b[j]:
+            result.append(a[i])
+            i += 1
+        else:
+            result.append(b[j])
+            j += 1
+    result.extend(a[i:])
+    result.extend(b[j:])
+    return result
+
+print(merge_sorted([1, 3, 5], [2, 4, 6]))
+
+Assertion test:
+assert merge_sorted([1, 3, 5], [2, 4, 6]) == [1, 2, 3, 4, 5, 6]  
+Assertion test:
+assert merge_sorted([], [1, 2]) == [1, 2]  
+Assertion te",[],"File ""/var/folders/w9/grylvlj17qn6v4c6tvhhwzbh0000gn/T/tmp8p8avs8r.py"", line 17
+    Assertion test:
+              ^^^^
+SyntaxError: invalid syntax",
+5,Code,Debug: logic error in recursion,Hard,True,"Must fix the recursion bug. [1, 2, 3, 4, 5, 6]
+ALL PASSED",1.35,219,160,379,118.8,"def flatten(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flatten(item))  # FIXED: Use `extend` instead of `append`
+        else:
+            result.append(item)
+    return result
+
+print(flatten([1, [2, [3, 4], 5], 6]))  # Should print [1, 2, 3, 4, 5, 6]
+
+assert flatten([1, [2, [3, 4], 5], 6]) == [1, 2, 3, 4, 5, 6]
+assert flatten([]) == []
+assert flatten([[[[1]]]]) == [1]
+print('ALL PASSED')",[],"[1, 2, 3, 4, 5, 6]
+ALL PASSED",
+6,Code,Refactor: extract and improve,Hard,True,"Must produce same output + REFACTORED. DIANA: 95 (A)
+BOB: 92 (A)
+EVE: 88 (B)
+ALICE: 85 (B)
+REFACTORED",1.62,235,188,423,116.3,"```python
+from typing import List, Dict
+
+data = [{""name"": ""alice"", ""score"": 85}, {""name"": ""bob"", ""score"": 92}, 
+        {""name"": ""charlie"", ""score"": 78}, {""name"": ""diana"", ""score"": 95},
+        {""name"": ""eve"", ""score"": 88}]
+
+result = [ 
+    {""name"": d[""name""].upper(), ""score"": d[""score""], ""grade"": ""A"" if d[""score""] >= 90 else ""B""}
+    for d in data
+    if d[""score""] >= 80
+]
+
+result.sort(key=lambda x: x[""score""], reverse=True)
+
+for r in result:
+    print(f""{r['name']}: {r['score']} ({r['grade']})",[],"DIANA: 95 (A)
+BOB: 92 (A)
+EVE: 88 (B)
+ALICE: 85 (B)
+REFACTORED",
+7,Code,Tree traversals,Medium,False,"Must pass all traversal assertions. Traceback (most recent call last):
+  File ""/var/folders/w9/grylvlj17qn6v4c6tvhhwzbh0000gn/T/tmp_epnq4ve.py"", line 40, in <module>
+    main()
+  File ""/",2.52,165,321,486,127.4,"```python
+class TreeNode:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+def build_tree():
+    root = TreeNode(4)
+    root.left = TreeNode(2)
+    root.right = TreeNode(6)
+    root.left.left = TreeNode(1)
+    root.left.right = TreeNode(3)
+    root.right.right = TreeNode(5)
+    root.right.right.left = TreeNode(7)
+    return root
+
+def inorder(root):
+    if root is None:
+        return []
+    return inorder(root.left) + [root.value] + in",[],"Traceback (most recent call last):
+  File ""/var/folders/w9/grylvlj17qn6v4c6tvhhwzbh0000gn/T/tmp_epnq4ve.py"", line 40, in <module>
+    main()
+  File ""/var/folders/w9/grylvlj17qn6v4c6tvhhwzbh0000gn/T/tmp_epnq4ve.py"", line 34, in main
+    assert inorder(tree) == [1, 2, 3, 4, 5, 6, 7], ""Assertion failed for inorder""
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Assertion failed for inorder",

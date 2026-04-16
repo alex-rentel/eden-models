@@ -1,0 +1,11 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Tool Calling,Single tool: list directory,Easy,False,Should call list_files with correct path,0.98,0,0,0,0,,[],,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+2,Tool Calling,Single tool: read specific file,Easy,False,Should call read_file with /etc/hostname,0.36,0,0,0,0,,[],,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+3,Tool Calling,Tool selection: weather (not file tools),Medium,True,"Should call get_weather, not search_web or file tools",0.39,603,28,631,71.5,,"[{""function"": {""name"": ""get_weather"", ""arguments"": ""{\""city\"": \""Tokyo\"", \""units\"": \""celsius\""}""}, ""type"": ""function"", ""id"": ""56f749ee-f7b3-42eb-89c7-d00911b88aba""}]",,
+4,Tool Calling,Tool selection: web search for current info,Medium,False,Should call search_web for current events,0.79,601,73,674,92.5,"I don't have direct access to real-time sports data, especially from last year. However, I can help you find this information. Would you like to search for it using the web search function?
+
+I can also provide you with the most recent information, if you'd like to know who won the finals in the most recent season. Just let me know.",[],,
+5,Tool Calling,Tool avoidance: simple question,Medium,True,Should answer directly without tools,0.22,600,8,608,37.0,The capital of France is Paris.,[],,
+6,Tool Calling,Tool avoidance: math question,Medium,False,Should compute 345 without calling any tools,0.39,603,27,630,68.4,,"[{""function"": {""name"": ""run_command"", ""arguments"": ""{\""command\"": \""calc 15 * 23\""}""}, ""type"": ""function"", ""id"": ""39799090-fb32-4798-85c0-5cdafd33b67b""}]",,
+7,Tool Calling,Write file with specific content,Medium,False,Should call write_file with correct path and content,0.47,0,0,0,0,,[],,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+8,Tool Calling,Multi-step: find and read,Hard,False,Should start with list_files or run_command,0.68,0,0,0,0,,[],,"('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"

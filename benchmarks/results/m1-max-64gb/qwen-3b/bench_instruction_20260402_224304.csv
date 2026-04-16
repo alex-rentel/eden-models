@@ -1,0 +1,26 @@
+test_num,category,name,difficulty,passed,note,elapsed_sec,prompt_tokens,completion_tokens,total_tokens,tok_per_sec,response,tool_calls,exec_output,error
+1,Instruction Following,Exact sentence count,Easy,False,"Expected 3 sentences, got 1",0.47,52,35,87,74.4,"Machine learning is a subset of artificial intelligence that enables systems to improve automatically through experience, using algorithms that can learn from and make predictions on data, without being explicitly programmed.",[],,
+2,Instruction Following,Bullet point count,Easy,True,"Expected 5 numbered items, got 5",1.96,54,204,258,103.8,"1. Establish a consistent sleep routine by going to bed and waking up at the same time every day, including weekends. This helps regulate your body's clock and can improve the quality of your sleep.
+
+2. Create a relaxing bedtime routine, such as taking a warm bath, meditating, or reading, to signal to your body that it's time to sleep. Avoid engaging in stimulating activities, such as working or using electronic devices, in the few hours before bed.
+
+3. Ensure your sleeping environment is conduc",[],,
+3,Instruction Following,Word avoidance,Medium,False,Forbidden words found: ['computer'],1.39,52,146,198,104.7,"A computer helps people do tasks. It can store information, numbers, and images. People can ask it to find answers to questions, make drawings, or play games. It can also sort through large amounts of data to find useful information. Computers allow people to communicate with others quickly, sending messages and images. They can remember things, like notes or notes, and can repeat actions over and over, such as when it calculates numbers. People use computers to create, edit, and share stories, ",[],,
+4,Instruction Following,Response in specific format,Medium,True,"Expected 3 each of TITLE/AUTHOR/WHY, got 3/3/3",1.4,67,140,207,99.9,"TITLE: ""To Kill a Mockingbird""
+AUTHOR: Harper Lee
+WHY: It explores themes of racial injustice and moral growth through its engaging narrative and memorable characters.
+
+TITLE: ""Pride and Prejudice""
+AUTHOR: Jane Austen
+WHY: A classic love story that delves into social class, marriage, and personal growth, providing insight into 19th-century societal norms.
+
+TITLE: ""The Great Gatsby""
+AUTHOR: F. Scott Fitzgerald
+WHY: A poignant exploration of the American dream, wealth, and the disillusionment of t",[],,
+5,Instruction Following,First letter constraint (acrostic),Hard,False,"Expected first letters 'HELLO', got 'HELOO'",0.56,53,49,102,88.2,"Huge efforts lead to our latest launch.  
+Exploration holds endless mysteries in distant worlds.  
+Luminous satellites scan cosmic expanses.  
+Observations offer clues to unseen phenomena.  
+Outer horizons beckon further human expansion.",[],,
+6,Instruction Following,JSON-only response,Medium,False,"Must return valid JSON with correct values, no wrapping",0.32,66,18,84,55.8,"{""animal"": ""blue whales"", ""color"": """", ""count"": ""3""}",[],,
+7,Instruction Following,Multi-constraint response,Hard,False,"Starts with 'Every': True, ends with '?': False, has number: True",0.99,78,98,176,98.7,"Every year, 60 million people in Colombia and 30 million in Brazil grow coffee, providing over 60% of the world's coffee supply. The aroma and taste of these beans, nurtured in lush, volcanic soil, captivate palates around the globe, raising curious minds to explore the diverse flavors and cultural significance of this beloved drink. Every sip, therefore, holds the story of two significant coffee-producing nations, inviting further exploration into the world of coffee.",[],,
