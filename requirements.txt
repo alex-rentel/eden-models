@@ -1,0 +1,15 @@
+# Top-level requirements for the eden-models training pipeline.
+#
+# Locally / on Apple Silicon: pip install -r requirements.txt
+# On Great Lakes (CUDA): the same file works — mlx is a no-op on CUDA
+# nodes; the training scripts import torch/HF transformers conditionally
+# based on platform. See slurm/*.slurm for the cluster install path.
+
+# Inference + local validation
+mlx>=0.31.0
+mlx-lm>=0.20.0
+
+# Training data + benchmarks
+numpy>=1.24.0
+requests>=2.28.0
+matplotlib>=3.7.0

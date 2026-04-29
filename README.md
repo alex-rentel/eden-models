@@ -57,7 +57,7 @@ IF Scratch 500M > 80% accuracy:
 ## Full Pipeline
 
 ```
-training-flywheel (captures real tool-calling sessions)
+eden-flywheel (captures real tool-calling sessions)
         ↓
 eden-models (trains on Great Lakes HPC)
         ↓
@@ -83,11 +83,11 @@ mlx-turboquant (validates compression, 4x KV cache savings)
 
 ## Training Data
 
-### Primary: training-flywheel captures
+### Primary: eden-flywheel captures
 Real user↔Eden sessions in ChatML format with tool calls.
 
 ### Supplemental: Synthetic generation
-When training-flywheel hasn't captured enough data, generate synthetic conversations:
+When eden-flywheel hasn't captured enough data, generate synthetic conversations:
 
 ```bash
 export OPENROUTER_API_KEY=...
@@ -200,9 +200,9 @@ python scripts/compare_experiments.py \
 
 ## Related Projects
 
-- [training-flywheel](https://github.com/alex-rentel/training-flywheel) — Captures real tool-calling sessions for training data
-- [mlx-nanochat](https://github.com/alex-rentel/mlx-nanochat) — Local validation on Apple Silicon
-- [mlx-turboquant](https://github.com/alex-rentel/mlx-turboquant) — Compression validation, 4x KV cache savings
+- [eden-flywheel](https://github.com/alex-rentel/eden-flywheel) — Captures real tool-calling sessions for training data
+- [eden-nanochat](https://github.com/alex-rentel/eden-nanochat) — Local validation on Apple Silicon (`mlx-nanochat` package)
+- [eden-turboquant](https://github.com/alex-rentel/eden-turboquant) — Compression validation, 4x KV cache savings (`mlx-turboquant` package)
 - [PrismML/Bonsai](https://github.com/PrismML-Eng/Bonsai-demo) — 1-bit model architecture reference
 - [Microsoft BitNet](https://github.com/microsoft/BitNet) — 1.58-bit training methodology
 - [Salesforce xLAM](https://github.com/SalesforceAIResearch/xLAM) — Action model research
